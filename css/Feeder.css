@@ -879,6 +879,12 @@ footer {
   background-color: #D0EAEC;
 }
 
+#tabletest.announceList tbody tr td, #tabletest.announceList tbody tr th, #table_Alert.announceList tbody tr td, #table_Alert.announceList tbody tr th {
+  max-width: -webkit-fit-content !important;
+  max-width: -moz-fit-content !important;
+  max-width: fit-content !important;
+}
+
 #table_Aset tr {
   background-color: white;
 }

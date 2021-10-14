@@ -439,6 +439,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px;
+  text-transform: uppercase;
 }
 
 .tblBox .inputBox button {
@@ -609,21 +610,21 @@ body {
 .tblBox .calculationBox {
   text-align: center;
   padding-bottom: 15px;
-  overflow-y: auto;
-  overflow-x: auto;
-  max-height: 720px;
+  max-height: 840px;
+  min-height: 240px;
+  height: calc(100vh - 300px);
   padding: 0;
 }
 
-.tblBox .calculationBox::-webkit-scrollbar {
+.tblBox .calculationBox div::-webkit-scrollbar {
   width: 8px;
 }
 
-.tblBox .calculationBox::-webkit-scrollbar-track {
+.tblBox .calculationBox div::-webkit-scrollbar-track {
   background: #E5EEF4;
 }
 
-.tblBox .calculationBox::-webkit-scrollbar-thumb {
+.tblBox .calculationBox div::-webkit-scrollbar-thumb {
   background: #AAC9DF;
 }
 
@@ -753,8 +754,18 @@ body {
 }
 
 .selectBox span {
+  padding: 0 5px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.selectBox span em {
+  font-style: initial;
+  padding: 0 5px;
+}
+
+.selectBox span.addSelect {
   border-right: 1px solid #4C7DA2;
-  padding: 0 10px;
 }
 
 .selectBox select {
@@ -762,8 +773,8 @@ body {
   background-repeat: no-repeat;
   background-position: bottom 8px right 5px;
   cursor: url("./../images/Hover.cur"), pointer !important;
-  padding: 0;
   border: 0;
+  padding: 0 5px;
 }
 
 .selectBox.box1 {

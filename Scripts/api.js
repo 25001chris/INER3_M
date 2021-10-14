@@ -94,3 +94,13 @@ function getXMLList(data){
     })
     return dfd.promise();
 }
+
+function getAnnounce() {
+    let dfd = $.Deferred();
+    $.get(`./data/announce.json`, function (res) {
+        dfd.resolve(res);
+    }).fail(function (e) {
+        dfd.reject(e);
+    })
+    return dfd.promise();
+}

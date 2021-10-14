@@ -429,6 +429,7 @@ footer {
         //min-width: initial;
     }
 }
+
 /*.scrolling td, th {
         vertical-align: top;
         padding: 10px;
@@ -470,7 +471,6 @@ footer {
         tr {
             td {
                 max-width: 120px;
-
             }
         }
     }
@@ -496,6 +496,15 @@ footer {
             }
 
             background-color: $color-white;
+        }
+    }
+    &.announceList{
+        tbody {
+            tr{
+                td,th{
+                    max-width:fit-content !important;
+                }
+            }
         }
     }
 }

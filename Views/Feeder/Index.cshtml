@@ -4,12 +4,7 @@
 @*@model HomeViewModels*@
 @model List<INERADMS.Models.FILTERLOOKUP>
 @{
-    //ViewBag.Title = "饋線監控系統告警篩選";
-    ViewBag.ListTitle = "訊息篩選清單";
-    ViewBag.SettingTitle = "訊息篩選邏輯設定";
-    JavaScriptSerializer js = new JavaScriptSerializer();
-    string jsonStr = js.Serialize(Model);
-
+    ViewBag.Title = "行動通報清單";
     string UserAuth = "";
     string tLoginUser = "";
     string tUserName = "";
@@ -28,32 +23,8 @@
     List<int> fList = UserAuthorityTool.GetFeederAuth();
     string tDataTitle = "";
     string tDataField = "";
-
-    if (fList.Contains((int)FeederAuthority.FeederIndexEdit))
-    {
-        tDataTitle = string.Join(",", new string[] { "編號", "邏輯", "警報時間", "設備編號", "設備名稱", "設備主體", "設備點", "警報訊息", "警報等級", "定位",
-"解除", "歷史" });
-        tDataField = string.Join(",", new string[] { "ID", "LOGIC", "TIME", "KEY", "ENAME", "PNAME", "SNAME", "REMARK", "LEVEL",
-"LOCATION", "REMOVE", "HISTORY" });
-    }
-    else if (fList.Contains((int)FeederAuthority.FeederIndexOnly))
-    {
-        tDataTitle = string.Join(",", new string[] { "編號", "邏輯", "警報時間", "設備編號", "設備名稱", "設備主體", "設備點", "警報訊息", "警報等級", "定位",
-"歷史" });
-        tDataField = string.Join(",", new string[] { "ID", "LOGIC", "TIME", "KEY", "ENAME", "PNAME", "SNAME", "REMARK", "LEVEL",
-"LOCATION", "HISTORY" });
-    }
-    else if (fList.Contains((int)FeederAuthority.FeederIndexEdit))
-    {
-
-    }
-    else
-    {
-        tDataTitle = string.Join(",", new string[] { "編號", "邏輯", "警報時間", "設備編號", "設備名稱", "設備主體", "設備點", "警報訊息", "警報等級", "歷史" });
-        tDataField = string.Join(",", new string[] { "ID", "LOGIC", "TIME", "KEY", "ENAME", "PNAME", "SNAME", "REMARK", "LEVEL",
-"HISTORY" });
-    }
-
+    tDataTitle = string.Join(",", new string[] { "編號", "來源", "通報地點", "通報事項", "備註", "通報人員", "電話", "照片", "處理進度", "定位",});
+    tDataField = string.Join(",", new string[] { "ID", "SOURCE", "LOCATION", "ITEM", "REMARK", "USER", "TEL", "PHOTO", "PROCESS","POSITION"});
 }
 @*@Styles.Render("~/Content/bootstrap.min.css")*@
 @Styles.Render("~/Content/base.min.css")
@@ -65,52 +36,39 @@
     }
 </style>
 <div class="">
-    <!-- <div class="mt30 mb5 pageTitle">
+    <div class="mt30 mb5 pageTitle">
         <div class="pd10 fw700 pageNameTitle">@ViewBag.Title</div>
-    </div> -->
-    <div id="switchTab" class="switch-tab mt30 mb5 ">
-        <div class="switch-tab-title pd10" onclick="select(0);">@ViewBag.ListTitle</div>
-        @if (Session["CURRENTUSERID"] != null)
-        {
-            <div class="switch-tab-title pd10" onclick="select(1);">@ViewBag.SettingTitle</div>
-            <div class="scroll-bar"></div>
-        }
     </div>
     <div class="systemAlertList" style="display:block;">
         <div class="alertMessage">
             <div class="SetupTest">
-                <select id="selectLogic" class="form-control">
-                    <option value="-999">請選擇邏輯</option>
-                    <!-- @foreach (var data in Model)
-                    {
-                        <option title="@data.filter_remark" value="@data.filter_logicid">邏輯 @data.filter_logicid</option>
-                    } -->
+                <select id="selectUser" class="form-control">
+                    <option value="-999">通報人員</option>
                 </select>
             </div>
             <div class="SetupTest">
-                <input id="DeviceNo" type="text" class="form-control" placeholder="輸入設備編號" />
+                <select id="selectSource" class="form-control">
+                    <option value="-999">通報來源</option>
+                </select>
             </div>
             <div class="SetupTest">
-                <input id="DeviceName" type="text" class="form-control" placeholder="輸入設備名稱" />
-            </div>
-            <div class="SetupTest">
-                <select id="Level" class="form-control">
-                    <option value="-999">警報等級</option>
-                    <option value="AL1">AL1</option>
-                    <option value="AL2">AL2</option>
-                    <option value="AL3">AL3</option>
+                <select id="selectItem" class="form-control">
+                    <option value="-999">通報事項</option>
                 </select>
             </div>
             <div class="SetupTest newCol">
-                <input id="startdate" class="input-box form-control datepicker" placeholder="變更起始時間" data-toggle="datetimepicker"
+                <input id="startdate" class="input-box form-control datepicker" placeholder="起始時間" data-toggle="datetimepicker"
                     data-target="#startdate" />
             </div>
             <div class="SetupTest newCol">
-                <input id="enddate" class="input-box form-control datepicker" placeholder="變更結束時間" data-toggle="datetimepicker"
+                <input id="enddate" class="input-box form-control datepicker" placeholder="結束時間" data-toggle="datetimepicker"
                     data-target="#enddate" />
             </div>
             <div class="SetupTest newCol">
                 <button id="btnSearch_Filter" class="btn btn-primary btn-search searchBtn button">搜尋</button>
+            </div>
+            <div class="SetupTest newCol">
+                <button id="btnSearch_Filter" class="btn btn-primary btn-search searchBtn button">清除全部</button>
             </div>
             <div class="pagechange">
                 <img id="pre_page" src="~/Images/left.png" title="前一頁" />
@@ -125,237 +83,10 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="scrolling outer">
                         <div class="inner">
-                            <table id="tabletest" class="table table-striped table-hover table-condensed"></table>
+                            <table id="tabletest" class="table table-striped table-hover table-condensed announceList"></table>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="filterLogicSetting">
-        <div class="alertMessage">
-            <div class="SetupTest">
-                <select id="selectScenario" class="form-control">
-                    <option value="">篩選情境</option>
-                    <option value="操作對應">操作對應</option>
-                    <option value="訊息篩選">訊息篩選</option>
-                    <option value="控制失敗">控制失敗</option>
-                </select>
-            </div>
-            <div class="SetupTest">
-                <input id="inputStatus" type="text" class="form-control" placeholder="輸入狀態種類" />
-            </div>
-            <div class="SetupTest">
-                <input id="inputAction1" type="text" class="form-control" placeholder="輸入動作種類1" />
-            </div>
-            <div class="SetupTest">
-                <input id="inputAction2" type="text" class="form-control" placeholder="輸入動作種類2" />
-            </div>
-            <div class="SetupTest">
-                <input id="createMember" type="text" class="form-control" placeholder="建立人員" />
-            </div>
-            <div class="SetupTest">
-                <select id="alertStatus" class="form-control">
-                    <option value="">警示狀態</option>
-                    <option value="true">開啟</option>
-                    <option value="false">停用</option>
-                </select>
-            </div>
-            <div class="SetupTest">
-                <select id="startStatus" class="form-control">
-                    <option value="">啟用狀態</option>
-                    <option value="true">啟用中</option>
-                    <option value="false">停用中</option>
-                </select>
-            </div>
-            <div class="SetupTest newCol">
-                <button id="btnSearch_Filter" class="btn btn-primary btn-search searchBtn" onclick="searchLogicSetting()">搜尋</button>
-            </div>
-            <div class="SetupTest newCol right">
-                <button id="btn-addLogic" class="btn btn-primary btn-add waves-effect waves-light button blankBtn"> + 新增邏輯</button>
-            </div>
-            <div class="pagechange">
-                <img data-btn="reduce" onclick="setPageNum(this)" src="~/Images/left.png" title="前一頁" />
-                <input id="page_select" class="pageSelect" type="text" value="1" />
-                <span>/</span>
-                <span id="totalLogicPage"></span>
-                <img data-btn="add" onclick="setPageNum(this)" src="~/Images/right.png" title="下一頁" />
-            </div>
-        </div>
-        <div class="container-fluid logicTable">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="scrolling outer">
-                        <table id="logicSetting" class="table table-striped table-hover table-condensed tableList"></table>
-                        <!-- <div class="inner">
-                            <table id="logicSetting" class="table table-striped table-hover table-condensed tableList"></table>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="warningMsg" class="modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
-    data-keyboard="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                <p id="modalMsg"></p>
-            </div>
-            <div class="modal-footer">
-                <button id="modalOK_warn" class="btn">確定</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="ooo" class="modal inmodal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
-    data-keyboard="true">
-    <div class="modal-dialog modal-pop modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                @*<button type="button" class="close" data-dismiss="modal">
-                    <span>&times;</span>
-                    </button>*@
-                <div class="modal-title">
-                    <h4 id="modalTitle" class="modal-title fs24 fw700">解除告警</h4>
-                </div>
-            </div>
-            <div class="modal-body">
-                <p id="modalMsg">告警解除後，將從介面中移除</p>
-            </div>
-            <div class="modal-footer">
-                <button id="modalCancel" class="btn w-40 cancelBtn button">取消</button>
-                <button id="modalOK" class="btn w-40 submitBtn">確定</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="historyModal" class="modal right fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-    <div class="modal-dialog modal-history modal-pop" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close ml-n3" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <label class="modal-title ml-3" id="myModalLabel2"></label>
-            </div>
-            <div class="mt-md-2 md mg5 model-history-box">
-                <label class="modal-title">時間區間</label>
-                <input id="startdate_history" class="input-box form-control datepicker md" placeholder="變更起始時間"
-                    data-toggle="datetimepicker" data-target="#startdate_history" />
-                <label class="modal-title">到</label>
-                <input id="enddate_history" class="input-box form-control datepicker md" placeholder="變更結束時間"
-                    data-toggle="datetimepicker" data-target="#enddate_history" />
-            </div>
-
-            <div class="mt-1 mt-md-2 mg5 d-flex justify-content-center justify-content-md-end model-history-box">
-                <button id="searchData_His" class="btn btn-filter filterBtn button">
-                    開始篩選
-                </button>
-            </div>
-            <div class="ml-2 ml-md-0 mt-2 mt-md-3 mg5 model-history-box">
-                <button id="exportexcel" class="btn btn-export left">報表匯出</button>
-                <div class="pagechange right">
-                    <img id="pre_page_his" src="~/Images/left.png" title="前一頁" />
-                    <input id="page_select_his" type="text" value="1" />
-                    <span>/</span>
-                    <span id="totalPage_search_his"></span>
-                    <img id="next_page_his" src="~/Images/right.png" title="下一頁" />
-                </div>
-            </div>
-            <div class="modal-body pt-4 pl-4 pr-4">
-                @*<div class="row">
-                    </div>*@
-                @*<div class="col-md-10">
-
-                    </div>*@
-                <div id="div_HistoryDetail" class="mt-md-2">
-                    <table id="table_History" class="w-100">
-                    </table>
-                </div>
-            </div>
-        </div><!-- modal-content -->
-    </div><!-- modal-dialog -->
-</div>
-<div id="addalert_modal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title fw700">新增篩選邏輯</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body row" style="display: flex;">
-                <form class="col-12 col-sm-12" id="addLogicBox">
-                    <div class="mb10">
-                        <label>篩選情境</label>
-                        <div class="warnlevel">
-                            <select id="scenario" class="form-control">
-                                <option value="-999">請選取篩選情境</option>
-                                <option value="操作對應">操作對應</option>
-                                <option value="訊息篩選">訊息篩選</option>
-                                <option value="控制失敗">控制失敗</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb10">
-                        <label>狀態種類</label>
-                        <div id="statusArea">
-                            <input id="logicStatus" type="text" class="form-control input-box w-100" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="mb10">
-                        <label>動作狀態1</label>
-                        <div id="action1Area">
-                            <input id="action1" type="text" class="form-control input-box w-100" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="mb10">
-                        <label>動作狀態2</label>
-                        <div id="action2Area">
-                            <input id="action2" type="text" class="form-control input-box w-100" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="mb10">
-                        <label>邏輯描述</label>
-                        <div id="logicDescriptArea">
-                            <input id="logicDescription" type="text" class="form-control input-box w-100" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="mb10 closed">
-                        <label>建立人員</label>
-                        <div id="logicUserArea">
-                            <input id="logicCreator" type="text" class="form-control input-box w-100" placeholder=""/>
-                        </div>
-                    </div>
-                    <div class="mb10">
-                        <label>觸發警示</label>
-                        <div class="form-inline">
-                            <div class="rowModal">
-                                <input name="isAlert" data-value="true" class="" type="radio" id="isOpe_Y" value="0" />
-                                <label class="form-check-label" for="isOpe_Y"> 啟用 </label>
-                                <input name="isAlert" data-value="false" class="" type="radio" id="isOpe_N" value="1" />
-                                <label class="form-check-label" for="isOpe_N"> 停用 </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb10">
-                        <label>啟用</label>
-                        <div class="form-inline">
-                            <div class="rowModal">
-                                <input name="isOpen" data-value="true" class="" type="radio" id="isEnable_Y" />
-                                <label class="form-check-label" for="isEnable_Y"> 啟用 </label>
-                                <input name="isOpen" data-value="false" class="" type="radio" id="isEnable_N"  />
-                                <label class="form-check-label" for="isEnable_N"> 停用 </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-area mb10">
-                        <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                        <button id="addAlert" type="button" class="btn btn-primary" onclick="logicSettingEvent(this)">確定</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -367,7 +98,6 @@
     var tEndT;
     var tUserAuth = "";
     $(function () {
-        console.log("@tLoginUser");
         mutation.setUserName(stateData, {item: 'userName',value: "@tUserName"});
         select(0);
         //初始
@@ -379,8 +109,9 @@
         }
         RenderBsDatepicker();
         refreshPage(30,getSearchData);
-
-
+        // getAnnounce().done(function(res){
+        //     console.log(res);
+        // })
         setTableRange();
         //查詢
         $("#btnSearch_Filter").click(function () {
@@ -530,17 +261,22 @@
         autoGetFilterData(tDataTitle, tDataField, tData)
     }
 
+    function setTableHead(item){
+        let html = `<th>${item}</th>`;
+        return html
+    }
+
     function autoGetFilterData(tDataTitle, tDataField, tData) {
-        var req = $.ajax({
-            type: "Get",
-            url: '@Url.Action("GetFilterData", "Feeder")',
-            data: tData,
-            dataType: "json",
-            async: true
-        })
-        $.when(req).done(function (res) {
+        // var req = $.ajax({
+        //     type: "Get",
+        //     url: '@Url.Action("GetFilterData", "Feeder")',
+        //     data: tData,
+        //     dataType: "json",
+        //     async: true
+        // })
+        getAnnounce().done(function (res) {
             console.log(res)
-            var data = res.reverse();
+            var data = res.data.reverse();
             var tPage = $("#page_select").val();
             var tStartNo = (tPage - 1) * 10;
             var tEndNo = (tStartNo + 10) > data.length ? data.length : (tStartNo + 10);
@@ -557,16 +293,6 @@
             $(".inner").css({
                 marginRight: ((tDataField.length - 9) * 120) + "px"
             });
-
-            if (!sessionStorage.getItem('lastFilterData')) {
-                sessionStorage.setItem('lastFilterData', data[0]["ID"])
-                sessionStorage.setItem('newFilterData', data[0]["ID"])
-            }
-
-            if (data[0]["ID"] > sessionStorage.getItem('newFilterData')) {
-                sessionStorage.setItem('lastFilterData', newData)
-                sessionStorage.setItem('newFilterData', data[0]["ID"])
-            }
 
             $(root).find("tr").removeClass("feederActive")
             $(root).find("th").removeClass("feederActive")
@@ -615,20 +341,7 @@
                             left: (k * positionPX) + "px",
                             width: '120px'
                         });
-                        if (tDataField[k] == "LOGIC") {
-                            th_detail.innerHTML = "邏輯" + data[i][tDataField[k]];
-                            //th_detail.title = data[i]["LOGICDES"];
-                            $(th_detail).attr("data-logic",data[i][tDataField[k]]);
-                            th_detail.title = stateData.LogicList[data[i][tDataField[k]]];
-                        }
-                        else if (tDataField[k] == "TIME") {
-                            th_detail.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
-
-                        }
-                        else {
-                            th_detail.innerHTML = data[i][tDataField[k]];
-                        }
-
+                        th_detail.innerHTML = data[i][tDataField[k]];
                         tr.appendChild(th_detail);
                         if (isNewData) {
                             $(th_detail).addClass("feederActive")
@@ -646,7 +359,7 @@
                             $(th_detail).addClass("feederActive")
                         }
 
-                        if (tDataField[k] == "LOCATION") {
+                        if (tDataField[k] == "POSITION") {
                             var a_location = document.createElement("a");
                             var img_location = document.createElement("img");
                             //img_location.src = "../Images/location.png";
@@ -656,91 +369,22 @@
 
                             th_detail.appendChild(a_location);
                         }
-                        else if (tDataField[k] == "REMOVE") {
-                            var img = document.createElement("img");
-                            //img.src = "../Images/status.png";
-                            img.src = "@tRemoveImg";
-                            img.className = "coursor-pointer";
-                            $(img).data("locat", data[i]["ID"]);
-
-                            $(img).click(function (pID) {
-                                return function () {
-                                    $('#ooo').modal('toggle');
-
-                                    $('#modalCancel').click(function () {
-                                        $('#ooo').modal('toggle');
-                                    });
-                                    $('#modalOK').click(function () {
-                                        $('#ooo').modal('toggle');
-                                        ChangeDisarmed(pID);
-                                    });
-
-                                };
-                            }($(img).data("locat")));
-
-                            th_detail.appendChild(img);
-
-                        } else if (tDataField[k] == "HISTORY") {
-                            var img = document.createElement("img");
-                            //img.src = "../Images/status.png";
-                            img.src = "@tHistoryImg";
-                            img.className = "coursor-pointer";
-                            $(img).data("history", data[i]["ENAME"]);
-                            $(img).attr("data-toggle", "modal");
-                            $(img).attr("data-target", "#historyModal");
-
-                            $(img).click(function (pEname) {
-                                return function () {
-                                    $("#startdate_history").val(jsTool_parseDateTimeStr(new Date(new Date().getTime() - 1 * 60 * 60 * 1000)));
-                                    $("#enddate_history").val(jsTool_parseDateTimeStr(new Date()));
-                                    getHistoryData(pEname, $("#startdate_history").val(), $("#enddate_history").val());
-                                    $("#exportexcel").click(function () { Export('@Url.Action("HistoryDetailExport", "Feeder")', { EquipName: pEname, startdate: $("#startdate_history").val(), enddate: $("#enddate_history").val() }); });
-                                };
-                            }($(img).data("history")));
-
-                            th_detail.appendChild(img);
-                        }
                         tr.appendChild(th_detail);
                     }
                     else {
                         var td_detail = document.createElement('td');
-
-                        if (tDataField[k] == "LOCATION") {
-                            var a_location = document.createElement("a");
-                            var img_location = document.createElement("img");
-                            //img_location.src = "../Images/location.png";
-                            img_location.src = "@tLocationImg";
-                            a_location.href = "https://demo.supergeotek.com/INERADMS/GISMAP/MAP?Method=Coordinate&Value=" + data[i]["Coor"];
-                            a_location.appendChild(img_location);
-
-                            td_detail.appendChild(a_location);
-                        }
-                        else if (tDataField[k] == "REMOVE") {
-                            var img = document.createElement("img");
-                            //img.src = "../Images/status.png";
-                            img.src = "@tRemoveImg";
-                            img.className = "coursor-pointer";
-                            $(img).data("locat", data[i]["ID"]);
-
-                            $(img).click(function (pID) {
-                                return function () {
-                                    $('#ooo').modal('toggle');
-
-                                    $('#modalCancel').click(function () {
-                                        $('#ooo').modal('toggle');
-                                    });
-                                    $('#modalOK').click(function () {
-                                        $('#ooo').modal('toggle');
-                                        ChangeDisarmed(pID);
-                                    });
-                                };
-                            }($(img).data("locat")));
-
-                            td_detail.appendChild(img);
-                        }
-                        else {
+                        //console.log(tDataField[k])
+                        if (tDataField[k] == "PROCESS") {
+                            //var $span = document.createElement("span");
+                            //$($span).addClass("primary");
+                            //$span.innerHTML = data[i][tDataField[k]];
+                            let result = Tag({type:'primary',text:data[i][tDataField[k]]})
+                            td_detail.appendChild(result);
+                        }else{
                             td_detail.innerHTML = data[i][tDataField[k]];
                         }
+                        
+                        
                         if (isNewData) {
                             $(tr).addClass("feederActive")
                         }
@@ -763,25 +407,13 @@
         })
     }
 
-    //告警解除
-    function ChangeDisarmed(pFilterID) {
-        var tData = {}
-        $.ajax({
-            type: "Put",
-            url: '@Url.Action("UpdateFilterData", "Feeder")' + '/' + pFilterID,
-            data: tData,
-            dataType: "json",
-            async: false,
-            success: function (data) {
-                if (data.Status == true) {
-                    $("#btnSearch_Filter").click();
-                }
-                else {
-                    alert(data.Msg);
-                }
-            },
-            failure: function (error) { }
-        });
+    function Tag(tagObj){
+        const type = tagObj.type;
+        const text = tagObj.text;
+        let html = document.createElement("span");
+        $(html).addClass(type);
+        html.innerHTML = text;
+        return html;
     }
 
     function getHistoryData(pEname, pStartTime, pEndTime) {

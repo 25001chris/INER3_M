@@ -135,6 +135,9 @@
                             <li class="nav-item align-self-center ml-1 @(ActionName == "ESTManage" ? "active" : "")" @(ControllerName != "Feeder" ? "hidden" : "")>
                                 <a class="nav-link" href="@Url.Action("ESTManage", "Feeder")" title="狀態估測訊息管理">狀態估測訊息管理</a>
                             </li>
+                            <li class="nav-item align-self-center ml-1 @(ActionName == "Announce" ? "active" : "")" @(ControllerName != "Feeder" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("Announce", "Feeder")" title="行動通報清單">行動通報清單</a>
+                            </li>
                         </ul>
                         break;
                         case "SYSTEM":

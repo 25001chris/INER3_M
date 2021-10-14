@@ -290,7 +290,8 @@ footer {
 .scrolling.outer td, .scrolling.outer th {
   vertical-align: top;
   padding: 10px;
-  min-width: 120px; }
+  min-width: 120px; 
+}
 
 /*.scrolling td, th {
         vertical-align: top;

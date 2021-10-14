@@ -431,7 +431,7 @@ function compareAidiList(arr, index, setList) {
         return setList.indexOf(e) === -1;
     })
     if (result.length > 0) {
-        $obj.eq(index).find("td").eq(2).html(success);
+        //$obj.eq(index).find("td").eq(2).html(success);
         result.forEach(function (v, i) {
             const $coordinate = $("#divSetLoaderResult").find("[data-coordinate='" + v + "']")
             $coordinate.find("td").eq(2).html(error);
