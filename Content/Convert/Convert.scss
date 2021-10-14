@@ -1,0 +1,631 @@
+// @import "./../scss/global-variables";
+@import "./../scss/global-style";
+//@import "layout-styles";
+
+body{
+    max-height: 80vh
+}
+
+//左側移動選單
+.navWindow {
+    position: absolute;
+    z-index: 1000;
+    top: 98px;
+    left: 0;
+    width: 25vw;
+    height: calc(100% - 98px);
+    transition: transform 0.4s ease;
+    background: #FFFFFF;
+    .nav-toggle-button{
+        left: 100% !important;
+    }
+    &.OpeningNav {
+        transform: translate3d(0,0,0) !important;
+    }
+    &.ClosingNav {
+        transform: translate3d(-100%,0,0) !important;
+    }
+}
+
+//轉檔輸入區塊
+.tblBox{
+    padding: 10px;
+    .mainTitle{
+        height: 23px;
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 23px;
+        letter-spacing: 0.115em;
+        margin: 10px 10px;
+        color: $color-dark;
+        min-width: 120px;
+    }
+    .title{
+        width: 66px;
+        height: 36px;
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        letter-spacing: 0.125em;
+        color: $color-dark;
+        margin: 0 5px;
+        min-width: 72px;
+    }
+    .inputBox{
+        color: $color-dark;
+        font-family: Noto Sans TC;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.125em;
+        text-align: left;
+        position: relative;
+        padding: 5px;
+        .AddObjectButton{
+            right: 12%;
+        }
+        .PointerButton{
+            right: 18%;
+        }
+        input{
+            height: 36px;
+            padding: 5px;
+            border: 1px solid #C1D6DC;
+            box-sizing: border-box;
+            border-radius: 5px;
+			text-transform:uppercase;
+        }
+        button{
+            top: 13px;
+        }
+        label{
+            display: initial;
+        }
+    }
+    .textAreaBox{
+        margin: 5px 0;
+        padding: 0 10px;
+        div{
+            height: calc(100vh - 240px);
+            background: white;
+            padding: 10px 15px;
+            overflow-x: auto;
+            overflow-y: auto;
+            &::-webkit-scrollbar{
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track{
+                background: $color-scroll-blank;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: $color-scroll;
+            }
+        }
+        ul{
+            //height: 70vh;
+            height: calc(100vh - 240px);
+            background: white;
+            padding: 10px 15px;
+            overflow-x: auto;
+            overflow-y: auto;
+            li{
+                list-style: none;
+            }
+            &::-webkit-scrollbar{
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track{
+                background: $color-scroll-blank;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: $color-scroll;
+            }
+        }
+        textarea{
+            border: none;
+            height: 70vh;
+            background: white;
+            padding: 10px 15px;
+            overflow-x: auto;
+            overflow-y: auto;
+            &::-webkit-scrollbar{
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track{
+                background: $color-scroll-blank;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: $color-scroll;
+            }
+        }
+    }
+    .listBox{
+        height: 122px;
+        margin: 5px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 0 5px;
+        overflow-y: scroll;
+        h6{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-bottom: 0;
+        }
+        ul{
+            &.checkBoxList{
+                li{
+                    height: 20px;
+                    line-height: 20px;
+                    padding-left: 20px;
+                }
+            }
+            &.toggleList{
+                padding-inline-start: 10px;
+                li{
+                    background-image: url("./../images/itemattribute_bg1.svg");
+                    background-repeat: no-repeat;
+                    padding-left: 36px;
+                    display: inline-table;
+                    label{
+                        left: 15px;
+                        top: 3px;
+                    }
+                }
+                li:last-child{
+                    background-image: url("./../images/itemattribute_bg2.svg");
+                }
+            }
+        }
+        li{
+            list-style: none;
+            position: relative;
+            input[type=checkbox]{
+                margin-right: 5px;
+                display: none;
+                &:checked+label{
+                    background-image: url("./../images/ICON/confirm.svg");
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+            label{
+                display: inline-block; 
+                position: absolute;
+                background: $color-label;
+                top: 5px;
+                left: 1px;
+                width: 14px;
+                height: 14px;
+            }
+            span{
+                &.checkText{
+                    margin-left: 20px;
+                }
+            }
+        }
+        &::-webkit-scrollbar{
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track{
+            background: $color-scroll-blank;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: $color-scroll;
+        }
+    }
+
+    .calculationBox{
+        text-align: center;
+        padding-bottom: 15px;
+        max-height: 840px;
+        min-height: 240px;
+        height: calc(100vh - 300px);
+        padding: 0;
+        div{
+            &::-webkit-scrollbar{
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track{
+                background: $color-scroll-blank;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: $color-scroll;
+            }
+        }
+    }
+    .settingAttributeBox{
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: $color-text-major;
+        h6{
+            height: 24px;
+            line-height: 24px;
+        }
+        li{
+            ul{
+                display: none;
+            }
+        }
+    }
+
+    table{
+        color: $color-dark;
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 190%;
+        /* or 27px */
+        align-items: center;
+        text-align: center;
+        thead{
+            height: 36px;
+            /* table head */
+            background: #D0EAEC;
+            border-radius: 5px 5px 0px 0px;
+        }
+        tbody{
+            tr{
+                height: 41px;
+                line-height: 41px;
+                &:nth-child(even) {background: $color-table-even};
+                &:nth-child(odd) {background: white};
+            }
+        }
+    }
+    .addFile{
+        background: $color-tag;
+        border-radius: 5px;
+        padding: 6px 8px;
+        margin: 5px;
+    }
+    &.setLoaderBox{
+        min-height: 60px;
+        padding: 10px 0;
+    }
+    &.topLine{
+        border-top: 0.25px solid #595959;
+    }
+}
+
+.btnBox{
+    position: relative;
+    padding: 0px 5px;
+    height: 30px;
+    line-height: 30px;
+    label{
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        background: $color-label;
+        top: 4px;
+        left: 10px;
+    }
+    span{
+        color: $color-dark;
+        font-family: Noto Sans TC;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        &.checkText{
+            margin-left: 20px;
+        }
+    }
+    input[type=checkbox]{
+        margin: 5px;
+        display: none;
+        &:checked+label{
+            background: url("./../images/ICON/confirm.svg");
+        }
+    }
+}
+
+.selectBox{
+    height: 36px;
+    float: left;
+    //min-width: 150px;
+    margin: 5px;
+    text-align: center;
+    background: $color-tag;
+    border-radius: 5px;
+    color: $color-major;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 36px;
+    /* B */
+    color: $color-major;
+    span{
+        padding: 0 5px;
+        height: 36px;
+        line-height: 36px;
+        em{
+            font-style: initial;
+            padding: 0 5px;
+        }
+        &.addSelect{
+            border-right: 1px solid $color-major;
+        }
+    }
+    select{
+        background-image:url("./../images/ICON/down-arrow.svg");
+        background-repeat:  no-repeat;
+        background-position: bottom 8px right 5px;;
+        cursor: url("./../images/Hover.cur"), pointer !important;
+        border: 0;
+        padding: 0 5px;
+    }
+    &.box1{
+        height: 26px;
+        margin: 10px 0.5em;
+        background-color: white;
+        border: 1px solid #C1D5DC;
+        select{
+            color: #7E909D;
+        }
+    }
+    &.box2{
+        height: 36px;
+        margin: 5px;
+        select{
+            background-color: $color-tag;
+            color: $color-major;
+        }
+    }
+}
+
+.systemTransfer{
+    padding: 0 20px;
+    .systemDataTitle{
+        min-height: 40px;
+    }
+}
+.systemData{
+    background: $color-table-even;
+    //min-height: 600px;
+    .systemDataTitle{
+        min-height: 50px;
+        padding: 0px 15px;
+        //position: relative;
+        .tipText{
+            position: absolute;
+            top: 25px;
+            right: 10px;
+        }
+    }
+    &.flot{
+        position: absolute;
+        top: 98px;
+        left: 25vw;
+        height: calc(100vh - 98px);
+    }
+}
+
+.setListBox{
+    //margin-top: 10px;
+    overflow-x: auto;
+    height: calc( 100vh - 136px);
+    &.ls{
+        height: calc( 100vh - 452px);
+    }
+    .resultList{
+        height: 118px;
+        position: relative;
+        ul{
+            padding: 5px 0;
+            margin-bottom: 0;
+            li{
+                padding: 2px 10px;
+                list-style: none;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                min-width: none;
+                span{
+                    height: 28px;
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 190%;
+                    /* or 27px */
+                    text-align: center;
+                    /* text */
+                    color: $color-dark;
+                    margin-right: 5px;
+                }
+            }
+        }
+        div{
+            &.linkBox{
+                position: absolute;
+                right: 1rem;
+                bottom: 1.25rem;
+                div{
+                    text-align: right;
+                    line-height: 30px;
+                }
+            }
+        }
+        &:nth-child(even) {background: $color-table-even};
+        &:nth-child(odd) {background: white};
+    }
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track{
+        background: $color-scroll-blank;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $color-scroll;
+    }
+}
+
+.summaryBox{
+    margin: 10px;
+    div{
+        margin: 0 5px;
+        span{
+            display: block;
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.115em;
+            color: #344059;
+            b{
+                height: 31px;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 35px;
+                text-align: center;
+                /* text */
+                color: $color-dark;
+            }
+        }
+    }
+}
+
+// button{
+//     font-family: Noto Sans TC;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 14px;
+//     line-height: 20px;
+//     color: $color-major;
+// }
+
+// .submitBtn{
+//     width: 92px;
+//     height: 36px;
+//     background: $color-major;
+//     color: white;
+//     border-radius: 5px;
+//     margin: 5px 2.5px;
+// }
+// .selectBtn{
+//     width: 92px;
+//     height: 36px;
+//     background: $color-scroll;
+//     color: $color-dark;
+//     border-radius: 5px;
+//     margin: 5px 2.5px;
+// }
+
+// .openBtn{
+//     width: 108px;
+//     height: 36px;
+//     background: white;
+//     color: $color-major;
+//     /* B */
+//     border: 1px solid $color-major;
+//     box-sizing: border-box;
+//     border-radius: 5px;
+//     margin: 5px 2.5px;
+//     img{
+//         margin: 0 5px;
+//     }
+// }
+
+//RWD樣式1024
+@include breakpoint(view-1024){
+    .tblBox{
+        .settingAttributeBox{
+            h6{
+                height: 24px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+//RWD樣式1200
+@include breakpoint(view-1200){
+    .tblBox{
+        .settingAttributeBox{
+            h6{
+                font-size: 10pt !important;
+                height: 24px;
+                margin-bottom: 0;
+            }
+            li{
+                ul{
+                    padding-left: 24px;
+                }
+                font-size: 10pt !important;
+                label{
+                    left: -5px;
+                }
+            }
+        }
+        .inputBox{
+            .AddObjectButton{
+                right: 10% !important;
+            }
+            .PointerButton{
+                right: 20% !important;
+            }
+            input{
+                width: 67.5% !important;
+            }
+        }
+        .listBox{
+            ul{
+                li{
+                    padding-left: 10px;
+                }
+            }
+            li{
+                font-size: 10pt;
+            }
+        }
+        .calculationBox{
+            height: calc(100vh - 300px);
+        }
+    }
+}
+
+//RWD樣式1440
+@include breakpoint(view-1440){
+    .tblBox{
+        .settingAttributeBox{
+            h6{
+                margin-bottom: 0;
+            }
+        }
+        .inputBox{
+            .AddObjectButton{
+                right: 7.5% !important;
+            }
+            .PointerButton{
+                right: 15% !important;
+            }
+        }
+        .calculationBox{
+            height: calc(100vh - 245px);
+        }
+    }
+}
+
+.GisMapToolboxButton{
+    @media (min-width: 769px){
+        width: 110px !important;
+        line-height: 25px !important;
+    }
+}
+

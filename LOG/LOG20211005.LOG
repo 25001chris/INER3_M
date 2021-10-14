@@ -1,0 +1,36 @@
+2021.10.05.09.21.08.814[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.21.08.814[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.10.05.09.22.13.374[Normal][INERADMS.Controllers.HomeController.LogIn](System)：supergeo,m6otLOfpeyyNIKNjtdO4vefYlCqKW9kLaZ1U9V0Wcw4=
+2021.10.05.09.22.13.390[Normal][INERADMS.Controllers.HomeController.LogIn](System)：supergeo登入檢查過關
+2021.10.05.09.22.13.437[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：supergeo,登入紀錄OK
+2021.10.05.09.22.13.468[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.22.13.468[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：supergeo
+2021.10.05.09.22.15.077[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.05.09.22.15.093[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.05.09.24.39.950[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.24.39.950[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：supergeo
+2021.10.05.09.24.42.455[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.05.09.24.42.487[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.05.09.33.09.889[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.33.09.889[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.05.09.33.12.061[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.05.09.33.12.077[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.05.09.33.39.927[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.33.39.927[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.05.09.33.42.427[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.05.09.33.42.443[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.05.09.36.40.331[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.36.40.331[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.10.05.09.37.00.902[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.37.00.902[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.10.05.09.37.03.453[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.10.05.09.37.03.469[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.10.05.09.37.03.578[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.10.05.09.37.03.609[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.37.03.609[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.05.09.37.06.234[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.05.09.37.06.250[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.05.09.38.38.089[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.05.09.38.38.089[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.05.09.38.39.605[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.05.09.38.39.621[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成

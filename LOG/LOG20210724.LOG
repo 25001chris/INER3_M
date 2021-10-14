@@ -1,0 +1,13 @@
+2021.07.24.18.57.24.128[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.24.18.57.24.128[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.24.18.57.37.648[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,OKglIBCE3jlZcnt+lvE3mOsP1fafSqZ6NhE+xs1Ky5A=
+2021.07.24.18.57.37.773[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,OKglIBCE3jlZcnt+lvE3mOsP1fafSqZ6NhE+xs1Ky5A=,登入檢查失敗
+2021.07.24.19.18.23.438[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,OKglIBCE3jlZcnt+lvE3mOsP1fafSqZ6NhE+xs1Ky5A=
+2021.07.24.19.18.23.563[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,OKglIBCE3jlZcnt+lvE3mOsP1fafSqZ6NhE+xs1Ky5A=,登入檢查失敗
+2021.07.24.19.18.34.673[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.24.19.18.34.767[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.24.19.18.34.861[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.24.19.18.34.939[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.24.19.18.34.939[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.24.19.18.38.960[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.24.19.18.38.976[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成

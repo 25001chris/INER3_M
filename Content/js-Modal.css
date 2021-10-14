@@ -1,0 +1,162 @@
+﻿@media (min-width: 300px) {
+  .modal-dialog-AccountMa .modal-content, .modal-dialog-AuthGroupMa .modal-content {
+    width: 375px;
+    height: 600px;
+    box-shadow: none;
+    border-radius: 5px; }
+  .modal-dialog-AccountMa .modal-header, .modal-dialog-AuthGroupMa .modal-header {
+    border-bottom: none; }
+    .modal-dialog-AccountMa .modal-header .close, .modal-dialog-AuthGroupMa .modal-header .close {
+      color: #344059; }
+      .modal-dialog-AccountMa .modal-header .close:hover, .modal-dialog-AuthGroupMa .modal-header .close:hover {
+        color: #344059; }
+  .modal-dialog-AccountMa .modal-body, .modal-dialog-AuthGroupMa .modal-body {
+    width: 375px; }
+    .modal-dialog-AccountMa .modal-body .input-box, .modal-dialog-AuthGroupMa .modal-body .input-box, .modal-dialog-AccountMa .modal-body .select-box, .modal-dialog-AuthGroupMa .modal-body .select-box {
+      width: 308px;
+      height: 42px; }
+      .modal-dialog-AccountMa .modal-body .input-box.hidden, .modal-dialog-AuthGroupMa .modal-body .input-box.hidden, .modal-dialog-AccountMa .modal-body .select-box.hidden, .modal-dialog-AuthGroupMa .modal-body .select-box.hidden {
+        border: 0px;
+        background: #FFFFFF;
+        cursor: default; }
+    .modal-dialog-AccountMa .modal-body a, .modal-dialog-AuthGroupMa .modal-body a {
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration-line: underline;
+      color: #344059; }
+    .modal-dialog-AccountMa .modal-body #div_msgfooter, .modal-dialog-AuthGroupMa .modal-body #div_msgfooter {
+      position: absolute;
+      top: 480px; }
+      .modal-dialog-AccountMa .modal-body #div_msgfooter button, .modal-dialog-AuthGroupMa .modal-body #div_msgfooter button {
+        width: 160px; }
+  .modal-dialog-AccountMa .modal-footer, .modal-dialog-AuthGroupMa .modal-footer {
+    border-top: none; }
+    .modal-dialog-AccountMa .modal-footer button, .modal-dialog-AuthGroupMa .modal-footer button {
+      display: none; } }
+
+@media (min-width: 768px) {
+  .modal-dialog-AccountMa .modal-content, .modal-dialog-AuthGroupMa .modal-content {
+    width: 689px;
+    height: 436px;
+    box-shadow: none;
+    border-radius: 5px; }
+  .modal-dialog-AccountMa .modal-body, .modal-dialog-AuthGroupMa .modal-body {
+    width: 689px; }
+    .modal-dialog-AccountMa .modal-body #div_msgfooter, .modal-dialog-AuthGroupMa .modal-body #div_msgfooter {
+      position: absolute;
+      top: 320px; }
+      .modal-dialog-AccountMa .modal-body #div_msgfooter button, .modal-dialog-AuthGroupMa .modal-body #div_msgfooter button {
+        width: 115px; } }
+
+@media (min-width: 300px) {
+  .modal-dialog-AuthGroupMa .modal-content {
+    width: 375px;
+    height: 575px; }
+  .modal-dialog-AuthGroupMa .modal-body {
+    width: 375px;
+    margin-top: -25px; }
+    .modal-dialog-AuthGroupMa .modal-body p {
+      font-weight: 500;
+      font-size: 16px;
+      margin-top: 10px; }
+    .modal-dialog-AuthGroupMa .modal-body .sadms-table {
+      margin-top: 5px; }
+      .modal-dialog-AuthGroupMa .modal-body .sadms-table th {
+        min-width: 90px; }
+        .modal-dialog-AuthGroupMa .modal-body .sadms-table th:nth-child(1) {
+          text-align: start;
+          padding-left: 15px; }
+      .modal-dialog-AuthGroupMa .modal-body .sadms-table img {
+        width: 15px;
+        height: 15px; }
+      .modal-dialog-AuthGroupMa .modal-body .sadms-table .major-action {
+        background-color: #F4F7F9; }
+        .modal-dialog-AuthGroupMa .modal-body .sadms-table .major-action td:nth-child(1) {
+          text-align: start;
+          padding-left: 25px; }
+      .modal-dialog-AuthGroupMa .modal-body .sadms-table .sub-action {
+        background-color: #FFFFFF; }
+        .modal-dialog-AuthGroupMa .modal-body .sadms-table .sub-action td:nth-child(1) {
+          text-align: start;
+          padding-left: 30px; }
+    .modal-dialog-AuthGroupMa .modal-body #div_msgfooter {
+      top: 480px; }
+      .modal-dialog-AuthGroupMa .modal-body #div_msgfooter button {
+        width: 160px; } }
+
+@media (min-width: 768px) {
+  .modal-dialog-AuthGroupMa .modal-content {
+    width: 557px;
+    height: 540px; }
+  .modal-dialog-AuthGroupMa .modal-body {
+    width: 557px; }
+    .modal-dialog-AuthGroupMa .modal-body .sadms-table th:nth-child(1) {
+      text-align: start;
+      padding-left: 25px; }
+    .modal-dialog-AuthGroupMa .modal-body .sadms-table .major-action td:nth-child(1) {
+      padding-left: 35px; }
+    .modal-dialog-AuthGroupMa .modal-body .sadms-table .sub-action td:nth-child(1) {
+      padding-left: 50px; }
+    .modal-dialog-AuthGroupMa .modal-body #div_msgfooter {
+      top: 450px; }
+      .modal-dialog-AuthGroupMa .modal-body #div_msgfooter button {
+        width: 115px; } }
+
+/*modal fade*/
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+  right: -320px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out; }
+  @media (min-width: 300px) {
+    .modal.right .modal-dialog {
+      width: 100%; } }
+  @media (min-width: 768px) {
+    .modal.right .modal-dialog {
+      width: 520px; } }
+
+.modal.right.fade.show .modal-dialog {
+  right: 0; }
+
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 0;
+  border: none;
+  background-color: #F4F7F9; }
+
+.modal.right .modal-header {
+  justify-content: normal;
+  border-bottom-color: #F4F7F9;
+  background-color: #F4F7F9; }
+  .modal.right .modal-header .modal-title {
+    font-weight: bold;
+    font-size: 16px; }
+
+.modal.right .modal-body label {
+  font-weight: 500;
+  font-size: 14px; }
+
+@media (min-width: 300px) {
+  .modal.right .modal-body .datepicker {
+    width: 95%; } }
+
+@media (min-width: 768px) {
+  .modal.right .modal-body .datepicker {
+    width: 148px; } }
+
+.blockMsg {
+  z-index: 99999 !important; }

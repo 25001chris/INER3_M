@@ -1,0 +1,1149 @@
+﻿@model INERADMS.Models.FeederAllocation 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>SuperGIS 3D Earth Server</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../../ServerGate/scripts/Framework.js"></script>
+    <script type="text/javascript" src="../../ServerGate/SGSEarth.js"></script>
+    <script type="text/javascript" src="~/EarthApp.js"></script>
+    <script type="text/javascript" src="../../ServerGate/scripts/TileLayer.js"></script>
+    <script type="text/javascript" src="../../ServerGate/scripts/VectorTube.js"></script>
+    <script type="text/javascript" src="../../ServerGate/scripts/Marker.js"></script>
+    <script type="text/javascript" src="../../ServerGate/scripts/EPSG.js"></script>
+    <script type="text/javascript" src="../../ServerGate/scripts/CoordSys.js"></script>
+    <script type="text/javascript" src="../../ServerGate/scripts/Projection.js"></script>
+    <script type="text/javascript" src="/ServerGate/scripts/MVTDocument.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/jquery-3.5.1.min.js"></script>*@
+    <link rel="stylesheet" href="~/Utils/jQueryUI/jquery-ui.css" />
+    <script type="text/javascript" src="~/Utils/jQueryUI/jquery-ui.js"></script>
+    @*Gary Lu 20200917:核研所系統若不通外網就連不到code.jquery.com然後下面的CSS&JS取不到就會造成部分功能出包
+        ANS:自己站台弄一份*@
+    @*<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+    <!--從中鋼系統沿用的超好用對話框-->
+    <link rel="stylesheet" type="text/css" href="~/Utils/SweetAlert2/sweetalert2.min.css" />
+    <!-- <script type="text/javascript" src="~/Utils/SweetAlert2/sweetalert2.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Bootstrap Notify-->
+    <script type="text/javascript" src="~/Utils/bootstrap-notify-3.1.3/bootstrap-notify.min.js"></script>
+    <!--Trial用CS&JSS-->
+    <link rel="stylesheet" type="text/css" href="~/content/base.min.css" />
+    <script type="text/javascript" src="~/Scripts/jquery.timer.js"></script> 
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_3DEvents.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_ToolWindows.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_MeasureTool.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_LayerSwitch.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_CheckBox.js"></script>
+    <script type="text/javascript" src="~/Scripts/TaipowerCoords_LngLat.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/Supergeo.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/Line.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_BasicMapControl.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_AlertMarkers.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_FeederAnalysis.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_FeederLineGet.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_AlertNotify.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_InfoWindow.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_StatusEvaluation.js" charset="big5"></script>
+	<script type="text/javascript" src="/ServerGate/scripts/ClusterLayer.js"></script>
+    <script type="text/javascript">
+        var earth_ = null;
+        var pGlobe = null;
+        var pCam = null;
+        var LineSymbols = {};
+        var IconTextures = {};
+        var IconSymbols = {};
+        var TextSymbols = {};
+		var eventMarkers = { VisibleFlag:true, fdr_labels:{} , MPoweroff:[], MFault:[], MShortcircuit:[], MTransfer:[], PPoweroff:0, PFault:0, PTransfer:0, PShortcircuit:0};
+		var SEMarkers = { AutoVisible:true, GeneralVisible:true, GeneralMaxVisibleHeight: 1000 ,Autolabel:[], Generallabel:[],ufidList: []}; // Soon 1100725
+		var arrowCount = 0;
+        var POISym = null;
+        var EquipmentClasses = [];
+        var SR_3857 = EPSG.CreateSpatialReference(3857);
+        var SR_4326 = EPSG.CreateSpatialReference(4326);
+        var current_visible = false;
+		var buffer_visible = true;
+        //Gary 20201012 部分搬移到3DEvents裡面去了
+        var PolyPoints = [];
+        var queryResults = [];
+        var QueryWindowState;
+        var ImgCompass;//可轉動羅盤
+        var newalert;  //notification
+        var bmc;
+        var stuspnl;//狀態列
+		var underground = true;
+
+        var Layers = {};
+        var IconLayers = {};
+        var TextOfIcon = {};
+        TextOfIcon['pole'] = ['pole_t'];
+        TextOfIcon['dsbnroom'] = ['dsbnroom_t'];
+        TextOfIcon['Connection'] = ['connection_t'];
+        TextOfIcon['breaker'] = ['breaker_t'];
+        TextOfIcon['hicustomer'] = ['hicustomer_t'];
+        TextOfIcon['substation'] = ['substation_t', 'substation_n'];
+        TextOfIcon['switch'] = ['switch_t'];
+
+        var LayerHeight = {};
+        LayerHeight['dsbnroom'] = 0.05;
+        LayerHeight['pole'] = 0.1;
+        LayerHeight['substation'] = 0.09;
+        LayerHeight['edgechange'] = 0.1;
+        LayerHeight['edgecross'] = 0.11;
+        LayerHeight['node'] = 0.1;
+        LayerHeight['station'] = 0.1;
+        LayerHeight['mxfmr'] = 0.12;
+        LayerHeight['terminal'] = 0.1;
+        LayerHeight['sxfmr'] = 0.1;
+        LayerHeight['switch-3'] = 0.15;
+        LayerHeight['switch-2'] = 0.13;
+        LayerHeight['switch-0'] = 0.12;
+        LayerHeight['youxiu'] = 0.1;
+        LayerHeight['distributedenergy'] = 0.11;
+        LayerHeight['jumper'] = 0.1;
+        LayerHeight['breaker'] = 0.11;
+        LayerHeight['hicustomer'] = 0.09;
+        LayerHeight['faultindicator'] = 0.11;
+        LayerHeight['capacitor'] = 0.09;
+
+        var LayerAlias = {};
+        LayerAlias['busbar'] = "匯流排";
+        LayerAlias['edge0'] = "高壓導線";
+		LayerAlias['edge1'] = "高壓導線";
+        LayerAlias['energy'] = "再生能源";
+        LayerAlias['connection'] = "直接連接";
+        LayerAlias['dsbnroom'] = "配電室";
+        LayerAlias['pole'] = "電桿";
+        LayerAlias['substation'] = "變電所";
+        LayerAlias['edgechange'] = "導線變更";
+        LayerAlias['edgecross'] = "導線交叉";
+        LayerAlias['node'] = "高壓節點";
+        LayerAlias['station'] = "電驛";
+        LayerAlias['mxfmr'] = "主變壓器";
+        LayerAlias['terminal'] = "終端";
+        LayerAlias['sxfmr'] = "線路變壓器";
+        LayerAlias['switch-3'] = "開關";
+        LayerAlias['switch-2'] = "開關";
+        LayerAlias['switch-0'] = "開關";
+        LayerAlias['youxiu'] = "游休";
+        LayerAlias['distributedenergy'] = "再生能源";
+        LayerAlias['jumper'] = "高壓跳線";
+        LayerAlias['breaker'] = "斷路器";
+        LayerAlias['hicustomer'] = "高壓用戶";
+        LayerAlias['faultindicator'] = "故障指示器";
+        LayerAlias['capacitor'] = "電容";
+		var LayerFSClookup = {};
+		LayerFSClookup['101'] = ['busbar'];
+        LayerFSClookup['106'] = ['edge0','edge1'];
+        LayerFSClookup['110'] = ['energy'];
+        LayerFSClookup['122'] = ['connection'];
+        LayerFSClookup['411'] = ['dsbnroom'];
+        LayerFSClookup['407'] = ['pole'];
+        LayerFSClookup['402'] = ['substation'];
+        LayerFSClookup['131'] = ['edgechange'];
+        LayerFSClookup['130'] = ['edgecross'];
+        LayerFSClookup['120'] = ['node'];
+        LayerFSClookup['119'] = ['station'];
+        LayerFSClookup['118'] = ['mxfmr'];
+        LayerFSClookup['116'] = ['terminal'];
+        LayerFSClookup['115'] = ['sxfmr'];
+        LayerFSClookup['114'] = ['switch-0','switch-2','switch-3'];
+        LayerFSClookup['113'] = ['youxiu'];
+        LayerFSClookup['109'] = ['jumper'];
+        LayerFSClookup['108'] = ['breaker'];
+        LayerFSClookup['107'] = ['hicustomer'];
+        LayerFSClookup['103'] = ['faultindicator'];
+        LayerFSClookup['102'] = ['capacitor'];
+        var LineLayers = {};
+        var TextLayers = {};
+        var HTMLContainer = null;
+        var year = (new Date).getFullYear();
+
+        var level1_err = 5;
+        var level2_err = 10;
+        var estResults = [];
+        var est_result_interval = 2000;
+        var est_result_time;
+
+        //window.getServicePath = function () { return 'http://192.168.3.117' };
+        //window.getRootPath = function () { return 'http://192.168.3.117/ineradms/' };
+        window.getServicePath = function () { return 'https://demo.supergeotek.com' };
+        window.getRootPath = function () { return 'https://demo.supergeotek.com/ineradms_integration/' };
+
+        $(document).ready(function () {
+            let url = new URL(location.href);
+            let pageEvent = url.searchParams.get('event');
+            $(window).resize(function(){
+                setListBoxLine();
+            })
+            $("#ulSettingAttribute").find("h6").click(function(){
+                $(this).siblings("ul").hide();
+            })
+            if(pageEvent === "XML"){
+                toggleToolboxButton($("#BtnXmlTransfer"));
+            }else{
+                toggleToolboxButton($("#BtnFeederMap"));
+                openTraneferData(false);
+            }
+            //取得xml轉檔模式紀錄
+            xmlModelocalStorage();
+            //XML轉換設定項目依螢幕高度顯示
+            setListBoxLine();
+            //轉換設定-設備項目/項目屬性 取得選項
+            setXMLItem();
+        });
+
+        //xml轉檔模式紀錄
+        function xmlModelocalStorage(){
+            const mode = localStorage.getItem('xmlConvertMode');
+            const $btnTransferXML = $("#btnTransferXML");
+            if(mode){
+                let $obj = $(`#${mode}`);
+                $($obj).siblings("button").removeClass("isDisable");
+                $($obj).addClass("isDisable");
+                btnDisable($btnTransferXML, false);
+            }else{
+                btnDisable($btnTransferXML, true);
+            }
+        }
+
+        //xml轉檔按鈕切換
+        function xmlBtnToggle(self){
+            const $btnTransferXML = $("#btnTransferXML");
+            $(self).siblings("button").removeClass("isDisable");
+            $(self).addClass("isDisable");
+            btnDisable($btnTransferXML, false);
+        }
+
+        function documentLoad() {
+			$("#information").html("核能研究所版權所有 ©" + year + "，提供之圖資設備資訊僅供參考");
+            SuperGIS.Initialize(window.getServicePath() + "/ServerGate/", function () {
+                SuperGIS.ServerEarth.Initialize(InitEarth);
+            });
+        }
+
+        var host_url = "./磚New/";
+        //var host_url = "https://demo.supergeotek.com/ineradms/磚/";
+        //var host_url = "https://demo.supergeotek.com/核研所/磚/";
+
+        function InitEarth() {
+            var pBody = new SuperGIS.Windows.HTMLContainer(document.getElementById("body"));
+            HTMLContainer = pBody;
+            var sHost = location.href;
+            var idx = sHost.indexOf("/", 8);
+            if (idx >= 0) sHost = sHost.substring(0, idx);
+            CreateHTML5Earth(pBody, function (pEarth) {
+                var material = pEarth.CreateModelMaterial(0, pEarth.CreateColor(0, 0, 0, 1));
+                // 載入定義圖示的文件
+                //Gary 20200923:not originally by Gary但還是換個modern點的寫法(COG ASKED)
+                var OCTIcons = $.get("./icons/OCTIcons.txt");
+                $.when(OCTIcons).done(function (OCTIcons) {
+                    var toload = 0;
+                    var lines = OCTIcons.split('\r\n');
+                    for (var ln in lines) {
+                        var val = lines[ln];
+                        if (val.length == 0)
+                            continue;
+
+                        toload++;
+                        var texture = pEarth.CreateModelTexture(null);
+                        IconTextures[val] = texture;
+                        var img = new Image;
+                        img.src = "./icons/" + val + ".png";
+                        img.onload = function () {
+                            toload--;
+                            if (toload == 0)
+                                EarthLoaded(pEarth); // 等 Icons 載完
+                        }
+                        texture.SetupTexture(img, 50, 50, 1);
+                    }
+                });
+                $.when($.post("./GisMap/GetEquipmentClasses")).done(function (EquipmentClasses) {
+                    console.log(EquipmentClasses);
+                    if (EquipmentClasses.ProcessFlag) {
+                    /*處理上OK*/
+                        var arrClasses = JSON.parse(EquipmentClasses.ProcessMessage);
+                        //達成類似輸入框的placeholder效果
+                        $("#selEquipmentClass").append("<option value='' disabled selected hidden>類別</option>");
+                        $("#selEquipmentClass2").append("<option value='' disabled selected hidden>類別</option>");
+                        for (var i = 0; i < arrClasses.length; i += 1) {
+                            $("#selEquipmentClass").append(new Option(arrClasses[i].DEVICENAME, arrClasses[i].FSC));
+                            $("#selEquipmentClass2").append(new Option(arrClasses[i].DEVICENAME, arrClasses[i].FSC));
+                        }
+                    }
+                }).fail(function(error){
+                    console.log(error)
+                });
+                /*var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../icons/OCTIcons.txt');
+                xhr.onreadystatechange = function () {
+                    var toload = 0;
+                    if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                        var lines = xhr.responseText.split('\r\n');
+                        for (var ln in lines) {
+                            var val = lines[ln];
+                            if (val.length == 0)
+                                continue;
+
+                            toload++;
+                            var texture = pEarth.CreateModelTexture(null);
+                            IconTextures[val] = texture;
+                            var img = new Image;
+                            img.src = "../icons/" + val + ".png";
+                            img.onload = function () {
+                                toload--;
+                                if (toload == 0)
+                                    EarthLoaded(pEarth); // 等 Icons 載完
+                            }
+                            texture.SetupTexture(img, 50, 50, 1);
+                        }
+                    }
+                }
+                xhr.send();*/
+            });
+
+            function EarthLoaded(pEarth) {
+                earth_ = pEarth;
+                pEarth.Scene.BackgroundColor = pEarth.CreateColor(0.2, 0.2, 0.2, 1);
+                pEarth.SetupSystem(false, SR_3857);
+                pEarth.HasTerrain = false;
+                //pEarth.TileQuality = SuperGIS.DDDCore.TileQuality.High;
+                POISym = new SuperGIS.DDDCore.Marker2DSymbol(null, pEarth.CreateVector2(0.5, 1, SuperGIS.DDDCore.VectorUnits.Proportion, SuperGIS.DDDCore.VectorUnits.Proportion));
+
+                _3DMouseUpDown.GWall = pEarth.CreateModelTexture("@Url.Content("./images/GisMap/Wall.jpg")");
+                _3DMouseUpDown.GBottom = pEarth.CreateModelTexture("@Url.Content("./images/GisMap/bottom.jpg")");
+
+                Basemap = new SuperGIS.TileLayer("https://demo.supergeotek.com/INER_NLSCEMAP/Agent.aspx",
+                    pEarth, { layer: 'mask', sr: SR_3857 }, null);
+                Basemap.setVisible(true);
+                Photo = new SuperGIS.TileLayer("https://wmts.nlsc.gov.tw/wmts",
+                    pEarth, { layer: 'PHOTO2' }, null);
+                Photo.setVisible(false);
+
+                // VectorTileLayers 為新的載入一次資料, 建立多圖層的方式
+
+				LineData = new MVTDocument(host_url + "LineData", pEarth, {minzoom: 13, maxzoom: 13, loadlayers: ["edge0"]}, function (name, features) {
+					LineFinish(name, features);
+				});
+
+				LineData1 = null;
+
+                IconData = new SuperGIS.VectorTileLayers(host_url + "IconData",
+                    pEarth, ['pole', 'dsbnroom', 'substation', 'edgechange', 'edgecross','node', 'mxfmr', 'terminal', 'sxfmr', 'distributedenergy', 'jumper', 'switch-3', 'switch-2', 'switch-0', 'youxiu', 'breaker', 'hicustomer', 'faultindicator', 'capacitor'],
+                    function (layer) { IconReady(layer); },
+                    function (array, layer) { IconFinish(array, layer); });
+
+                TextData = null;
+
+				//Soon 1100725 再生能源群聚顯示
+				Cluster = new SuperGIS.ClusterLayer(pEarth, { geojson: 'https://demo.supergeotek.com/%E6%A0%B8%E7%A0%94%E6%89%80/generatingunit3857.json',
+					clusterRadius: 2000000,
+					paint: { 'circle-color': '#00ff00',
+						'circle-stroke-color': '#ffffff',
+						'circle-radius': 4,
+						'cluster-color': ['#00ff00', 50, '#ffff00', 100, '#ff8c00'],
+						'cluster-stroke-color': ['#ffffff', 50, '#ffffff', 100, '#ffffff'],
+						'cluster-radius': [15, 50, 25, 100, 35],
+						'text-size': 12,
+						'text-font': 'Microsoft JhengHei',
+						'text-color': 'black' }}, null);
+				
+				Cluster.setMinMaxVisibleHeight(100, 90000);
+				Cluster.Visible = false;
+				Layers["distributedenergycluster"] = Cluster;
+				
+                pEarth.SetViewpoint(120.414247, 23.650445, 70000, 0, 0, false);
+                pEarth.AllowTilt = true;
+                //Gary Lu 20201021:預設是true，不設為false，下場就是切換到3D時3D專屬窗格選項出不來
+                //pEarth.SetViewpoint(120.254, 23.636, 1000, 0, 45, false);
+                //pEarth.SetViewpoint(120.5423, 23.7106, 138, 0, 0, false);
+
+                pGlobe = pEarth.GetGlobe();
+                pCam = pEarth.GetCamera();
+                pScene = pEarth.GetScene();
+				pCam.addEventListener("changed", CameraChanged, false);
+                pEarth.addEventListener("mousedown", _3DMouseUpDown.MouseDown, false);
+                pEarth.addEventListener("mouseup", _3DMouseUpDown.MouseUp, false);
+                pEarth.addEventListener("mousemove", _3DMouseUpDown.MouseMove, false);
+                pEarth.addEventListener("dblclick", _3DMouseUpDown.DBLClick, false);
+                pScene.addEventListener("endrender", _3DMouseUpDown.EndRender, false);
+				if(!underground)
+					pScene.GetEngine().UsingDepthTesting = false;
+                stuspnl = pEarth.CreateStatusPanel();
+
+                /*--按鈕按出新視窗--*/
+                $("#BtnStatusEvaluationTool").click(function () {
+                    ToolWindowBarControl.OpenStatusDialog();
+                    //WriteUserLog(7);
+                });
+
+                $("#BtnMeasureTool").click(function () {
+                    ToolWindowBarControl.OpenMeasureDialog();
+                    WriteUserLog(6);
+                });
+                $("#BtnLayersTool").click(function () {
+                    ToolWindowBarControl.OpenLayerDialog();
+                    WriteUserLog(5);
+                });
+                $("#BtnPositioningTool").click(function () {
+                    ToolWindowBarControl.OpenPositioningDialog();
+                });
+                $("#BtnPipeDistMeasure").click(function () {
+                    ToolWindowBarControl.OpenPipeDistDialog();
+                    WriteUserLog(11);
+                });
+                $("#BtnGroundHoleTool").click(function () {
+                    ToolWindowBarControl.OpenGroundHoleDialog();
+                    WriteUserLog(10);
+                });
+                $("#BtnSectionalViewTool").click(function () {
+                    ToolWindowBarControl.OpenProfileDialog();
+                    WriteUserLog(9);
+                });
+                $("#BtnFeederLineTool").click(function () {
+                    ToolWindowBarControl.OpenFeederAnalysisDialog();
+                });
+                $("#BtnAlertNotifySwitchPanel").click(function () {
+                    ToolWindowBarControl.OpenNotificationDialog();
+                });
+                $("#divGisMapToolBoxPanel").css("width", "600px");
+                $("#BtnPipeDistMeasure").hide();
+                $("#BtnGroundHoleTool").hide();
+                $("#BtnSectionalViewTool").hide();
+                select(0);
+                _3DMouseUpDown.TurnClickQueryOnOff();
+                $("#navQueryWindow").addClass("ClosingNav");
+                $("#aToggleButton").find("i").addClass("fa-caret-right");
+                QueryWindowState = false;
+                $("#aToggleButton").click(function (e) {
+                    if (QueryWindowState) {
+                        $("#aToggleButton").find("i").removeClass("fa-caret-left");
+                        $("#aToggleButton").find("i").addClass("fa-caret-right");
+                        $("#navQueryWindow").removeClass("OpeningNav");
+                        $("#navQueryWindow").addClass("ClosingNav");
+                    } else {
+                        $("#aToggleButton").find("i").removeClass("fa-caret-right");
+                        $("#aToggleButton").find("i").addClass("fa-caret-left");
+                        $("#navQueryWindow").removeClass("ClosingNav");
+                        $("#navQueryWindow").addClass("OpeningNav");
+                    }
+                    QueryWindowState = (!QueryWindowState);
+                    e.preventDefault();
+                });
+
+                //預設XML轉換行為 
+                $("#btnTransferXML").click(function(){
+                    let data = getXMLData();
+                    if(data.feederList.length > 0){
+                        ajaxStart();
+                        mutation.toggleIsXmlLoad(stateData,{item:'isXmlload',value:0});
+                        $("#XMLDataBox").html("");
+                        getXMLList(data).done(function(res){
+                            let errArr = [];
+                            let convertMode = $("#transferBtn .isDisable").attr("id");
+                            res.errorlist.forEach(function(v){
+                                if(v.rdfid!==""){
+                                    errArr.push(v.rdfid)
+                                }
+                            })
+                            ajaxStop();
+                            openTraneferData(true);
+                            loadXMLErrList(res.errorlist)
+                            loadXML(res,errArr);
+                            localStorage.setItem('xmlConvertMode',convertMode);
+                        })
+                    }else{
+                        Swal.fire({
+                            icon: "warning"
+                            , title: "饋線編號錯誤"
+                            , text: "請至少選擇一個饋線編號"
+                        });
+                    }
+                })
+                //XML轉檔按鈕切換
+                $("#btnDemoXML").click(function(){
+                    xmlBtnToggle(this);
+                })
+                $("#btnNormalXML").click(function(){
+                    xmlBtnToggle(this);
+                })
+                //關閉共同資訊模型區塊
+                $("#closeDataBox").click(function(){
+                    let isOpen = $("#navQueryWindow").hasClass("OpeningNav");
+                    let toolBoxButton = isOpen ? "BtnFeederMap" : "BtnXmlTransfer"
+                    toggleNavQueryWindow(isOpen,toolBoxButton);
+                    openTraneferData(false)
+                })
+                /*轉檔應用選單切換測試用*/
+                /*饋線地圖*/
+                $("#BtnFeederMap").click(function(){
+                    $("#divBodyContainer").siblings("div").hide();
+                    $("#divBodyContainer").show();
+                    toggleToolboxButton(this);
+                    openTraneferData(false);
+                })
+                /*XML轉換*/
+                $("#BtnXmlTransfer").click(function(){              
+                    $("#divBodyContainer").siblings("div").hide();
+                    $("#divBodyContainer").show();
+                    toggleToolboxButton(this);
+                });
+                /*轉檔應用選單切換測試用*/
+                $("#divGisMapToolBoxPanel").css("width", "600px");
+                $("#BtnPipeDistMeasure").hide();
+                $("#BtnGroundHoleTool").hide();
+                $("#BtnSectionalViewTool").hide();
+                select(0);
+                _3DMouseUpDown.TurnClickQueryOnOff();
+                $("#aToggleButton").find("i").addClass("fa-caret-right");
+                $("#aToggleButton").click(function (e) {
+                    //側方選單收合
+                    let isOpen = $("#navConvertWindow").hasClass("OpeningNav")
+                    let toolBoxButton = isOpen ? "BtnFeederMap" : "BtnXmlTransfer"
+                    toggleNavQueryWindow(isOpen,toolBoxButton)
+                    e.preventDefault();
+                });
+                bmc = new BasicMapControl(earth_);
+                INERAlertings.Initialize();
+                ImgCompass = new GNavigationPanel(HTMLContainer, pEarth);
+                if (blnUpdate) {
+                    setTimeout(function () { _3DMouseUpDown.CheckChangeInfo(); }, _3DMouseUpDown.changeinfo_interval);
+                }
+            }
+        }
+        /**
+         * 設定初始位置
+         */
+        function SetInitialPosition(newEarth) {
+            newEarth.SetViewpoint(120.414247, 23.650445, 70000, 0, 0, newEarth.AllowTilt);
+        }
+
+		function CameraChanged()
+		{
+			if(LineData1 == null)
+			{
+				if(pCam.Position.Z < 7500)
+				{
+					LineData1 = new MVTDocument(host_url + "LineData", earth_, {minzoom: 13, maxzoom: 13, loadlayers: ['busbar', 'edge1', 'energy', 'connection']}, function (name, features) {
+								LineFinish(name, features);
+							});
+				}
+			}
+			if(TextData == null)
+			{
+				if(pCam.Position.Z < 10000)
+				{
+					TextData = new MVTDocument(host_url + "TextData", earth_, {maxzoom: 15});
+				}
+			}
+		}
+
+        var down_x, down_y;
+        function MouseDown(tEvent) {
+            down_x = tEvent.x;
+            down_y = tEvent.y - tEvent.currentTarget.offsetTop;
+            //y值要排除掉offsetTop(實際上不屬於圖台的上面系統標題帶與功能帶的高度)
+            _3DMouseUpDown.MouseDown(tEvent);
+        }
+        function MouseUp(tEvent) {
+            _3DMouseUpDown.MouseUp(tEvent);
+        }
+
+        function HexToRGB(hex) {
+            if (hex.charAt(0) == '#')
+                hex = hex.substring(1, hex.length);
+            var r = parseInt(hex.substring(0, 2), 16) / 255;
+            var g = parseInt(hex.substring(2, 4), 16) / 255;
+            var b = parseInt(hex.substring(4, 6), 16) / 255;
+            return [r, g, b];
+        }
+
+        // 由於目前所有線圖層欄位皆同, 因此未作 layer 判別
+        function AddArrow(feature, oid, clr)
+		{
+			var pts = feature.geometry[0];
+			var dir = feature.values["dir"];
+			var rgb = clr;
+			if (current_visible)
+				rgb = rgb + "FF";
+			else
+				rgb = rgb + "00";
+			var size;
+			for (var i = 0; i < pts.length - 3; i += 3)
+			{
+				size = 1;
+				var first, second;
+				if (dir == 1)
+				{
+					first = pts.slice(i, i + 3);
+					second = pts.slice(i + 3, i + 6);
+				}
+				else
+				{
+					first = pts.slice(i + 3, i + 6);
+					second = pts.slice(i, i + 3);
+				}
+
+				var dist = (first[0] - second[0]) * (first[0] - second[0]) + (first[1] - second[1]) * (first[1] - second[1]);
+				var angle = Math.atan((first[1] - second[1]) / (second[0] - first[0]));
+				var tmps = [];
+				if(arrowCount % 4 == 0)
+				{
+					if (dist >= 400 && feature.name == 'edge0')
+					{
+						var aps_13 = CreateArrowPoints(first, second, angle, 36);
+						tmps.push(earth_.AddPolygonSurface(oid, aps_13, rgb, "", 8, 11));
+					}
+					if (dist >= 400)
+					{
+						var aps_14 = CreateArrowPoints(first, second, angle, 12);
+						tmps.push(earth_.AddPolygonSurface(oid, aps_14, rgb, "", 12, 13));
+					}
+				}
+				arrowCount++;
+				if (dist >= 100)
+				{
+					var aps_14 = CreateArrowPoints(first, second, angle, 3);
+					tmps.push(earth_.AddPolygonSurface(oid, aps_14, rgb, "", 14, 18));
+				}
+				for (var j = 0; j < tmps.length; j++)
+				{
+					var surface = tmps[j];
+					surface.fp = first;
+					surface.sp = second;
+					surface.dir = dir;
+					if (_3DMouseUpDown.g_surfaces[oid] == null)
+						_3DMouseUpDown.g_surfaces[oid] = [surface];
+					else
+						_3DMouseUpDown.g_surfaces[oid].push(surface);
+				}
+			}
+		}
+		// 20210326
+		function CreateArrowPoints(p1, p2, angle, size)
+		{
+			var sina = Math.sin(angle);
+			var cosa = Math.cos(angle);
+			var x = (p1[0] + p2[0]) / 2;
+			var y = (p1[1] + p2[1]) / 2;
+			var	x1 = x + size * sina;
+			var	y1 = y + size * cosa;
+			var x2 = x - size * sina;
+			var y2 = y - size * cosa;
+			var x3, y3;
+			size *= 3;
+			var tx1 = x - size * cosa;
+			var ty1 = y + size * sina;
+			var tx2 = x + size * cosa;
+			var ty2 = y - size * sina;
+			var d1 = (tx1 - p2[0]) * (tx1 - p2[0]) + (ty1 - p2[1]) * (ty1 - p2[1]);
+			var d2 = (tx2 - p2[0]) * (tx2 - p2[0]) + (ty2 - p2[1]) * (ty2 - p2[1]);
+			if (d1 < d2)
+			{
+				x3 = tx1;
+				y3 = ty1;
+			}
+			else
+			{
+				x3 = tx2;
+				y3 = ty2;
+			}
+			return [x1, y1, x2, y2, x3, y3];
+		}
+
+        // 20201201
+        function ProcessSurfaceGeometry(pGlobe, sWKT) {
+            var pos = sWKT.indexOf('(');
+            var type = sWKT.slice(0, pos);
+            sWKT = sWKT.trim();
+
+            var minX = null;
+            var maxX = null;
+            var minY = null;
+            var maxY = null;
+            if (type == "POLYGON") {
+                var pGeos = [];
+                sWKT = sWKT.slice(pos + 1, sWKT.lastIndexOf(')'));
+                var rings = sWKT.trim().split('),');
+                for (var i = 0; i < rings.length; i++) {
+                    var ring = rings[i].slice(1, rings[i].length - 1);
+                    var pairs = ring.trim().split(',');
+                    var pts = [];
+                    for (var j = 0; j < pairs.length; j++) {
+                        var pair = pairs[j];
+                        var xyz = pair.trim().split(' ');
+                        pts.push(parseFloat(xyz[0]), parseFloat(xyz[1]), 0);
+                    }
+                    CoordinateTransform(true, pGlobe.SpatialReference, s_WGS84, pts, pts.length / 3);
+                    for (var j = 0; j < pts.length; j += 3) {
+                        pGeos.push(pts[j], pts[j + 1]);
+                        if (minX == null || pts[j] < minX) minX = pts[j];
+                        if (maxX == null || pts[j] > maxX) maxX = pts[j];
+                        if (minY == null || pts[j + 1] < minY) minY = pts[j + 1];
+                        if (maxY == null || pts[j + 1] > maxY) maxY = pts[j + 1];
+                    }
+                }
+                return { Points: pGeos, Extent: [minX, maxY, maxX, minY], Type: type };
+            }
+            else if (type == "LINESTRING") {
+                var pGeos = [];
+                sWKT = sWKT.slice(pos + 1, sWKT.lastIndexOf(')'));
+                var pairs = sWKT.trim().split(',');
+                var pts = [];
+                for (var i = 0; i < pairs.length; i++) {
+                    var pair = pairs[i];
+                    var xyz = pair.trim().split(' ');
+                    pts.push(parseFloat(xyz[0]), parseFloat(xyz[1]), 0);
+                }
+                CoordinateTransform(true, pGlobe.SpatialReference, s_WGS84, pts, pts.length / 3);
+                for (var i = 0; i < pts.length; i += 3) {
+                    pGeos.push(pts[i], pts[i + 1]);
+                    if (minX == null || pts[i] < minX) minX = pts[i];
+                    if (maxX == null || pts[i] > maxX) maxX = pts[i];
+                    if (minY == null || pts[i + 1] < minY) minY = pts[i + 1];
+                    if (maxY == null || pts[i + 1] > maxY) maxY = pts[i + 1];
+                }
+                return { Points: pGeos, Extent: [minX, maxY, maxX, minY], Type: type };
+            }
+
+            return null;
+        }
+
+        // 20201201
+        function CreateArrowGeometry(surface, dir) {
+            var first = (surface.dir == dir) ? surface.fp : surface.sp;
+            var second = (surface.dir == dir) ? surface.sp : surface.fp;
+            var angle = Math.atan((first[1] - second[1]) / (second[0] - first[0]));
+			var size;
+			if (surface.maxLevel == 11)
+				size = 36;
+			else if (surface.maxLevel == 13)
+				size = 12;
+			else if (surface.maxLevel == 15)
+				size = 3;
+			var aps = CreateArrowPoints(first, second, angle, size)
+						var wkt = "POLYGON((" + aps[0].toString() + " " + aps[1].toString() + "," +
+								aps[2].toString() + " " + aps[3].toString() + "," +
+								aps[4].toString() + " " + aps[5].toString() + "))";
+			return ProcessSurfaceGeometry(pGlobe, wkt);
+        }
+
+        // 20201201
+        function CreateXGeometry(surface) {
+            var first = surface.fp;
+            var second = surface.sp;
+            var angle = Math.atan((first[1] - second[1]) / (second[0] - first[0]));
+            var angle1 = angle + 40;
+            var angle2 = angle - 40;
+
+            var sina = Math.sin(angle1);
+            var cosa = Math.cos(angle1);
+            var x = (first[0] + second[0]) / 2;
+            var y = (first[1] + second[1]) / 2;
+            var x1 = x + 12 * sina;
+            var y1 = y + 12 * cosa;
+            var x2 = x - 12 * sina;
+            var y2 = y - 12 * cosa;
+            sina = Math.sin(angle2);
+            cosa = Math.cos(angle2);
+            var x3 = x + 12 * sina;
+            var y3 = y + 12 * cosa;
+            var x4 = x - 12 * sina;
+            var y4 = y - 12 * cosa;
+
+            var wkt = "LINESTRING(" + x1.toString() + " " + y1.toString() + "," +
+                x2.toString() + " " + y2.toString() + "," + x.toString() + " " + y.toString() + "," +
+                x3.toString() + " " + y3.toString() + "," + x4.toString() + " " + y4.toString() + ")";
+            return ProcessSurfaceGeometry(pGlobe, wkt);
+        }
+
+        // 20201201
+        function UpdateSurface(pm, dir, clr) {
+            var oid = GetValue(pm, "oid");
+			var fdr = pm.values.fdr1;
+            var surfaces = _3DMouseUpDown.g_surfaces[oid];
+			var surfaces2 = _3DMouseUpDown.g_surfaces2[oid];
+			if (dir != -2) // -2 視為異常, 不用變電流方向
+			{
+				for (var i in surfaces)
+				{
+					var surface = surfaces[i];
+					if (dir == 99 || dir == -1)
+						surface.Visible = false;
+					else
+					{
+						surface.Visible = true;
+						surface.Geometry = CreateArrowGeometry(surface, dir);
+					}
+
+					var rgb = (clr != null) ? clr.slice(0) : HexToRGB(GetValue(pm, "symcolor"));
+					for (var j = 0; j < 3; j++)
+						rgb[j] = rgb[j] * 255;
+
+					var hc = "#";
+					for (var j = 0; j < 3; j++)
+						hc += rgb[j].toString(16).padStart(2, '0');
+					hc += (current_visible) ? "ff" : "00";
+					surface.Style = hc;
+
+					for (var j = 0; j < surface.CoveredTiles.length; j++)
+						surface.CoveredTiles[j].Invalidate();
+				}
+			}
+
+			if (surfaces2 == null) // buffer 未建
+			{
+				if (dir == 99 || dir == -1 || dir == -2)
+				{
+					_3DMouseUpDown.g_surfaces2[oid] = [];
+					for (var i in surfaces)
+					{
+						var wkt50 = CreateBufferWKT(surfaces[i], 75);
+						//var wkt100 = CreateBufferWKT(surfaces[i], 100);
+						if(buffer_visible)
+							var rgb = (dir == 99) ? "#bebebeff" : (dir == -1) ? "#ffb4b4ff" : "#ff7f27ff";
+						else
+							var rgb = (dir == 99) ? "#bebebe00" : (dir == -1) ? "#ffb4b400" : "#ff7f2700";
+						var buffer50 = earth_.AddSurface(oid, wkt50, rgb, "", 6, 18);
+						//var buffer100 = earth_.AddSurface(oid, wkt100, rgb, "", 6, 12);
+						_3DMouseUpDown.g_surfaces2[oid].push(buffer50);
+						//_3DMouseUpDown.g_surfaces2[oid].push(buffer100);
+					}
+				}
+			}
+			else
+			{
+				for (var i in surfaces2)
+				{
+					var surface = surfaces2[i];
+					if (dir != 99 && dir != -1 && dir != -2)
+						surface.Visible = false;
+					else
+					{
+						surface.Visible = true;
+						if(buffer_visible)
+							var rgb = (dir == 99) ? "#bebebeff" : (dir == -1) ? "#ffb4b4ff" : "#ff7f27ff";
+						else
+							var rgb = (dir == 99) ? "#bebebe00" : (dir == -1) ? "#ffb4b400" : "#ff7f2700";
+						surface.Style = rgb;
+					}
+					for (var j = 0; j < surface.CoveredTiles.length; j++)
+						surface.CoveredTiles[j].Invalidate();
+				}
+			}
+        }
+
+		function CreateBufferWKT(surface, r)
+		{
+			var f = surface.fp;
+			var s = surface.sp;
+			var angle = Math.atan((f[1] - s[1]) / (s[0] - f[0]));
+
+			var sina = Math.sin(angle);
+			var cosa = Math.cos(angle);
+			//var r = 50;
+			var pts = [];
+			pts.push([f[0] - r * sina, f[1] - r * cosa]);
+			for (var i = 30; i <= 180; i += 30)
+			{
+				var a = (f[0] > s[0]) ? -i : i;
+				sina = Math.sin(angle + a * Math.PI / 180);
+				cosa = Math.cos(angle + a * Math.PI / 180);
+				pts.push([f[0] - r * sina, f[1] - r * cosa]);
+			}
+			sina = Math.sin(angle);
+			cosa = Math.cos(angle);
+			pts.push([f[0] + r * sina, f[1] + r * cosa]);
+			pts.push([s[0] + r * sina, s[1] + r * cosa]);
+			for (var i = 30; i <= 180; i += 30)
+			{
+				var a = (f[0] > s[0]) ? -i : i;
+				sina = Math.sin(angle + a * Math.PI / 180);
+				cosa = Math.cos(angle + a * Math.PI / 180);
+				pts.push([s[0] + r * sina, s[1] + r * cosa]);
+			}
+
+			var wkt = "POLYGON((";
+			for (var i = 0; i < pts.length; i++)
+			{
+				wkt += pts[i][0].toString() + " " + pts[i][1].toString();
+				if (i != pts.length - 1)
+					wkt += ",";
+			}
+			wkt += "))";
+			return wkt;
+		}
+
+        // 20201119
+        function LineFinish(name, features) {
+			var depth = -5;
+			for (var i = 0; i < features.length; i++)
+			{
+				var feature = features[i];
+				feature.name = name;
+				var tid = feature.values["tid"];
+				var oid = feature.values["oid"];
+				var clr = feature.values["symcolor"];
+
+				if (name == "edge0" || name == "edge1") // 導線才加電流方向
+					AddArrow(feature, oid, clr);
+
+				var id = tid.toString() + "." + oid.toString();
+				if (_3DMouseUpDown.g_pms[id] == null)
+					_3DMouseUpDown.g_pms[id] = [feature];
+				else
+					_3DMouseUpDown.g_pms[id].push(feature);
+
+                //Soon needed this
+				if (oid == "10220714" | oid == "5078923" | oid == "10991758" | oid == "10134515") {
+					var pts = feature.geometry[0];
+					var wkt = "LINESTRING(";
+					for (var j = 0; j < pts.length; j += 3) {
+						wkt += (pts[j].toString() + ' ' + pts[j + 1].toString() + ' ' + depth.toString());
+						if (j == pts.length - 3)
+							wkt += ')';
+						else
+							wkt += ',';
+					}
+					depth += 1;
+					var rgb = HexToRGB(clr)
+					var pipe = earth_.CreatePlacemark("", wkt);
+					pipe.DDDSymbol = earth_.CreateRoundPipeSymbol(earth_.CreateModelMaterial(0, earth_.CreateColor(rgb[0], rgb[1], rgb[2], 1)), 0.2, 0.1);
+					pipe.BelowSurface = true;
+					pipe.PreserveGeometry = true;
+					earth_.PlacemarkObjects.Add(pipe);
+				}
+
+            }
+            _3DMouseUpDown.changedDevices = []; // 使強制 CheckChangeInfo
+        }
+
+        function IconReady(layer) {
+            Layers[layer.Name] = IconLayers[layer.Name] = layer;
+            layer.TextureMixType = SuperGIS.DDDCore.TextureMixType.Plus;
+            layer.maxVHeight = 600;
+        }
+        function IconFinish(array, layer) {
+            var h;
+			if(underground)
+				h = LayerHeight[layer.Name];
+            var bbox = layer.BoundingBox;
+			var pLayerOrigin = [(bbox.MinX + bbox.MaxX) / 2, (bbox.MinY + bbox.MaxY) / 2, 0];
+			pGlobe.CartesiansFromGeodetics(1, pLayerOrigin, pLayerOrigin);
+            for (var i = 0; i < array.length; i++) {
+                var mark = array[i];
+                mark.Name = layer.Name;
+                var tid = mark.GetFieldValueByIndex(1);
+				var oid = mark.GetFieldValueByIndex(2);
+                var clr = mark.GetFieldValueByIndex(6);
+                var height = mark.GetFieldValueByIndex(10);
+                var width = mark.GetFieldValueByIndex(11);
+                var ang = mark.GetFieldValueByIndex(12);
+                var sym = mark.GetFieldValueByIndex(13);
+                var ostatus = mark.GetFieldValueByIndex(15);
+                var texture = IconTextures[sym];
+                if (!texture)
+                    console.log("no texture: " + sym);
+
+                if (tid == 114 && ostatus == 0) // 常用開關為黑
+                    clr = "#000000";
+
+                var symbol = IconSymbols[clr + sym];
+                if (!symbol) {
+                    var rgb = HexToRGB(clr);
+                    // 底色皆設為透明 (需搭配 TextureMixType.Plus), 藉此由線條呈現效果, 包括 Highlight
+                    var material = earth_.CreateModelMaterial(0, earth_.CreateColor(rgb[0], rgb[1], rgb[2], 0));
+                    symbol = IconSymbols[clr + sym] = earth_.CreateSimpleDDDFillSymbol(material, null);
+                    symbol.Texture = texture;
+                }
+
+                var pts = mark.Geometry[0].pGeoArr;
+                pts.splice(pts.length - 3, pts.length);
+                var sum_x = 0, sum_y = 0;
+                for (var j = 0; j < pts.length; j += 3) {
+                    sum_x += pts[j];
+                    sum_y += pts[j + 1];
+                }
+                var pt = { X: sum_x / (pts.length / 3), Y: sum_y / (pts.length / 3), Z: 0 };
+                var w = Math.sqrt((pts[0] - pts[3]) * (pts[0] - pts[3]) + (pts[1] - pts[4]) * (pts[1] - pts[4])) / 2;
+                if (pGlobe.IsGCS()) {
+                    pt = SpatialReference.CoordinateTransform(SR_3857, SR_4326, null, pt);
+                    w /= 111000;
+                }
+                if (mark.Name == 'sxfmr')
+                    w = w * 1.3;
+
+                mark.Geometry = null;
+                mark.Centroid = pt;
+                mark.DDDSymbol = symbol;
+                var pMesh = new SuperGIS.DDDCore.Mesh;
+                mark.SetMeshes([{ PrimitiveType: SuperGIS.DDDCore.PrimitiveType.Triangles, Mesh: pMesh }]);
+
+                var varCoord = [];
+                var varNormal = [];
+                var varTexture = [];
+                var varIndex = [];
+
+                var xy = [];
+                var sin = Math.sin(ang * Math.PI / 180);
+                var cos = Math.cos(ang * Math.PI / 180);
+                var pts = [[-w, w], [-w, -w], [w, w], [w, -w]];
+                for (var j in pts) {
+                    var x = pts[j][0];
+                    var y = pts[j][1];
+                    var xp = x * cos - y * sin;
+                    var yp = y * cos + x * sin;
+                    xy.push(pt.X + xp, pt.Y + yp, h);
+                }
+                varIndex.push(0, 1, 2, 1, 2, 3);
+                varTexture.push(0, 1, 0, 0, 1, 1, 1, 0);
+
+                pGlobe.CartesiansFromGeodetics(xy.length / 3, xy, xy);
+                for (var j = 0; j < xy.length; j += 3) {
+                    varCoord.push(xy[j] - pLayerOrigin[0], xy[j + 1] - pLayerOrigin[1], xy[j + 2] - pLayerOrigin[2]);
+                    varNormal.push(0, 0, 1);
+                }
+
+                pMesh.setVertexCoord(varCoord);
+                pMesh.setVertexNormal(varNormal);
+                pMesh.setTextureCoord(varTexture);
+                pMesh.setIndex(varIndex);
+
+
+                var id = tid.toString() + "." + oid.toString();
+				if (_3DMouseUpDown.g_pms[id] == null)
+					_3DMouseUpDown.g_pms[id] = [mark];
+				else
+					_3DMouseUpDown.g_pms[id].push(mark);
+
+
+				if (mark.Name == "switch-0" && (oid == "5010448" | oid == "5010449" | oid == "5010450" | oid == "5010451")) {
+					var url = "http://192.168.3.117/INERADMS/Fac/RB套裝整壓站.kmz";
+					kml = earth_.CreateKMLDocument('', url, "");
+					kml.setModelAlignment(0, 0, null);
+					earth_.PlacemarkObjects.Add(kml);
+					pt84 = SpatialReference.CoordinateTransform(SR_3857, SR_4326, null, pt);
+					kml.setUserDefinedLocation(pt84.X, pt84.Y, -5);
+					kml.setScale(3);
+					kml.setRotation(270);
+					kml.BelowSurface = true;
+				}
+            }
+                _3DMouseUpDown.changedDevices = []; // 使強制 CheckChangeInfo
+        }
+
+		//20210324
+		function IsPlacemark(obj)
+		{
+			return (obj.DDDSymbol != null);
+		}
+		function GetValue(obj, field)
+		{
+			var result;
+			if(IsPlacemark(obj))
+				result = obj.GetFieldValue(field);
+			else
+				result = obj.values[field]
+			return result;
+        }
+    </script>
+</head>
+<body onload="documentLoad();" style="margin: 0px">
+    <div id="body" style="width:100%;height:100%;"></div>
+    @Html.Hidden("hidSCADASideIP", Model.SCADASideIP, new { id = "hidSCADASideIP" })
+    @Html.Hidden("hidSCADASidePort", Model.SCADASidePort.ToString(), new { id = "hidSCADASidePort" })
+    @Html.Hidden("hidLocMethod", Model.Method, new { id = "hidLocMethod" })
+    @Html.Hidden("hidLocValue", Model.Value, new { id = "hidLocValue" })
+	<div id="divMapBaseEventOperation">
+		<div class="EventItem" id="PoweroffLocation">
+            <img src="~/images/GisMap/Poweroff.svg" />
+        </div>
+		<div class="EventItem" id="FaultLocation">
+            <img src="~/images/GisMap/Fault.svg" />
+        </div>
+		<div class="EventItem" id="TransferLocation">
+            <img src="~/images/GisMap/Transfer.svg" />
+        </div>
+		<div class="EventItem" id="ShortcircuitLocation">
+            <img src="~/images/GisMap/Shortcircuit.svg" />
+        </div>
+    </div>
+    <div id="divMapBaseOperation">
+        <div class="MapItem" id="dimgHome">
+            <img src="~/images/GisMap/Home.svg" />
+        </div>
+        <div class="MapItem" id="dimgZoomIn">
+            <img src="~/images/GisMap/ZoomIn.svg" />
+        </div>
+        <div class="MapItem" id="dimgZoomOut">
+            <img src="~/images/GisMap/ZoomOut.svg" />
+        </div>
+    </div>
+	<div id="information" style="position: absolute;    bottom: 32px;    left: 7px;    width: 350px;    font-weight: bold;    font-size: 13px;    line-height: 35px;">
+	</div>
+    <div id="divPowerShow" style="display:none;">
+    </div>
+    @*<label id="lblPowerShow" style="display:none;">
+    </label>*@
+    <nav id="navConvertWindow" class="navWindow ClosingNav">
+        <a id="aToggleButton" class="nav-toggle-button">
+            <!--這個i需要更換箭頭方向-->
+            <i class="fas fa-caret-right"></i>
+        </a>
+        <div id="tblTransferBox" class="tblBox">
+            <label class="mainTitle">電力共同資訊模型轉換</label>
+            <div id="transferInput" class="inputBox">
+                <label class="w-25 initial">轉換饋線</label>
+                <input class="w-75" type="text" id="transferInputNo" placeholder="饋線編號" />
+                <button id="AddFeederRange" type="button" class="AddObjectButton" onclick="mapEvent('addFeederLine')"></button>
+                <button id="GetFeederRange" type="button" class="PointerButton" onclick="mapEvent('getFeederLine')"></button>
+            </div>
+            <ul id="FeederLineRangeBox" class="listBox" size="3"></ul>
+            <div id="transferBtn" class="btnBox w-100 min-h-20">
+                <input type="checkbox" id="allTransfer" name="allTransfer" value="all" onclick="handleCheck(this)">
+                <label for="allTransfer"></label>
+                <span class="checkText">全饋線轉換</span>
+            </div>
+            <label class="mainTitle">轉換設定-設備項目</label>
+            <ul id="ulSettingItem" class="listBox checkBoxList" size="3"></ul>
+            <label class="mainTitle">轉換設定-項目屬性</label>
+            <div id="selectAttrBox" class="selectBox w-40 right box1">
+                <select class="w-80" onchange="attributeChange(this)">
+                    <option value="all">全部</option>
+                </select>
+            </div>
+            <ul id="ulSettingAttribute" class="listBox settingAttributeBox" size="3"></ul>
+            <div id="transferBtn" class="btnBox w-100">
+                <button id="btnTransferXML" type="button" onclick="getXMLData()" class="submitBtn right button isdisable" disabled="disabled">轉換</button>
+                <button id="btnNormalXML" type="button" onclick="recoveryXMLDemo()" class="submitBtn right button">正常模式</button>
+                <button id="btnDemoXML" type="button" onclick="setXMLDemo()" class="submitBtn right button">展示模式</button>
+            </div>
+        </div>
+        <div id="tblListBox" class="tblBox setListBox lg w-100" style="display:none">
+            <label class="title w-50">轉換異常清單</label>
+        </div>
+    </nav>
+    <div id="monitorTraneferData" class="vw-75 right systemData flot" style="display:none">
+        <div class="tblBox w-100">
+            <div class="w-100 systemDataTitle">
+                <label class="mainTitle left">共同資訊模型</label>
+                <i id="closeDataBox" class="icon hide right link"></i>
+                <!-- <span class="tipText">目前正在進行 XF27 斷路器 11035 模型建立.....</span> -->
+            </div>
+            <div class="textAreaBox w-100">
+                <div class="w-100" contenteditable="false" id="XMLDataBox" name=""></div>
+            </div>
+            <div id="setDataBtn" class="btnBox">
+                <button id="fixData" type="button" class="selectBtn button left isdisable" disabled="disabled"  onclick="restoreXML()">修復</button>
+                <button id="editData" type="button" class="selectBtn button left isdisable" disabled="disabled"  onclick="toggleEdit('XMLDataBox',true)">編輯</button>
+                <button id="saveData" type="button" class="selectBtn button left isdisable" disabled="disabled"  onclick="toggleEdit('XMLDataBox',false)">儲存</button>
+                <button id="download" type="button" class="submitBtn button right isdisable" disabled="disabled"  onclick="downloadFile('XML')">下載</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

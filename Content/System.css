@@ -1,0 +1,67 @@
+﻿h3 {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #344059; }
+
+/*pagination start*/
+#page-selection, #page-selection2 {
+  margin: 10px;
+  height: 35px; }
+  #page-selection li.active .page-link, #page-selection2 li.active .page-link {
+    color: #344059;
+    background-color: #FFFFFF;
+    /* LINE */
+    border: 1px solid #C1D5DC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: none; }
+
+/*pagination end*/
+/*responsive start*/
+@media (min-width: 300px) {
+  #a_AccountMa, #a_AuthGroupMa {
+    font-size: 14px; }
+  .LightStick, .reset {
+    background-color: #FCD76E;
+    width: 100%;
+    height: 0.3125rem;
+    border-radius: 0.625rem; }
+  #div_Authority_content {
+    margin-top: 50px; }
+  #div_Log_content {
+    margin-top: 50px; }
+  #div_EquipHistory_content {
+    margin-top: 47px; }
+    #div_EquipHistory_content #lbl-lastupdate {
+      font-weight: normal;
+      font-size: 14px;
+      color: #7E909D;
+      margin-top: 15px; } }
+
+@media (min-width: 768px) {
+  #a_AccountMa, #a_AuthGroupMa {
+    font-size: 16px; }
+  #div_Authority_content {
+    margin-top: 30px; }
+    #div_Authority_content #btn-add_account {
+      margin-right: -15px; }
+  #div_Log_content {
+    margin-top: 10px; }
+    #div_Log_content .btn-print {
+      margin-right: -110px; }
+  #div_EquipHistory_content {
+    margin-top: 25px; }
+    #div_EquipHistory_content .input-box {
+      width: 152px; }
+    #div_EquipHistory_content .select-box {
+      width: 152px; } }
+
+/*responsive end*/
+.reset {
+  background-color: #E5EEF4; }
+
+@media print {
+  #div_Log_content * {
+    -webkit-print-color-adjust: exact !important; }
+  #div_Log_content .noPrint {
+    display: none !important; } }

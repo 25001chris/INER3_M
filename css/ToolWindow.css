@@ -1,0 +1,1058 @@
+﻿/*
+    這裡是工具視窗的樣式表
+    圖層套疊、座標與定位、量測工具、告警事件顯示
+*/
+label, input, td {
+    /*這些元素內部的文字字型一律使用Noto Sans TC或微軟正黑
+        <input>部分不限定type為botton或text或submit等等
+    */
+    font-family: Noto Sans TC,'Microsoft JhengHei';
+}
+
+    button, input[type=button] {
+        cursor: pointer;
+    }
+/*狀態評估表格
+    */
+.fixed_header {
+    width: 525px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+    .fixed_header tbody {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        height: 150px;
+        box-shadow: 0 0 0 1px rgb(174 174 174 / 0.54);
+        border-radius: 2px;
+    }
+
+    .fixed_header thead tr {
+        display: block;
+    }
+
+    .fixed_header thead {
+       
+        color: black;
+    }
+
+    .fixed_header th {
+        font-size:4px;
+        padding: 2px;
+        text-align: center;
+        width: 100px;
+    }
+
+    .fixed_header td {
+        font-size: 8px;
+        padding: 2px;
+        text-align: center;
+        width: 460px;
+    }
+
+#tb::-webkit-scrollbar,
+.NodeFeederBox::-webkit-scrollbar {
+    width: 8px;
+}
+
+#tb::-webkit-scrollbar-track,
+.NodeFeederBox::-webkit-scrollbar-track {
+    background: #E5EEF4;
+}
+
+#tb::-webkit-scrollbar-thumb,
+.NodeFeederBox::-webkit-scrollbar-thumb {
+    background: #AAC9DF;
+}
+
+/*--這邊開始是手機版面與電腦版面有區別的樣式(版面區分僅以768個像素長度為界，較窄的是手機版面，較寬的是電腦版面)--*/
+@media(max-width:768px) {
+    .BoxSizeButton {
+        /*電腦版工具窗格縮到最小或還原紐*/
+        position: absolute;
+        right: 33px;
+        top: 11px;
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+    }
+
+    .GMinimizeDialogGeneral {
+        /*手機環境下縮到最小*/
+        position: absolute;
+        bottom: 0;
+        height: 36px;
+        left: 0;
+        width: 100%;
+    }
+
+    .GStatusDialog {
+        /*狀態估測工具窗位置設定*/
+        position: absolute;
+        float: left;
+        left: 0px;
+        bottom: 0;
+        width: 100%;
+        height: 200px;
+        border-radius: 0;
+        z-index: 32767;
+    }
+
+    .GMeasureDialog {
+        /*量測工具窗位置設定*/
+        position: absolute;
+        float: left;
+        left: 0px;
+        bottom: 0;
+        width: 100%;
+        height: 237px;
+        border-radius: 0;
+        z-index: 32767;
+    }
+
+    .GPositioningDialog {
+        /*坐標與定位工具窗位置設定*/
+        position: absolute;
+        float: left;
+        left: 0px;
+        bottom: 0;
+        width: 100%;
+        height: 213px;
+        border-radius: 0;
+        z-index: 32767;
+    }
+
+    .GLayerSwitchDialog {
+        /*圖層套疊工具窗位置設定*/
+        position: absolute;
+        float: left;
+        left: 0px;
+        bottom: 0;
+        width: 100%;
+        height: 195px;
+        border-radius: 0;
+        z-index: 32767;
+    }
+
+    .GPipeLineDistanceDialog {
+        /*管距測量工具窗格位置設定(手機環境當2D圖台,不開)*/
+        display: none;
+    }
+
+    .GGroundHoleDialog {
+        /*開挖工具窗格位置設定(手機環境當2D圖台,不開)*/
+        display: none;
+    }
+
+    .GProfileDialog {
+        /*剖面線工具窗格位置設定(手機環境當2D圖台,不開)*/
+        display: none;
+    }
+
+    #BtnSendPositioningCmd {
+        /*發送定位指令*/
+        display: none;
+    }
+
+    .CoordinateActionButton {
+        /*"發送定位指令""圖台定位"共通*/
+        width: calc(100% - 26px);
+        height: 36px;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Microsoft JhengHei';
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        bottom: 18px;
+    }
+
+    #BtnGISPositioning {
+        /*圖台定位*/
+        position: absolute;
+        right: 13px;
+        background: #3C5165;
+        color: #FFFFFF;
+    }
+}
+
+@media(min-width:769px) {
+    .BoxSizeButton {
+        /*電腦版工具窗格縮到最小或還原紐*/
+        display: none;
+    }
+
+    .GStatusDialog {
+        /*狀態估測工具窗位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 550px;
+        height: 370px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    #divStatusCal, #divStatusCompare {
+        /*狀態估測內兩個子頁的共通設定*/
+        position: absolute;
+        left: 10px;
+        top: 50px;
+        width: 450px;
+    }
+
+    #divStatusCal { /*1 估測運算*/
+        height: 240px;
+    }
+
+    #divStatusCompare { /*2 估測比對*/
+        height: 350px;
+    }
+	
+	#feederSel { /*1 估測運算 饋線編號輸入文字框*/
+        position: absolute;
+        left: 5px;
+        top: 27px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    #iptStatusCal { /*1 估測運算 饋線編號輸入文字框*/
+        position: absolute;
+        left: 120px;
+        top: 27px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+
+    #iptStatusCompare1 { /*1 估測比對條件輸入文字框*/
+        font-size:10px;
+        text-align:center;
+        height:25px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    #iptStatusCompare2 { /*1 估測比對條件輸入文字框*/
+        font-size: 10px;
+        text-align: center;
+        height: 25px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    #iptStatusCompare3 { /*1 估測比對條件輸入文字框*/
+        font-size: 10px;
+        text-align: center;
+        height: 25px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+
+
+    #ulStatusCompareBox {
+        /*1 拓樸圖形結構演算 饋線編號下方設備類別選擇區*/
+        position: absolute;
+        top: 30px;
+        list-style-type: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 320px;
+        height: 156px;
+        border: 1px solid #C1D6DC;
+        padding-left: 3px;
+    }
+
+        #ulStatusCompareBox > li {
+            display: list-item;
+            margin: 0;
+        }
+        /*--起點--需要有特定卷軸樣式的容器，在此作卷軸樣式定義--*/
+        #ulStatusCompareBox::-webkit-scrollbar,
+        .NodeFeederBox::-webkit-scrollbar {
+            width: 8px;
+        }
+
+    #ulTopologyEquipmentClasses::-webkit-scrollbar-track,
+    .NodeFeederBox::-webkit-scrollbar-track {
+        background: #E5EEF4;
+    }
+
+    #ulStatusCompareBox::-webkit-scrollbar-thumb,
+    .NodeFeederBox::-webkit-scrollbar-thumb {
+        background: #AAC9DF;
+    }
+
+    .GMeasureDialog {
+        /*量測工具窗位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 374px;
+        height: 237px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    .GPositioningDialog {
+        /*坐標與定位工具窗位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 280px;
+        height: 213px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    .GLayerSwitchDialog {
+        /*圖層套疊工具窗位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 280px;
+        height: 195px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    .GPipeLineDistanceDialog {
+        /*管距測量工具窗格位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 280px;
+        height: 237px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    .GGroundHoleDialog {
+        /*開挖工具窗格位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 280px;
+        height: 237px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    .GProfileDialog {
+        /*剖面線工具窗格位置設定*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 361px;
+        height: 322px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    .GInfoWindow {
+        /*點選查詢資訊窗格*/
+        position: absolute;
+        left: calc(50% - 396px);
+        top: calc(50% - 198px);
+        height: 396px;
+        width: 792px;
+        box-shadow: 1px 1px 1px grey;
+    }
+
+    #BtnSendPositioningCmd {
+        /*發送定位指令*/
+        position: absolute;
+        left: 13px;
+        background: #FCD76E;
+        color: #3C5165;
+    }
+
+    .CoordinateActionButton {
+        /*"發送定位指令""圖台定位"共通*/
+        width: 92px;
+        height: 36px;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Microsoft JhengHei';
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        bottom: 18px;
+    }
+
+    #BtnGISPositioning {
+        /*圖台定位*/
+        position: absolute;
+        right: 13px;
+        background: #3C5165;
+        color: #FFFFFF;
+    }
+
+    .Btn3DOnlyToolButton {
+        /*3D專用工具窗格內按鈕*/
+        position: absolute;
+        width: 92px;
+        height: 36px;
+        /* text */
+        border-radius: 5px;
+        text-align: center;
+        vertical-align: middle;
+        font-family: Noto Sans TC,'Microsoft JhengHei';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .Only3DToolBox {
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
+
+    #tblBasicInfo,
+    #tblOwnerInfo {
+        top: 0;
+    }
+
+    #tblRealtimeInfo {
+        /*Info window內即時數據表格位置:因應上方統一顯示共通項目，出現位置向下壓*/
+        top: 60px;
+    }
+
+    .GFeederAnalysisDialog {
+        /*饋線演算分析窗格*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 280px;
+        height: 370px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+
+    #divTopologyAnimation, #divConnectionAnimation {
+        /*饋線演算分析內兩個子頁的共通設定*/
+        position: absolute;
+        left: 10px;
+        top: 50px;
+        width: 260px;
+    }
+
+    #divTopologyAnimation { /*1 拓樸圖形結構演算*/
+        height: 240px;
+    }
+
+    #divConnectionAnimation { /*2 連結性演算*/
+        height: 508px;
+    }
+
+        #divConnectionAnimation > tr > td {
+            /*"格子"內的東西可以用absolute定位*/
+            vertical-align: middle;
+            position: relative;
+        }
+
+            #divConnectionAnimation > tr > td,
+            #divConnectionAnimation > tr > td > label {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 20px;
+                color: #484848;
+            }
+
+    #iptFeederID_Analysis { /*1 拓樸圖形結構演算 饋線編號輸入文字框*/
+        position: absolute;
+        left: 5px;
+        top: 27px;
+        width: 254px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    #ulTopologyEquipmentClasses {
+        /*1 拓樸圖形結構演算 饋線編號下方設備類別選擇區*/
+        position: absolute;
+        left: 5px;
+        top: 57px;
+        list-style-type: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 254px;
+        height: 156px;
+        border: 1px solid #C1D6DC;
+        padding-left: 3px;
+    }
+
+        #ulTopologyEquipmentClasses > li {
+            display: list-item;
+            margin: 0;
+        }
+        /*--起點--需要有特定卷軸樣式的容器，在此作卷軸樣式定義--*/
+        #ulTopologyEquipmentClasses::-webkit-scrollbar,
+        .NodeFeederBox::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #ulTopologyEquipmentClasses::-webkit-scrollbar-track,
+        .NodeFeederBox::-webkit-scrollbar-track {
+            background: #E5EEF4;
+        }
+
+        #ulTopologyEquipmentClasses::-webkit-scrollbar-thumb,
+        .NodeFeederBox::-webkit-scrollbar-thumb {
+            background: #AAC9DF;
+        }
+    /*--終點--需要有特定卷軸樣式的容器，在此作卷軸樣式定義--*/
+    #btnFeederCalculation {
+        position: absolute;
+        bottom: 7px;
+        right: 14px;
+        width: 92px;
+        height: 36px;
+        border-radius: 5px;
+        background: #344059;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFFFFF;
+		border: none;
+    }
+
+    #btnPlayAnimationAgain {
+        /*再次播放鈕*/
+        position: absolute;
+        left: 14px;
+        bottom: 7px;
+        width: 92px;
+        height: 36px;
+        border-radius: 5px;
+        background: #fcd76e;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        border: none;
+        color: #344059;
+    }
+
+    .NodeFeederInput {
+        /*饋線範圍 起始與終止節點 輸入框*/
+        position: absolute;
+        right: 0px;
+        width: 158px;
+        height: 32px;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .NodeFeederBox {
+        /*饋線範圍 終止節點 選單框*/
+        position: absolute;
+        left: 0;
+        width: 255px;
+        height: 70px;
+        max-height: 70px;
+        overflow-y: auto;
+        border: 1px solid #C1D6DC;
+        box-sizing: border-box;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .RdoCalculationDirection2 {
+        /*計算方向 IMG代RadioButton*/
+        width: 15px;
+        height: 15px;
+    }
+
+    .RdoCalculationDirection {
+        /*計算方向 IMG代RadioButton*/
+        position: absolute;
+        top: 24px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .LblCalculationDirection {
+        /*計算方向 選項文字*/
+        position: absolute;
+        top: 22px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #484848;
+    }
+
+    .PointerButton {
+        /*點選圖示紐*/
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background: url("../images/ToolWindow/Topology/PointSelect.svg");
+    }
+
+    .AddObjectButton {
+        /*增加項目紐*/
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background: url("../images/ToolWindow/Topology/Add.svg");
+    }
+
+    .GTopoResultDialog {
+        /*拓樸演算結果視窗*/
+        position: absolute;
+        width: 500px;
+        height: 350px;
+        table-layout: fixed;
+        left: 0;
+        top: 230px;
+        z-index: 32767;
+    }
+
+    .GAlertNotifyDialog {
+        /*告警通知窗格*/
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        width: 280px;
+        height: 160px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px grey;
+        z-index: 32767;
+    }
+}
+/*--手機版面與電腦版面有區別的樣式的定義區域到此結束
+    這邊開始是暫時(有可能會往上搬移)或是永久性和螢幕大小無關的樣式--*/
+.ToolDialogHeader {
+    /*標頭區*/
+    position: relative;
+    height: 36px;
+    background-color: #DDECF6;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+    .ToolDialogHeader > img.Icon {
+        /*標頭區內的圖示*/
+        position: absolute;
+        left: 20px;
+        top: 8px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .ToolDialogHeader > label {
+        font-family: Microsoft Jhenghei;
+        margin-top: 8px;
+        margin-left: 2px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.115em;
+        color: #344059;
+    }
+
+.centering {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ToolWindowBody {
+    /*工具窗格內容區(扣掉標題帶但有含50px高的頁面切換TABLE)*/
+    height: calc(100% - 36px);
+}
+
+.ToolWindowOperation {
+    /*工具窗格實際操作區(以ToolWindowBody為PARENT但頁面切換TABLE不算在高度中)*/
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.StatusCoordinateInput {
+    /*座標輸入方塊*/
+    position: absolute;
+    left: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    width: calc(100% - 20px);
+    height: 36px;
+    border: 1px solid #C1D6DC;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.CoordinateInput {
+    /*座標輸入方塊*/
+    position: absolute;
+    left: 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+    height: 36px;
+    border: 1px solid #C1D6DC;
+    box-sizing: border-box;
+    border-radius: 5px;
+	text-transform:uppercase;
+}
+
+.CoordinateResult {
+    /*坐標換算結果呈現區*/
+    font-family: 'Microsoft JhengHei';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #344059;
+}
+
+.MeasureToolBoxBody {
+    /*量測工具說明區與數據呈現區的容器*/
+    position: absolute;
+    left: 6px;
+    top: 50px;
+    width: calc(100% - 10px);
+    table-layout: fixed;
+}
+
+.MeasureToolBoxBody2 {
+    /*量測工具說明區與數據呈現區的容器*/
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: calc(100% - 10px);
+    table-layout: fixed;
+}
+
+.MeasureToolReadMe {
+    /*量測工具說明區*/
+    font-family: 'Microsoft JhengHei';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    vertical-align: top;
+    position: relative;
+}
+
+.MeasureToolNumeric {
+    /*量測工具數據呈現區*/
+    position: relative;
+    height: 75px;
+}
+
+.MeetTop {
+    /*向上對齊*/
+    vertical-align: top;
+}
+
+#lblMeasureStatus {
+    /*量測工具數據呈現文字方塊*/
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #344059;
+}
+
+.StatusWindowOperation {
+    /*狀態評估窗格內各個子區位置設定*/
+    position: absolute;
+    left: 4px;
+    top: 40px;
+    width: calc(100% - 10px);
+    height: 20px;
+}
+
+.StatusInfoText {
+    /*狀態評估窗內文字說明*/
+    margin-left: 10px;
+    margin-top: 6px;
+    font-family: Noto Sans TC,'Microsoft JhengHei';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #344059;
+}
+
+.LayerWindowOperation {
+    /*圖層套疊窗格內各個子區位置設定*/
+    position: absolute;
+    left: 4px;
+    top: 40px;
+    width: calc(100% - 10px);
+    height: 100px;
+}
+
+.LayerToolLayerName {
+    /*圖層套疊窗內圖層名稱*/
+    margin-left: 10px;
+    margin-top: 6px;
+    font-family: Noto Sans TC,'Microsoft JhengHei';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #344059;
+}
+
+.LayerToolOpacityBox {
+    /*圖層套疊窗內透明度控制容器*/
+    width: 84px;
+    height: 36px;
+    border: 1px solid #C1C5DC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.AdjustOpacity {
+    width: 9px;
+    height: 8px;
+    margin-top: 12px;
+}
+
+.AdjustOpacityL {
+    float: left;
+    margin-left: 6px;
+}
+
+.AdjustOpacityR {
+    float: right;
+    margin-right: 6px;
+}
+
+.OpacityValue {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 0;
+    text-align: center;
+    width: 50px;
+}
+
+.WarningSign {
+    /*主、次要警報後面的圖示*/
+    margin-top: -7px;
+    margin-left: 7px;
+}
+
+.VisibilityButton {
+    /*透明度按鈕for主、次要警報*/
+    position: absolute;
+    right: 22px;
+    top: 15px;
+    cursor: pointer;
+}
+
+#DivEquipmentLayerCover {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    height: 366px;
+    max-height: 366px;
+    overflow-y: scroll;
+}
+
+    #DivEquipmentLayerCover::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #DivEquipmentLayerCover::-webkit-scrollbar-track {
+        background: #E5EEF4;
+    }
+
+    #DivEquipmentLayerCover::-webkit-scrollbar-thumb {
+        background: #AAC9DF;
+    }
+
+table.DisplayAttribute {
+    /*點選查詢結果小視窗內表格設定*/
+    table-layout: fixed;
+    border: none;
+    position: absolute;
+    left: 21px;
+    width: calc(100% - 42px);
+    height: 100%;
+}
+
+td.FieldName {
+    /*點選查詢結果小視窗欄位名稱*/
+    width: 135px;
+    text-align: left;
+    font-family: Noto Sans TC,'Microsoft JhengHei';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 190%;
+    color: #344059;
+}
+
+td.FieldValue {
+    /*點選查詢結果小視窗欄位值*/
+    width: 165px;
+    text-align: left;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 190%;
+    color: #484848;
+}
+
+#btnSCADALocating {
+    /*SCADA定位鈕in點選查詢結果小視窗*/
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    width: 92px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FCD76E;
+    font-family: Noto Sans TC,'Microsoft JhengHei';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #344059;
+}
+/*風哥提供的換頁機制START*/
+.switch-tab {
+    position: relative;
+    width: 100%;
+    border-bottom: 7px solid #E5EEF4;
+    display: inline-flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    font-weight: 600;
+}
+
+    .switch-tab .switch-tab-title {
+        font-family: 'Microsoft JhengHei';
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .switch-tab .scroll-bar {
+        position: absolute;
+        bottom: -7px;
+        border-bottom: 7px solid #FCD76E;
+        border-radius: 5px;
+        transition: transform .3s;
+    }
+
+.alertSetup,
+.alertQueue {
+    display: none;
+}
+
+    .alertQueue select,
+    .alertQueue input {
+        width: 120px;
+    }
+
+.switch-tab-title.active {
+    color: #344059;
+    transition: transform .3s;
+}
+/*風哥提供的換頁機制END*/
+.topology_removeitem {
+    float: right;
+    margin-right: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.RealtimeBasisTitle {
+    /*即時資料共通標頭*/
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 190%;
+    color: #344059;
+}
+
+.RealtimeBasisVal {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 190%;
+    color: #484848;
+}
+
+button {
+    border-color: transparent;
+}
+
+:focus {
+    outline: none;
+}
+/*#lblPowerShow {
+    position: absolute;
+    bottom: 53px;
+    right: 63px;
+    width: 200px;
+    height: 28px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 28px;
+    color: #344059;
+    background-color:#ffffff;
+	border-radius: 5px;
+	box-shadow: 0 2px 3px rgba(83,122,139,.13);
+	text-align: center;
+}*/
+#divPowerShow {
+    position: absolute;
+    bottom: 60px;
+    right: 63px;
+    width: 235px;
+    height: 36px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 35px;
+    color: #344059;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(83,122,139,.13);
+    text-align: left;
+    vertical-align: middle;
+	padding-left: 10px;
+}

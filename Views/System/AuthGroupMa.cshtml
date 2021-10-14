@@ -1,0 +1,262 @@
+﻿@using INERADMS.Models
+@model  INERADMS.ViewModels.PaginationViewModel
+@{
+    //有人的群組id
+    List<int> hasmanlist = ViewData["hasmanlist"] as List<int>;
+    //判斷是否有本頁的編輯權限
+    string EditAuth = ViewData["EditAuth"].ToString();
+}
+
+<div class="row">
+    <div class="col-6 col-md-2 text-center">
+        <a id="a_AccountMa" class="custom-black" onclick="Authority_RenderAjax('@Url.Action("AccountMa", "System")'); return false;"
+           title="使用者帳號管理">
+            使用者帳號管理
+            <div id="LightStick_AccountMa"></div>
+        </a>
+    </div>
+    <div class="col-6 col-md-2 ml-n4 text-center">
+        <a id="a_AuthGroupMa" class="custom-black font-weight-bold" onclick="Authority_RenderAjax('@Url.Action("AuthGroupMa", "System")'); return false;"
+           title="權限群組管理">
+            權限群組管理
+            <div id="LightStick_AuthGroupMa" class="LightStick"></div>
+        </a>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-md-12 mt-3 mt-md-0 d-flex justify-content-end">
+        @if (EditAuth == "y")
+        {
+            <button class="btn btn-add ml-2" onclick="showModifyAuthGroup('新增群組');">+ 新增群組</button>
+        }
+    </div>
+    <div class="col-md-12 d-flex justify-content-end">
+        <div id="page-selection"></div>
+    </div>
+    <div class="col-md-12">
+        <div class="force-overflow">
+            <table class="sadms-table">
+                <thead>
+                    <tr>
+                        <th scope="col">群組名稱</th>
+                        <th scope="col">最後變更時間</th>
+                        <th scope="col">管理</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Grouplist group in Model.Data)
+                    {
+                        <tr>
+                            <td>@group.group_name</td>
+                            <td>@group.update_time</td>
+
+                            @if (EditAuth == "y")
+                            {
+                                <td>
+                                    <img class="" src="~/Images/ICON/ma.svg" onclick="showModifyAuthGroup('編輯群組', '@group.group_id');" />
+                                    @if (!hasmanlist.Contains(group.group_id))
+                                    {
+                                        @Html.Raw("&nbsp; &nbsp;")
+                                        <img class="" src="~/Images/ICON/delete.svg" onclick="deleteAuthGroup('@group.group_id', '@group.group_name');" />
+                                    }
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <img class="" src="~/Images/ICON/search.svg" onclick="showModifyAuthGroup('檢視群組', '@group.group_id');" />
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        AjaxPagination(@Model.Total, @Model.Current, "@Url.Action("AuthGroupMa", "System", new { id = ""})");
+    });
+
+    //功能名稱
+    var actionNmae = [{ title: "圖台展示功能", editkey: "17", viewkey: "18" },
+    { title: "帳號與權限管理", editkey: "none", viewkey: "none" },
+    { title: "使用者帳號管理", editkey: "1", viewkey: "9" },
+    { title: "權限群組管理", editkey: "2", viewkey: "10" },
+    { title: "系統操作紀錄", editkey: "3", viewkey: "11" },
+    { title: "設備歷史資訊", editkey: "4", viewkey: "12" },
+    { title: "系統參數設定", editkey: "5", viewkey: "13" },
+    { title: "饋線監控系統告警篩選", editkey: "6", viewkey: "14" },
+    { title: "饋線監控告警應用", editkey: "none", viewkey: "none" },
+    { title: "饋線監控告警設定", editkey: "7", viewkey: "15" },
+    { title: "告警事件佇列", editkey: "8", viewkey: "16" }];
+
+    //新增&編輯群組
+    function showModifyAuthGroup(type, group_id) {
+        let image = "<img src='" + RootUrl + "/images/ICON/collapse.svg' style='margin-left: -25px;' title='收合' />";
+
+        //header標題
+        let header = "<h3>" + type + "</h3>";
+        //資料區
+        let content = "<div class='row'>";
+        content += "<div class='col-4 col-md-3 d-flex justify-content-center'>";
+        content += "<p>群組名稱</p>";
+        content += "</div>";
+        content += "<div class='col-8 col-md-9 d-flex justify-content-end'>";
+        content += "<input id='group_name' class='input-box w-100 CusRequired' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='top' placeholder='輸入名稱' data-cusrequired='名稱' title='輸入名稱'" + (type === "編輯群組" ? "readonly" : "") + " />";
+        content += "</div>";
+        content += "<div class='col-12 d-flex justify-content-end'>";
+        content += "<table class='sadms-table'><thead><tr><th scope='col'>功能名稱</th><th scope='col'>編輯</th><th scope='col'>檢視</th></tr></thead>";
+
+        content += "<tbody>";
+        //功能名稱(按陣列index依序顯出)
+        actionNmae.forEach(function (item, index, array) {
+            if (item.title === "帳號與權限管理" || item.title === "饋線監控告警應用") {
+                content += "<tr class='major-action'><td onclick='toggleTrClass(this);'>" + image + item.title + "</td><td></td><td></td>";
+            }
+            else {
+                if (item.title === "使用者帳號管理" || item.title === "權限群組管理" || item.title === "饋線監控告警設定" || item.title === "告警事件佇列") {  //子選單
+                    content += "<tr class='sub-action'><td>" + item.title + "</td><td><div class='form-check abc-radio abc-radio-custom form-check-inline ml-3'><input class='form-check-input' type='radio' id='" + item.editkey + "' name='" + item.editkey + "'></div></td>";
+                    content += "<td><div class='form-check abc-radio abc-radio-custom form-check-inline ml-3'><input class='form-check-input' type='radio' id='" + item.viewkey + "' name='" + item.editkey + "' checked></div></td></tr>";  //比對資料庫groupright的permit_id
+                }
+                else {  //主選單
+                    content += "<tr class='major-action'><td>" + item.title + "</td><td><div class='form-check abc-radio abc-radio-custom form-check-inline ml-3'><input class='form-check-input' type='radio' id='" + item.editkey + "' name='" + item.editkey + "'></div></td>";
+                    content += "<td><div class='form-check abc-radio abc-radio-custom form-check-inline ml-3'><input class='form-check-input' type='radio' id='" + item.viewkey + "' name='" + item.editkey + "' checked></div></td></tr>";
+                }
+            }
+        });
+        content += "</tbody></table>";
+        content += "</div>";
+
+        //footer按鈕區
+        content += "<div id='div_msgfooter' class='col-12 d-flex justify-content-center justify-content-md-end'>";
+        content += "<button class='btn btn-cancel' onclick='$(\"#msgModal\").modal(\"toggle\");'>取消</button>";
+        if ("@EditAuth" == "y") {
+            content += "<button class='btn btn-agree' onclick='ModifyAuthGroupDetail(\"" + type + "\")'>儲存</button>";
+        }
+        content += "<input type='hidden' id='hf_group_id'>";
+        content += "</div>";
+        content += "</div>";
+
+        showMsgSm(header, content, null);
+        //添加新樣式以和卡控訊息樣式區別
+        $(".modal-dialog").removeClass("modal-dialog-AccountMa");
+        $(".modal-dialog").addClass("modal-dialog-AuthGroupMa");
+        //取得權限群組明細並綁定checkbox
+        if (type == "編輯群組" || type == "檢視群組") {
+            GetAuthDetail(group_id);
+        }
+    }
+
+     //取得權限群組明細
+    function GetAuthDetail(group_id) {
+        //開啟Loading遮罩
+        ajaxStart();
+
+        $.ajax({
+            url: "@Url.Action("GetAuthDetail", "System", new { id = ""})/" + group_id,
+            success: function (result) {
+                $("#group_name").val(result.group_name);
+                //解析比對{權限序號, 流水號(PK)}
+                result.permit_list.forEach(function (item, index, array) {
+                    actionNmae.some(function (item2) {
+                        if (item.permit_id == item2.editkey || item.permit_id == item2.viewkey) {
+                            $("#" + item2.editkey).attr("name", item.permitsno);
+                            $("#" + item2.viewkey).attr("name", item.permitsno);
+                            $("#" + item.permit_id).click();
+                            return true;  //有搜尋到就停止該輪迴圈
+                        }
+                    });
+                    $("#hf_group_id").val(result.group_id);
+                });
+            },
+            error: function (msg) {
+                alert("取得畫面資料失敗！");
+            },
+            complete: function () {
+                //關閉Loading遮罩
+                ajaxStop();
+            }
+        });
+    }
+
+     //新增&編輯權限群組明細
+    function ModifyAuthGroupDetail(type) {
+        //開啟Loading遮罩
+        //ajaxStart();
+
+        //驗證欄位資料 必填
+        let msg = jsTool_CusRequired();
+        if (msg) return false;
+
+        let postArray = [];
+        $.each($(".form-check-input:checked"), function (index, item) {
+            let obj = {
+                group_name: $("#group_name").val(),
+                permitsno: $(this).attr("name"),
+                group_id: $("#hf_group_id").val(),
+                permit_id: $(this).attr("id")
+            };
+            postArray.push(obj);
+        });
+
+        $.ajax({
+            url: "@Url.Action("ModifyAuthGroupDetail", "System", new { id = ""})/?type=" + type,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            type: 'POST',
+            data: JSON.stringify(postArray),
+            success: function (result) {
+                if (result.Status) {
+                    alert(result.Message);
+                    $("#msgModal").modal("toggle");
+                    $("#a_AuthGroupMa").click();  //點擊標籤重整頁面
+                }
+                else {  //群組名稱重複
+                    //alert(result.Message);
+                    RenderBootstrapTooltip($("#group_name"), result.Message);
+                    $("#group_name").focus();
+                }
+            },
+            error: function (msg) {
+                alert("取得畫面資料失敗！");
+            },
+            complete: function () {
+                //關閉Loading遮罩
+                //ajaxStop();
+            }
+        });
+    }
+
+     //刪除權限群組明細
+    function deleteAuthGroup(id, name) {
+        if (id != "") {
+            if (confirm('權限群組『' + name + '』，確定刪除?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteAuthGroup", "System")/' + id,
+                    success: function (result) {
+                        if (result.Status) {
+                            showMsgSm('通知', result.Message, function () {
+                                $("#a_AuthGroupMa").click();
+                            });
+                        }
+                        else {
+                            //if (result.message == "You don't have permission.") {
+                            //    showMsgSm('通知', "You don't have permission.", null);
+                            //} else {
+                            showMsgSm('通知', result.Message, null);
+                            //}
+                        }
+                    },
+                    error: function () {
+                        showMsgSm('通知', '刪除失敗!', null);
+                    }
+                });
+            }
+        }
+        else {
+            showMsgSm('通知', '刪除失敗!', null);
+        }
+    }
+</script>

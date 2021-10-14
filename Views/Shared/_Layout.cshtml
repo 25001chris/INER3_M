@@ -1,0 +1,417 @@
+﻿
+<html>
+@{
+    string ControllerName = Convert.ToString(@ViewContext.RouteData.Values["Controller"]);
+    string ActionName = Convert.ToString(@ViewContext.RouteData.Values["Action"]);
+    @Html.Hidden("hf_ControllerName", ControllerName)
+    @Html.Hidden("hf_ActionName", ActionName)
+    @Html.Hidden("hf_RootUrl", Request.ApplicationPath)
+}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--頁籤logo-->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <title>智慧電力圖資演算地理資訊應用系統@*@ViewBag.Title*@</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/_layout-styles.css")" />
+    <!--Controller styles -->
+    <link rel="stylesheet" href="@Url.Content("~/css/main.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/convert.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/system.css")" />
+    @{
+        string csshref = "~/Content/" + ControllerName + ".min.css";
+        <link rel="stylesheet" href="@Url.Content(@csshref)" />
+    }
+    <!--Modal styles-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/js-Modal.min.css")" />
+
+    <!--tempusdominus-bootstrap-4 styles-->
+    <link rel="stylesheet" href="~/Content/tempusdominus-bootstrap-4.min.css" />
+
+    <!--Jack：FontAwesome已經在_layout-styles.css引用了-->
+    @*<link href="~/Utils/FontAwesome-Free-5.8.2-Web/css/all.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="~/css/animate.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="~/Utils/SweetAlert2/sweetalert2.min.css" />
+    <script type="text/javascript" src="~/Utils/SweetAlert2/sweetalert2.min.js"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="~/Utils/SweetAlert2/sweetalert2@11.js"></script>
+    <script type="text/javascript" src="~/Scripts/api.js"></script>  
+    <script type="text/javascript" src="~/Scripts/state.js"></script>
+    <script type="text/javascript" src="~/Scripts/convert.js"></script>
+    <script type="text/javascript" src="~/Scripts/feeder.js"></script>
+    <script type="text/javascript" src="~/Scripts/fnEvent.js"></script> 
+    <style>
+
+        .dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown > .dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+
+        .dropdown-menu {
+            min-width: 5rem;
+        }
+
+
+        footer {
+            padding: 0 10px;
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav_major" class="navbar navbar-expand-md white fixed-top shadow-none p-md-0">
+            <div class="container-fluid p-md-0">
+                <img id="logo" class="SYSLOGO" onclick="" title="智慧電力圖資演算地理資訊應用系統" />
+                <a class="SYSNAME m-title custom-black" href="" title="智慧電力圖資演算地理資訊應用系統">智慧電力圖資演算地理資訊應用系統</a>
+                <button class="navbar-toggler second-button custom-bgcolor-pink" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                @*<a class="MobileSystemMenu" onclick="SwitchMobileSystemMenu();"><img src="~/images/Mobile/SystemMenu.svg" /></a>*@
+                <div class="navbar-collapse collapse flex-md-row-reverse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item align-self-center" @(ControllerName == "GISMAP" ? "hidden" : "")>
+                            <a class="nav-link" href="@Url.Action("Map", "GISMAP")" title="圖台系統">圖台系統</a>
+                        </li>
+                        <li class="nav-item align-self-center" @(ControllerName == "Feeder" ? "hidden" : "")>
+                            <a class="nav-link" href="@Url.Action("Index", "Feeder")" title="訊息管理">訊息管理</a>
+                        </li>
+                        <li class="nav-item align-self-center" @(ControllerName == "System" ? "hidden" : "")>
+                            <a class="nav-link" href="@Url.Action("Authority", "System")" title="後台系統">後台系統</a>
+                        </li>
+                        <li class="nav-item align-self-center" @(ControllerName == "Convert" ? "hidden" : "")>
+                            <a class="nav-link" href="@Url.Action("Index", "Convert")" title="轉檔應用">轉檔應用</a>
+                        </li>
+                        <li class="nav-item align-self-center">
+                            <img class="mt-0 ml-1" src="~/Images/man_logo.svg" />
+                            <label class="mt-2">@((string.IsNullOrEmpty((string)Session["CURRENTUSERNAME"])? "未登入" : ((string)Session["CURRENTUSERNAME"])))</label>
+							<label hidden id="CURRENTUSERID">@((string.IsNullOrEmpty((string)Session["CURRENTUSERNAME"])? "未登入" : ((string)Session["CURRENTUSERID"])))</label>
+                        </li>
+                        <li class="nav-item align-self-center" @((string.IsNullOrEmpty((string)Session["CURRENTUSERID"]) ? "" : "hidden"))>
+                            <button class="btn btn-logout ml-2" onclick="javascript:location.href='@Url.Action("Map", "GISMAP")'" )>登入</button>
+                        </li>
+                        <li class="nav-item align-self-center" @((string.IsNullOrEmpty((string)Session["CURRENTUSERID"]) ? "hidden" : ""))>
+                            <button class="btn btn-logout ml-2" onclick="$('#frmLogOutGisMap').submit();">登出</button>
+                            @using (Html.BeginForm("LogOut", "GISMAP", FormMethod.Post, new { @id = "frmLogOutGisMap", @style = "display:none;" }))
+                            {
+                            }
+                        </li>
+                        <li class="nav-item align-self-center">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="nav_sub" class="navbar navbar-expand-md shadow-none p-md-0 mt-5 custom-bgcolor-major w-100">
+            <div class="container-fluid p-md-0">
+                <div class="navbar-collapse collapse ml-5" id="navbarSupportedContent">
+                    @switch (ControllerName.ToUpper())
+                    {
+                        case "FEEDER":
+                        <ul class="navbar-nav">
+                            <!--訊息管理-->
+                            <li class="nav-item align-self-center @(ActionName == "Index" ? "active" : "")" @(ControllerName != "Feeder" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("Index", "Feeder")" title="饋線監控系統告警篩選">饋線監控系統告警篩選</a>
+                            </li>
+                            <li class="nav-item align-self-center ml-1 @(ActionName == "FeederManage" ? "active" : "")" @(ControllerName != "Feeder" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("FeederManage", "Feeder")" title="饋線監控告警應用">饋線監控告警應用</a>
+                            </li>
+                            <li class="nav-item align-self-center ml-1 @(ActionName == "ESTManage" ? "active" : "")" @(ControllerName != "Feeder" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("ESTManage", "Feeder")" title="狀態估測訊息管理">狀態估測訊息管理</a>
+                            </li>
+                        </ul>
+                        break;
+                        case "SYSTEM":
+                        <ul class="navbar-nav">
+                            <!--後台系統-->
+                            <li class="nav-item align-self-center @(ActionName == "Authority" ? "active" : "")" @(ControllerName != "System" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("Authority", "System")" title="帳號與權限管理">帳號與權限管理</a>
+                            </li>
+                            <li class="nav-item align-self-center ml-1 @(ActionName == "Log" ? "active" : "")" @(ControllerName != "System" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("Log", "System")" title="系統操作紀錄">系統操作紀錄</a>
+                            </li>
+                            <li class="nav-item align-self-center ml-1 @(ActionName == "EquipHistory" ? "active" : "")" @(ControllerName != "System" ? "hidden" : "")>
+                                <a class="nav-link" href="@Url.Action("EquipHistory", "System")" title="設備歷史資訊">設備歷史資訊</a>
+                            </li>
+                        </ul>
+                        break;
+                        case "GISMAP":
+                            <div id="div2D3DMapSwitcher">
+                                @*2D3D圖台切換紐*@
+                                <input type="button" id="Btn2DModeMap" value="2D" class="GisMapModeButton GisMapModeButton_On" />
+                                <input type="button" id="Btn3DModeMap" value="3D" class="GisMapModeButton GisMapModeButton_Off" />
+                            </div>
+                            <div id="divShuttleArea">@*緩衝區*@</div>
+                            <div id="divGisMapToolBoxPanel">
+                                @*工具窗格點開收放區*@
+                                @*<input type="button" id="BtnPipeDistMeasure" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="管距測量" />
+                                    <input type="button" id="BtnGroundHoleTool" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="開挖工具" />
+                                    <input type="button" id="BtnSectionalViewTool" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="剖面線工具" />
+                                    <input type="button" id="BtnMeasureTool" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="量測工具" />*@
+                                <btn type="button" id="BtnLayersTool" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right mt-2 font-weight-bold">圖層套疊</btn>
+                                <btn type="button" id="BtnPositioningTool" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right mt-2 font-weight-bold">坐標與定位</btn>
+                                @*<input type="button" id="BtnFeederLineTool" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="饋線演算分析" />*@
+                                @*<input type="button" id="BtnAlertNotifySwitchPanel" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="告警通知" />*@
+                                <div class="dropdown">
+                                    <btn class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right mt-2 font-weight-bold dropdown-toggle" type="button" id="geographyMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">地理應用</btn>
+                                    <div class="dropdown-menu" aria-labelledby="geographyMenu" style="top:38px;left:260px;">
+                                        <a id="BtnMeasureTool" class="dropdown-item" href="javascript:void(0)">量測工具</a>
+                                        <a id="BtnPipeDistMeasure" class="dropdown-item" href="javascript:void(0)">管距測量</a>
+                                        <a id="BtnGroundHoleTool" class="dropdown-item" href="javascript:void(0)">開挖工具</a>
+                                        <a id="BtnSectionalViewTool" class="dropdown-item" href="javascript:void(0)">剖面線工具</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <btn class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right mt-2 font-weight-bold dropdown-toggle" type="button" id="algorithmMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">演算分析</btn>
+                                    <div class="dropdown-menu" aria-labelledby="algorithmMenu" style="top:38px;left:140px;">
+                                        <a id="BtnFeederLineTool" class="dropdown-item" href="javascript:void(0)">拓樸分析</a>
+                                        <!-- <a id="BtnStatusEvaluationTool" class="dropdown-item" href="javascript:void(0)">狀態估測</a> -->
+                                        <a id="BtnAlertNotifySwitchPanel" class="dropdown-item" href="javascript:void(0)">告警通知</a>
+                                    </div>
+                                </div>
+                            </div>
+                            break;
+                        case "CONVERT":
+                            <!-- <div id="divShuttleArea">@*緩衝區*@</div>
+                            <div id="divConvertToolBox">
+                                @*工具窗格點開收放區*@
+                                <input type="button" id="BtnFeederLineCalculation" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="饋線單線圖" />
+                                <input type="button" id="BtnConnectCompare" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="通訊點位比對" />
+                                <input type="button" id="BtnSetTransfer" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="SET轉換" />
+                                <input type="button" id="BtnXmlTransfer" class="GisMapToolboxButton GisMapToolboxButton_Normal align-center float-right" value="XML轉換" />
+                                <input type="button" id="BtnFeederMap" class="GisMapToolboxButton GisMapToolboxButton_Pressed align-center float-right" value="饋線地圖" />
+                            </div> -->
+                            <ul id="divConvertToolBox" class="navbar-nav" style="position:absolute;right:0">
+                                <li id="BtnFeederMap" class="nav-item align-self-center @(ActionName == "Index" ? "active" : "")" @(ControllerName != "Convert" ? "hidden" : "")>
+                                    <a class="nav-link" href="javascript:void(0)" title="饋線地圖" onclick="linkToXMLConvert('MAP')">饋線地圖</a>
+                                </li>
+                                <li id="BtnXmlTransfer" class="nav-item align-self-center" @(ControllerName != "Convert" ? "hidden" : "")>
+                                    <a class="nav-link"  href="javascript:void(0)" title="XML轉換" onclick="linkToXMLConvert('XML')">XML轉換</a>
+                                </li>
+                                <li class="nav-item align-self-center ml-1 @(ActionName == "SetConvert" ? "active" : "")" @(ControllerName != "Convert" ? "hidden" : "")>
+                                    <a class="nav-link" href="@Url.Action("SetConvert", "Convert")" title="SET轉換">SET轉換</a>
+                                </li>
+                                <li class="nav-item align-self-center ml-1 @(ActionName == "CommPosCompare" ? "active" : "")" @(ControllerName != "Convert" ? "hidden" : "")>
+                                    <a class="nav-link" href="@Url.Action("CommPosCompare", "Convert")" title="通訊點位比對">通訊點位比對</a>
+                                </li>
+                                <li class="nav-item align-self-center ml-1 @(ActionName == "FeederLineDiagram" ? "active" : "")" @(ControllerName != "Convert" ? "hidden" : "")>
+                                    <a class="nav-link" href="@Url.Action("FeederLineDiagram", "Convert")" title="饋線單線圖">饋線單線圖</a>
+                                </li>
+                            </ul>
+                            break;
+                        default:
+                            break;
+                    }
+                </div>
+            </div>
+        </nav>
+        <nav id="nav_mobile" class="navbar navbar-expand-md white fixed-top shadow-none p-0" hidden>
+            <div class="container-fluid p-md-0">
+                <img src="~/Images/logo_mobile.svg" onclick="" title="智慧電力圖資演算地理資訊應用系統" />
+                <a class="m-title custom-black" href="" title="智慧電力圖資演算地理資訊應用系統">智慧電力圖資演算地理資訊應用系統</a>
+                <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="navbar-collapse collapse flex-md-row-reverse custom-bgcolor-major" id="navbarSupportedContent">
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <!--圖台系統-->
+                            <li class="nav-item" onclick="toogleMobileSubItem('MsgMa', this);">
+                                <a id="a_MsgMa" class="nav-link ml-3" title="圖台系統">圖台系統</a>
+
+                            </li>
+                            <li class="nav-item MsgMa-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" title="饋線演算分析">饋線演算分析</a>
+                            </li>
+                            <li class="nav-item MsgMa-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" title="坐標與定位" onclick="ToolWindowBarControl.OpenPositioningDialog();">坐標與定位</a>
+                            </li>
+                            <li class="nav-item MsgMa-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" title="圖層套疊" onclick="ToolWindowBarControl.OpenLayerDialog();WriteUserLog(5);">圖層套疊</a>
+                            </li>
+                            <li class="nav-item MsgMa-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" title="量測工具" onclick="ToolWindowBarControl.OpenMeasureDialog();WriteUserLog(6);">量測工具</a>
+                            </li>
+                            <!--訊息管理-->
+                            <li class="nav-item" onclick="toogleMobileSubItem('Feeder', this);">
+                                <a id="a_Feeder" class="nav-link ml-3" title="訊息管理">訊息管理</a>
+                            </li>
+                            <li class="nav-item Feeder-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" href="@Url.Action("Index", "Feeder")" title="饋線監控系統告警篩選">饋線監控系統告警篩選</a>
+                            </li>
+                            <li class="nav-item Feeder-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" href="@Url.Action("FeederManage", "Feeder")" title="饋線監控告警應用">饋線監控告警應用</a>
+                            </li>
+                            <li class="nav-item Feeder-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" href="@Url.Action("ESTManage", "Feeder")" title="狀態估測訊息管理">狀態估測訊息管理</a>
+                            </li>
+                            <!--後台系統-->
+                            <li class="nav-item" onclick="toogleMobileSubItem('System', this);">
+                                <a id="a_System" class="nav-link ml-3" title="後台系統">後台系統</a>
+                            </li>
+                            <li class="nav-item System-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" href="@Url.Action("Authority", "System")" title="帳號與權限管理">帳號與權限管理</a>
+                            </li>
+                            <li class="nav-item System-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" href="@Url.Action("Log", "System")" title="系統操作紀錄">系統操作紀錄</a>
+                            </li>
+                            <li class="nav-item System-item custom-bgcolor-expansion d-none">
+                                <a class="nav-link ml-4" href="@Url.Action("EquipHistory", "System")" title="設備歷史資訊">設備歷史資訊</a>
+                            </li>
+                            <li class="nav-item" @((string.IsNullOrEmpty((string)Session["CURRENTUSERID"]) ? "" : "hidden"))>
+                                <a id="a_Logout" class="nav-link ml-3" href="@Url.Action("Map", "GisMap")" title="登入">登入</a>
+                            </li>
+                            <li class="nav-item" @((string.IsNullOrEmpty((string)Session["CURRENTUSERID"]) ? "hidden" : ""))>
+                                <a id="a_Logout" class="nav-link ml-3" onclick="$('#frmLogOutGisMap2').submit();" title="登出">登出</a>
+                                @using (Html.BeginForm("LogOut", "GisMap", FormMethod.Post, new { @id = "frmLogOutGisMap2", @style = "display:none;" }))
+                                {
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!--JQuery BlockUI-->
+    @*<script type="text/javascript" src="https://malsup.github.io/jquery.blockUI.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/blockUI.js"></script>
+    <!-- Bootstrap tooltips -->
+    @*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>*@
+    <!-- Bootstrap core JavaScript -->
+    @*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/twitter-bootstrap.min.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/jquery.bootpag.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js-Tool.js"></script>
+    <script type="text/javascript" src="~/Scripts/js-Modal.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/Scripts/mdb.min.js"></script>
+    <!-- Custom JavaScript(自訂) -->
+    <script type="text/javascript" src="~/Scripts/custom.js"></script>
+    @if (ControllerName.ToUpper() == "GISMAP")
+    {
+    @*(Gary Lu 20201109把這一截註解掉的目的在於不論是哪個Controller都要用
+        blockUI的功能到今日為止還沒要用，基於查詢功能要套用的關係變成有需要了)*@
+ <!--JQuery BlockUI-->
+    <!--<script type="text/javascript" src="~/Scripts/blockUI.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.bootpag.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js-Tool.js"></script>
+    <script type="text/javascript" src="~/Scripts/js-Modal.js"></script>-->
+ <!-- Custom JavaScript(自訂) -->
+ <!--<script type="text/javascript" src="~/Scripts/custom.js"></script>-->
+
+ <!--Trial用CS&JSS-->
+    <link rel="stylesheet" type="text/css" href="~/content/base.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/ToolWindow.css" />
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_ToolWindows.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_MeasureTool.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_CheckBox.js"></script>
+    <script type="text/javascript" src="~/Scripts/TaipowerCoords_LngLat.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/Supergeo.js"></script>
+    @RenderSection("scripts", required: false)
+    <div id="divBodyContainer" class="contentTop">
+        @RenderBody()
+    </div>
+}
+else if(ControllerName.ToUpper() == "CONVERT")
+{
+    <link rel="stylesheet" type="text/css" href="~/content/base.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/ToolWindow.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/GISMAP.min.css" />
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_ToolWindows.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_MeasureTool.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/EarthApp_CheckBox.js"></script>
+    <script type="text/javascript" src="~/Scripts/TaipowerCoords_LngLat.js"></script>
+    <script type="text/javascript" src="~/Scripts/Map/Supergeo.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <div id="divBodyContainer" class="contentTop">
+        @RenderBody()
+    </div>
+}
+else
+{
+ <!--moment.js-->
+    <script src="~/Scripts/moment.min.js"></script>
+ <!--中文月份、星期-->
+    <script src="~/Scripts/moment_zh-tw.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-2JBCbWoMJPH+Uj7Wq5OLub8E5edWHlTM4ar/YJkZh3plwB2INhhOC3eDoqHm1Za/ZOSksrLlURLoyXVdfQXqwg==" crossorigin="anonymous"></script>*@
+
+    @*@RenderSection("scripts", required: false)*@
+ <!--JS end-->
+
+    <div class="container-fluid contentTop">
+        <div id="div_SystemMa" class="row d-flex justify-content-center">
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
+
+        @*<hr />*@
+
+    </div>
+        if (ControllerName == "Feeder")
+        {
+    <footer>
+        <div style="background-color: #506375">
+            現在日期時間:
+            <label id="footer-time" style="color: #FFF"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            @*<label style="color: #FFF">警報訊息:目前狀態皆正常</label>*@
+            @if (ActionName == "Index")
+                    {
+            <label id="refreshPageTxt" class="right">頁面將於<span>0</span>秒後自動刷新</label>
+                    }
+        </div>
+        @*<p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>*@
+    </footer>
+        }
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/moment")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/bootstraptable")*@
+    @Scripts.Render("~/bundles/jsfunction")
+    @RenderSection("scripts", required: false)
+
+    @RenderSection("table", required: false)
+    <script src="~/Scripts/tempusdominus-bootstrap-4.min.js"></script>
+    <script>
+        getDateNow();
+        function getDateNow() {
+            setInterval(function () {
+                var nowTime = moment();
+
+                nowTime.locale("zh-tw");
+                var timetext = nowTime.format("YYYY/MM/DD HH:mm:ss dddd");
+                //console.log(timetext);
+                $("#footer-time").text(timetext);
+            }, 500);
+        };
+    </script>
+    }
+</body>
+</html>

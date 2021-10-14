@@ -1,0 +1,199 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TopoGraph</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        var down_x, down_y;
+        var bDown = false;
+        $(document).ready(function () {
+            $("#div_TopoResult").dialog({
+                autoOpen: false,
+                resizable: false,
+                width: "460",
+                height: "300",
+                position: { my: "right-45 top+5", at: "right-45 top+5" }
+            });
+            $("#div_TopoResult").mousedown(function (event) {
+                down_x = event.offsetX;
+                down_y = event.offsetY;
+                bDown = true;
+            });
+            $("#div_TopoResult").mousemove(function (event) {
+                if (bDown) {
+                    var x = down_x - event.offsetX + this.scrollLeft;
+                    var y = down_y - event.offsetY + this.scrollTop;
+                    this.scrollTo(x, y);
+                }
+            });
+            $("#div_TopoResult").mouseup(function (event) {
+                bDown = false;
+                if (event.offsetX == down_x && event.offsetY == down_y)
+                    ClickElement(down_x, down_y);
+            });
+        });
+
+        var eleW = 46;
+        var eleH = 26;
+        var elements = {};
+
+        function DrawHorizontalArrows(ctx, xl, xr, y) {
+            var rtriangle = GetTriangle3Points(xr, y, "E", 6);
+            ctx.beginPath();
+            ctx.moveTo(rtriangle[0], rtriangle[1]);
+            ctx.lineTo(rtriangle[2], rtriangle[3]);
+            ctx.lineTo(rtriangle[4], rtriangle[5]);
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function GetTriangle3Points(ox, oy, news, length) {
+            var pts = [];
+            pts.push(ox);
+            pts.push(oy);
+            var triangle_height = length * Math.sqrt(3) / 2;
+            switch (news.toUpperCase()) {
+                case "E":
+                    pts.push(ox - triangle_height);
+                    pts.push(oy - length / 2);
+                    pts.push(ox - triangle_height);
+                    pts.push(oy + length / 2);
+                    break;
+                case "W":
+                    pts.push(ox + triangle_height);
+                    pts.push(oy - length / 2);
+                    pts.push(ox + triangle_height);
+                    pts.push(oy + length / 2);
+                    break;
+                case "N":
+                    pts.push(ox - length / 2);
+                    pts.push(oy + triangle_height);
+                    pts.push(ox + length / 2);
+                    pts.push(oy + triangle_height);
+                    break;
+                case "S":
+                    pts.push(ox - length / 2);
+                    pts.push(oy - triangle_height);
+                    pts.push(ox + length / 2);
+                    pts.push(oy - triangle_height);
+                    break;
+            }
+            return pts;
+        }
+
+        function CheckPosition(ori) {
+            for (var i in elements) {
+                if (elements[i].x == ori.x && elements[i].y == ori.y) {
+                    ori.y += (eleH + eleH / 2);
+                    CheckPosition(ori);
+                    return;
+                }
+            }
+        }
+
+        function DrawElement(dv, ori, canvas) {
+            if (canvas.width - eleW < ori.x + eleW || canvas.height - eleH < ori.y + eleH) { // 當快畫超出前
+                var dummyCanvas = document.createElement('canvas');
+                dummyCanvas.width = canvas.width;
+                dummyCanvas.height = canvas.height;
+                dummyCanvas.getContext('2d').drawImage(canvas, 0, 0);
+                if (canvas.width - eleW < ori.x + eleW)
+                    canvas.width = canvas.width + eleW * 6;
+                if (canvas.height - eleH < ori.y + eleH)
+                    canvas.height = canvas.height + eleH * 6;
+                var ctx = canvas.getContext("2d");
+                ctx.textBaseline = "middle";
+                ctx.textAlign = "center";
+                ctx.font = "10px Arial";
+                ctx.drawImage(dummyCanvas, 0, 0);
+            }
+            var ctx = canvas.getContext("2d");
+            ctx.strokeRect(ori.x, ori.y, eleW, eleH);
+            ctx.fillText(dv.ufid, ori.x + eleW / 2, ori.y + eleH / 2);
+
+            var xgap = eleW / 2;
+            var ygap = eleH / 2;
+            var ori_child = { x: ori.x + eleW + xgap, y: ori.y };
+
+            for (var i in dv.children) {
+                var ufid = dv.children[i].ufid;
+                CheckPosition(ori_child);
+                elements[ufid] = { x: ori_child.x, y: ori_child.y };
+
+                ctx.beginPath();
+                ctx.moveTo(ori.x + eleW, ori.y + eleH / 2);
+                if (ori_child.y == ori.y)
+                    ctx.lineTo(ori_child.x, ori_child.y + eleH / 2);
+                else {
+                    ctx.lineTo(ori_child.x - xgap / 3 * 2, ori.y + eleH / 2);
+                    ctx.lineTo(ori_child.x - xgap / 3, ori_child.y + eleH / 2);
+                    ctx.lineTo(ori_child.x, ori_child.y + eleH / 2);
+                }
+                ctx.stroke();
+                ctx.closePath();
+                DrawHorizontalArrows(ctx, ori.x + eleW, ori_child.x, ori_child.y + eleH / 2);
+
+                DrawElement(dv.children[i], ori_child, canvas);
+                ori_child.y += (eleH + ygap);
+            }
+        }
+
+        function DrawTopoResult(dv) {
+            var canvas = document.getElementById("TopoCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.font = "10px Arial";
+            elements = {};
+            var start = { x: 0.5, y: 0.5 };
+            elements[dv.ufid] = start;
+            DrawElement(dv, start, canvas);
+        }
+
+        function Topo()
+        {
+            if ($("#div_TopoResult").dialog("isOpen"))
+                $("#div_TopoResult").dialog("close");
+            else {
+                $("#div_TopoResult").dialog("open");
+
+                var element = '@ViewBag.Json';
+                element = element.replace(/&quot;/g, '"');
+                var dv = JSON.parse(element).Data;
+
+                DrawTopoResult(dv);
+            }
+        }
+
+        function ClickElement(x, y) {
+            for (var i in elements) {
+                if (x > elements[i].x && x < elements[i].x + eleW && y > elements[i].y && y < elements[i].y + eleH)
+                    alert(i);
+            }
+        }
+    </script>
+</head>
+<body style="margin: 0px">
+    <div id="div_TopoResult" title="拓樸圖形結構">
+        <canvas id="TopoCanvas">
+        </canvas>
+    </div>
+    <table style="position:absolute; top:0px;">
+        <tr>
+            <td>
+                <input type="button" value="Topo Test" onclick="Topo();" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

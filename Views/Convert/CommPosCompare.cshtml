@@ -1,0 +1,55 @@
+﻿@using INERADMS.ViewModels
+@using INERADMS.Helpers
+@model INERADMS.ViewModels.PaginationViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.LeftTitle = "通訊點位清單";
+    ViewBag.RightTitle = "饋線監控系統 SET";
+}
+@*@Styles.Render("~/Content/bootstrap.min.css")*@
+@Styles.Render("~/Content/base.min.css")
+@*@Styles.Render("~/css/convert.css")*@
+
+<div id="monitorSystemTransfer" class="w-30 left systemTransfer">
+    <div id="divSetLoaderLeft" class="tblBox w-100 setLoaderBox">
+        <label class="mainTitle w-30 left">@ViewBag.LeftTitle</label>
+    </div>
+    <div id="divSetLoaderResult" class="tblBox w-100 left">
+        <table class="w-100">
+            <thead>
+                <tr>
+                    <th>饋線編號</th>
+                    <th>圖號坐標</th>
+                    <th>比對結果</th>
+                    <th>地圖定位</th>
+                </tr>
+            </thead>
+            <tbody class="closed"></tbody>
+        </table>
+    </div>
+    <div id="divSetSummary" class="summaryBox w-100 left">
+        <div id="setNum"  class="left">
+            <span>通訊點位<b>0</b>處<span>
+        </div>
+        <div id="compareResult" class="left closed">
+            <span>比對成功<b class="success">0</b>處<small class="success">0%</small></span>
+            <span>比對失敗<b class="warn">0</b>處<small class="warn">0%</small></span>
+        </div>
+    </div>
+</div>
+<div id="monitorCompareData" class="w-70 right systemData">
+    <div id="divSetLoaderRight" class="tblBox w-100">
+        <div class="w-100 systemDataTitle">
+            <label class="mainTitle left">@ViewBag.RightTitle</label>
+            <button id="openXml" type="button" class="submitBtn button right" onclick="openSETFile.click()">讀取檔案</button>
+            <input id="openSETFile" type="file" onchange="upload(this)" data-box="setDataBox" style="display: none" />
+        </div>
+        <div id="setDataBox1" class="textAreaBox w-100">
+            <ul class="w-100" id="setDataBox" contenteditable="false" id="" name=""></ul>
+            <!-- <textarea name="setCompareText" id="setCompareText" class="w-100"></textarea>-->
+        </div>
+        <div id="setDataBtn" class="btnBox">
+            <button id="compare" type="button" disabled="disabled" class="submitBtn button right isdisable" onclick="compareData()">比對</button>
+        </div>
+    </div>
+</div>

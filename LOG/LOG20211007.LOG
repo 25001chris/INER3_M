@@ -1,0 +1,15 @@
+2021.10.07.14.59.12.019[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.10.07.14.59.12.035[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.10.07.14.59.12.129[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.10.07.14.59.12.988[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.07.14.59.12.988[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.07.14.59.14.488[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.07.14.59.14.488[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.07.14.59.48.839[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=407,OID=11236125
+2021.10.07.14.59.48.839[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:407,設備OID:11236125,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.10.07.14.59.48.854[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:407,設備OID:11236125,設備類別碼有效性檢查PASSED
+2021.10.07.14.59.48.901[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=407,得到表格名稱=pole
+2021.10.07.14.59.48.901[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:407,設備OID:11236125,表格名稱=pole,基本設備資訊查詢完成
+2021.10.07.14.59.48.917[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成
+2021.10.07.14.59.48.917[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.10.07.14.59.48.917[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。

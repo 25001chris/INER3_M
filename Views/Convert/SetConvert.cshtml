@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>setTransfer</title>
+</head>
+<body>
+    <div id="monitorSystemTransfer" class="w-30 left systemTransfer">
+        <div id="divSetTransfer" class="tblBox w-100">
+            <label class="mainTitle w-100">饋線監控系統資料格式轉換</label>
+            <div id="transferInput" class="inputBox">
+                <label class="title w-25">轉換饋線</label>
+                <button id="openXml" type="button" class="submitBtn button right" onclick="openXML.click()">開啟XML</button>
+                <input id="openXML" type="file" onchange="openXMLData(this)" data-box="ulSETLineRange" data-option="openXML" style="display: none" />
+            </div>
+            <ul id="ulSETLineRange" class="listBox checkBoxList w-100" size="3"></ul>
+            <div id="transferBtn" class="btnBox">
+                <button id="selectAllFeeder" name="selectAllFeeder" type="button" class="selectBtn button left" onclick="selectAllCheckBox({'id':'ulSETLineRange','action':'open'})">全選</button>
+                <button id="clearSelect" type="button" class="selectBtn button left"  onclick="selectAllCheckBox({'id':'ulSETLineRange'})">清除</button>
+                <button id="btnTransferSET" type="button" class="submitBtn button right isdisable" disabled="disabled">轉換</button>
+            </div>
+        </div>
+        <div class="tblBox topLine left w-100"><label class="title w-50">連結性異常清單</label></div>
+        <div id="divSetResult" class="setListBox ls tblBox w-100 left"></div>
+    </div>
+    <div id="monitorSystemData" class="w-70 right systemData">
+        <div class="tblBox w-100">
+            <div class="w-100 systemDataTitle">
+                <label class="mainTitle left">饋線監控系統 SET</label>
+            </div>
+            <div class="textAreaBox w-100">
+                <ul class="w-100" contenteditable="false" id="SystemDataBox" name="" style="overflow:auto"></ul>
+            </div>
+            <div id="setConvertBtn" class="btnBox">
+                <button id="editData" type="button" class="selectBtn button left isdisable" disabled="disabled" onclick="toggleEdit('SystemDataBox',true)">編輯</button>
+                <button id="saveData" type="button" class="selectBtn button left isdisable" disabled="disabled" onclick="toggleEdit('SystemDataBox',false)">儲存</button>
+                <button id="revertData" type="button" class="submitBtn button right isdisable" disabled="disabled" onclick="revertEdit('SET')">復原</button>
+                <button id="download" type="button" class="submitBtn button right isdisable" disabled="disabled" onclick="downloadFile('SET')">下載</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+    $("#openXml").click(function(){
+        const $content = $("#monitorSystemData").find("ul");
+        const $btnTransferSET =  $("#divSetTransfer").find("#btnTransferSET");
+        clearContent([$content]);
+        mutation.toggleIsLoad(stateData,{item:'isload',value:0});
+        btnDisable($btnTransferSET,false);
+    })
+
+    $("#divSetTransfer").find("#btnTransferSET").click(function(){
+        const $FeederLineRangeList = $("#ulSETLineRange li");
+        const $checkList = $FeederLineRangeList.find("input[type=checkbox]:checked");
+        let feederlistArr = [];
+        if($checkList.length>0){
+            $FeederLineRangeList.find("input[type=checkbox]:checked").each(function(){
+                feederlistArr.push($(this).val())
+            })
+            ajaxStart();
+            clearContent([$("#SystemDataBox"),$("#divSetResult")]);
+            mutation.toggleIsLoad(stateData,{item:'isload',value:0});
+            btnDisable($("#btnTransferSET"),true);
+            UploadFile(feederlistArr,eventOption.UploadXMLFile["XMLToSET"]);
+        }else{
+            alertSwal({ icon: "warning", title: "資料錯誤", text: "需選取饋線" });
+        }
+    })
+
+    $("#BtnSetTransfer").click(function(){
+        $("#divSetTransferContent").siblings("div").hide();
+        $("#divSetTransferContent").show();
+        toggleToolboxButton(this);
+    })
+})
+</script>

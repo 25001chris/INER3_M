@@ -1,0 +1,56 @@
+﻿@using INERADMS.ViewModels
+@model  INERADMS.ViewModels.PaginationViewModel
+
+@Html.Hidden("hf_PageTotal", Model.Total)
+<div class="force-overflow">
+    <table class="sadms-table">
+        <thead>
+            <tr>
+                <th scope="col">饋線編號</th>
+                <th scope="col">圖號坐標</th>
+                <th scope="col">設備編號</th>
+                <th scope="col">設備主體</th>
+                <th scope="col">設備名稱</th>
+                <th scope="col">設備點</th>
+                <th scope="col">當前數值</th>
+                <th scope="col">歷史</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ if (Model.Count > 0)
+                {
+                    foreach (EquipHistory equip in Model.Data)
+                    {
+                        <tr>
+                            <td>@equip.FeedName</td>
+                            <td>@equip.Coordinate</td>
+                            <td>@equip.UniKey</td>
+                            <td>@equip.SiteName</td>
+                            <td>@equip.EquipName</td>
+                            <td>@equip.PointName</td>
+                            <td>@equip.DataValue</td>
+                            <td>
+                                @{
+                                    string title = @equip.FeedName + " " + @equip.UniKey + " " + @equip.EquipName + " " + @equip.PointName;
+                                }
+                                <img class="" src="~/Images/ICON/search.svg" data-toggle="modal" data-target="#myModal2"
+                                     onclick="InitialHistoryDetail('@Url.Action("HistoryDetailPartialView", "System", new { id = "" })', { UniKey: '@equip.UniKey', EquipType: '@equip.EquipType' });
+                                                       $('#hf_UniKey').val('@equip.UniKey');
+                                                       $('#hf_EquipType').val('@equip.EquipType');
+                                                       $('#myModalLabel2').text('@title');
+                                                       $('[name^=startdate]:not([hidden])').val('');
+                                                       $('[name^=enddate]:not([hidden])').val('');" />
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td class="td-empty" colspan="8">無查詢結果</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

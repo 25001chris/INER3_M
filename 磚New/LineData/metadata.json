@@ -1,0 +1,12 @@
+{
+  "name": "LineData",
+  "description": "LineData",
+  "version": "2",
+  "minzoom": "13",
+  "maxzoom": "13",
+  "center": "13319207.274852,1366366.384452",
+  "bounds": "13197514.523443,-201.906638,13440900.026261,2732934.675543",
+  "type": "overlay",
+  "format": "pbf",
+  "json": "{\"vector_layers\":[{\"id\":\"busbar\",\"description\":\"busbar\",\"minzoom\":13,\"maxzoom\":13,\"laybounds\":\"13373941.761300,2695195.395270,13438310.199707,2731314.243307\",\"fields\":{\"did\":\"Number\",\"tid\":\"Number\",\"oid\":\"Number\",\"cid\":\"Number\",\"lid\":\"Number\",\"level\":\"Number\",\"symcolor\":\"String\",\"symweight\":\"Number\",\"symstyle\":\"Number\"}},{\"id\":\"edge0\",\"description\":\"edge0\",\"minzoom\":13,\"maxzoom\":13,\"laybounds\":\"13373912.584353,2693791.464299,13438640.454156,2731762.860561\",\"fields\":{\"did\":\"Number\",\"tid\":\"Number\",\"oid\":\"Number\",\"cid\":\"Number\",\"lid\":\"Number\",\"level\":\"Number\",\"symcolor\":\"String\",\"symweight\":\"Number\",\"symstyle\":\"Number\",\"dir\":\"Number\",\"fdr1\":\"Number\",\"cabtype\":\"Number\",\"ohug\":\"Number\"}},{\"id\":\"edge1\",\"description\":\"edge1\",\"minzoom\":13,\"maxzoom\":13,\"laybounds\":\"13373415.115663,2693408.116264,13439200.162180,2732934.675543\",\"fields\":{\"did\":\"Number\",\"tid\":\"Number\",\"oid\":\"Number\",\"cid\":\"Number\",\"lid\":\"Number\",\"level\":\"Number\",\"symcolor\":\"String\",\"symweight\":\"Number\",\"symstyle\":\"Number\",\"dir\":\"Number\",\"fdr1\":\"Number\",\"cabtype\":\"Number\",\"ohug\":\"Number\"}},{\"id\":\"energy\",\"description\":\"energy\",\"minzoom\":13,\"maxzoom\":13,\"laybounds\":\"13373802.114180,2694295.768845,13429736.921112,2731213.748517\",\"fields\":{\"did\":\"Number\",\"tid\":\"Number\",\"oid\":\"Number\",\"cid\":\"Number\",\"lid\":\"Number\",\"level\":\"Number\",\"symcolor\":\"String\",\"symweight\":\"Number\",\"symstyle\":\"Number\"}},{\"id\":\"connection\",\"description\":\"connection\",\"minzoom\":13,\"maxzoom\":13,\"laybounds\":\"13197514.523443,-201.906638,13440900.026261,2731314.243307\",\"fields\":{\"did\":\"Number\",\"tid\":\"Number\",\"oid\":\"Number\",\"cid\":\"Number\",\"lid\":\"Number\",\"level\":\"Number\",\"symcolor\":\"String\",\"symweight\":\"Number\",\"symstyle\":\"Number\"}}],\"tilestats\":{\"layerCount\":5,\"layers\":[{\"layer\":\"busbar\",\"geometry\":\"LineString\"},{\"layer\":\"edge0\",\"geometry\":\"LineString\"},{\"layer\":\"edge1\",\"geometry\":\"LineString\"},{\"layer\":\"energy\",\"geometry\":\"LineString\"},{\"layer\":\"connection\",\"geometry\":\"LineString\"}]}}"
+}

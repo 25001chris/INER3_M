@@ -1,0 +1,68 @@
+{
+	"version":8,
+	"name":"Supergeo",
+	"sources":{
+		"Supergeo Map":{
+			"type":"vector",
+			"tiles":["LineData"],
+			"minzoom":11,
+			"maxzoom":16
+		}
+	},
+	"layers":[
+		{
+			"id":"edge0",
+			"source":"Supergeo Map",
+			"source-layer":"edge0",
+			"type":"line",
+			"paint":{
+			    "line-color":["get", "symcolor"],
+				"line-width":3
+			}
+		},
+		{
+			"id":"edge1",
+			"source":"Supergeo Map",
+			"source-layer":"edge1",
+			"type":"line",
+			"minzoom": 13,
+			"paint":{
+			    "line-color":["get", "symcolor"],
+				"line-width":1
+			}
+		},
+		{
+			"id":"connection",
+			"source":"Supergeo Map",
+			"source-layer":"connection",
+			"type":"line",
+			"minzoom": 13,
+			"paint":{
+			    "line-color":["get", "symcolor"],
+				"line-width":1
+			}
+		},
+		{
+			"id":"energy",
+			"source":"Supergeo Map",
+			"source-layer":"energy",
+			"type":"line",
+			"minzoom": 13,
+			"paint":{
+			    "line-color":["get", "symcolor"],
+				"line-width":1
+			}
+		},
+		{
+			"id":"busbar",
+			"source":"Supergeo Map",
+			"source-layer":"busbar",
+			"type":"line",
+			"minzoom": 13,
+			"paint":{
+			    "line-color":["get", "symcolor"],
+				"line-width":1
+			}
+		}
+	]
+}

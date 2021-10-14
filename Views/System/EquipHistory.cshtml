@@ -1,0 +1,160 @@
+﻿@model  INERADMS.ViewModels.PaginationViewModel
+
+@{
+    ViewBag.Title = "設備歷史資訊";
+    //判斷是否有本頁的編輯權限
+    string EditAuth = ViewData["EditAuth"].ToString();
+}
+
+<div id="div_EquipHistory_content">
+    <div class="row">
+        <div class="col-md-12 mb-md-2 d-flex justify-content-center justify-content-md-start">
+            <h3>設備歷史資訊</h3>
+        </div>
+        <div class="col-md-2 mr-md-n2 d-flex justify-content-center justify-content-md-start">
+            <input class="input-box" id="FeedName" name="FeedName" placeholder="請輸入饋線編號" onclick="$(this).tooltip('hide');" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-cusrequired="饋線編號" title="饋線編號" />
+        </div>
+        <div class="col-md-2 ml-md-n4 mr-md-n2 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-start">
+            <input class="input-box" id="coordinate" name="coordinate" placeholder="請輸入圖號坐標" />
+        </div>
+        <div class="col-md-2 ml-md-n4 mr-md-n2 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-start">
+            <select class="select-box CusRequired" id="EquipType" name="EquipType" onclick="$(this).tooltip('hide');" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-cusrequired="設備類別" title="設備類別">
+                <option value="">請選擇設備類別</option>
+                <option value="All">全部</option>
+                <option value="Ai">Ai類</option>
+                <option value="Di">Di類</option>
+            </select>
+        </div>
+        <div class="col-md-2 ml-md-n4 mr-md-4 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-start">
+            <button class="btn btn-search"
+                    onclick="if (SearchCheck()) {
+        Search('@Url.Action("EquipHistoryPartialView", "System", new { id = ""})',
+            { FeedName: $('#FeedName').val().trim(), coordinate: $('#coordinate').val().trim(), EquipType: $('#EquipType').val() });
+    }">
+                搜尋
+            </button>
+        </div>
+        <div class="col-md-4 ml-n3 ml-md-5 mt-1 mt-md-0 d-flex justify-content-end">
+            <label id="lbl-lastupdate">最後更新: @DateTime.Now.ToString("yyyy-MM-dd HH:mm")</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-update_now"
+                    onclick="if (!AuthCheck()) { return AuthCheck(); }
+    if (SearchCheck()) {
+        Search('@Url.Action("EquipHistoryPartialView", "System", new { id = ""})',
+            { FeedName: $('#FeedName').val().trim(), coordinate: $('#coordinate').val().trim(), EquipType: $('#EquipType').val() });
+        $('#lbl-lastupdate').text('最後更新: ' + moment(new Date()).format('YYYY-MM-DD HH:mm'));
+    }">
+                立即更新
+            </button>
+        </div>
+        <div class="col-md-12 d-flex justify-content-end">
+            <div id="page-selection"></div>
+        </div>
+        <div id="div_EquipHistory_table" class="col-md-12">
+            @Html.Hidden("hf_PageTotal", Model.Total)
+            <div class="force-overflow">
+                <table class="sadms-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">饋線編號</th>
+                            <th scope="col">圖號坐標</th>
+                            <th scope="col">設備編號</th>
+                            <th scope="col">設備主體</th>
+                            <th scope="col">設備名稱</th>
+                            <th scope="col">設備點</th>
+                            <th scope="col">當前數值</th>
+                            <th scope="col">歷史</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-empty" colspan="8">尚無查詢結果</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close ml-n3" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <label class="modal-title ml-3" id="myModalLabel2">XF27 K0765FC70 13,301,350 A相電流</label>
+            </div>
+
+            <div class="modal-body pt-4 pl-4 pr-4">
+                <div class="row">
+                    <div class="col-md-3 mt-n3 mt-md-2 d-flex align-items-center justify-content-center md">
+                        <label class="modal-title">時間區間</label>
+                    </div>
+                    <div class="col-md-9 mt-md-2 md">
+                        <input id="startdate" name="startdate" class="input-box datepicker md" placeholder="起始時間" data-toggle="datetimepicker" data-target="#startdate" />
+                        <label class="modal-title">到</label>
+                        <input id="enddate" name="enddate" class="input-box datepicker md" placeholder="結束時間" data-toggle="datetimepicker" data-target="#enddate" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-center xs" hidden>
+                        <input id="startdate2" name="startdate2" class="input-box datepicker xs" placeholder="起始時間" data-toggle="datetimepicker" data-target="#startdate2" />
+                    </div>
+                    <div class="col-12 mt-1 d-flex justify-content-center xs" hidden>
+                        <input id="enddate2" name="enddate2" class="input-box datepicker xs" placeholder="結束時間" data-toggle="datetimepicker" data-target="#enddate2" />
+                    </div>
+                    <div class="col-12 mt-1 mt-md-2 d-flex justify-content-center justify-content-md-end">
+                        @Html.Hidden("hf_UniKey", "")
+                        @Html.Hidden("hf_EquipType", "")
+                        <button class="btn btn-filter"
+                                onclick="InitialHistoryDetail('@Url.Action("HistoryDetailPartialView", "System", new { id = "" })', { UniKey: $('#hf_UniKey').val(), EquipType: $('#hf_EquipType').val(), startdate: $('[name^=startdate]:not([hidden])').val(), enddate: $('[name^=enddate]:not([hidden])').val() });">
+                            開始篩選
+                        </button>
+                    </div>
+                    <div class="col-5 col-md-6 ml-2 ml-md-0 mt-2 mt-md-3">
+                        <button class="btn btn-export"
+                                onclick="Export('@Url.Action("HistoryDetailExport", "System")', { UniKey: $('#hf_UniKey').val(), EquipType: $('#hf_EquipType').val(), startdate: $('[name^=startdate]:not([hidden])').val(), enddate: $('[name^=enddate]:not([hidden])').val() });">
+                            報表匯出
+                        </button>
+                    </div>
+                    <div class="col-5 col-md-6 ml-5 ml-md-0 mt-md-2 d-flex justify-content-end">
+                        <div id="page-selection2"></div>
+                    </div>
+                    <div id="div_HistoryDetail" class="col-md-12 mt-md-2">
+                    </div>
+                </div>
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+    <script>
+        $(function () {
+            RenderBsDatepicker();
+        });
+
+        //驗證欄位資料 start
+        function SearchCheck() {
+            let msg = "";
+            //2擇1必填
+            if ($("#FeedName").val().trim() == "" && $("#coordinate").val().trim() == "") {
+                msg += "饋線編號、圖號坐標必需擇一填入!";
+                RenderBootstrapTooltip($("#FeedName"), msg);
+            }
+
+            //必填
+            msg += jsTool_CusRequired();
+
+            if (msg) return false;
+            else return true;
+        }
+
+        //驗證編輯權限
+        function AuthCheck() {
+            if ("@EditAuth" == "n") {
+                showMsgSm('通知', '權限不足', null);
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+</div><!-- modal -->

@@ -1,0 +1,1175 @@
+2021.07.06.09.33.28.705[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.28.705[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.28.721[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.28.814[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.29.196[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.29.196[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.29.212[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.29.321[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.29.692[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.29.692[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.29.707[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.29.785[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.30.160[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.30.160[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.30.160[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.30.207[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.30.598[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.30.598[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.30.598[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.30.661[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.31.052[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.31.052[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.31.052[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.31.114[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.31.489[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.31.489[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.31.489[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.31.585[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.31.972[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.31.972[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.31.972[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.32.019[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.32.402[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.32.402[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.32.402[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.32.449[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.32.825[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.32.825[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.32.841[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.32.919[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.33.294[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.33.294[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.33.310[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.33.357[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.33.733[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.33.733[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.33.733[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.33.796[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.34.171[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.34.171[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.34.186[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.34.233[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.34.612[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.34.612[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.34.627[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.34.706[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.35.081[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.35.081[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.35.096[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.35.143[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.35.534[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.35.534[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.35.534[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.35.596[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.35.957[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.35.957[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.35.973[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.36.020[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.36.400[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.36.400[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.36.400[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.36.556[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.36.939[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.36.940[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.36.941[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.36.988[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.37.363[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.37.363[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.37.378[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.37.409[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.37.784[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.37.784[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.37.800[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.37.847[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.38.228[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.38.229[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.38.236[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.38.330[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.38.705[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.38.705[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.38.721[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.38.783[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.39.158[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.39.158[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.39.174[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.39.221[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.39.596[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.39.596[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.39.612[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.39.659[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.40.034[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.40.034[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.40.050[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.40.175[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.40.565[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.40.565[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.40.565[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.40.737[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.41.114[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.41.114[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.41.114[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.41.255[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.41.630[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.41.630[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.41.645[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.41.692[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.42.052[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.42.067[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.42.067[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.42.130[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.42.522[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.42.522[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.42.522[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.42.584[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.42.960[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.42.960[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.42.960[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.43.247[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.43.623[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.43.623[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.43.639[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.43.686[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.44.061[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.44.061[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.44.092[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.44.209[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.44.584[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.44.584[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.44.599[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.44.818[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.45.225[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.45.225[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.45.241[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.45.376[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.45.751[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.45.751[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.45.751[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.45.813[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.46.190[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.46.190[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.46.206[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.46.456[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.46.831[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.46.831[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.46.846[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.46.893[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.47.271[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.47.271[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.47.287[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.47.334[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.47.725[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.47.725[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.47.725[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.47.772[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.48.149[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.48.149[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.48.164[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.48.539[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.48.914[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.48.914[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.48.930[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.49.071[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.49.430[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.49.446[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.49.446[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.49.571[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.49.946[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.49.946[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.49.961[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.50.039[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.50.416[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.50.416[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.50.416[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.50.479[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.50.854[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.50.854[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.50.854[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.51.010[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.51.385[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.51.385[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.51.400[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.51.447[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.51.822[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.51.822[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.51.822[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.51.854[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.09.33.51.854[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.09.33.51.885[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.52.239[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.52.239[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.52.255[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.52.255[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.09.33.52.270[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.09.33.52.500[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.52.859[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.52.859[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.52.859[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.52.922[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.53.281[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.53.281[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.53.281[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.53.328[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.53.688[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.53.688[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.53.703[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.53.781[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.54.156[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.54.156[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.54.156[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.54.203[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.54.578[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.54.578[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.54.578[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.54.641[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.55.000[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.55.000[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.55.016[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.55.172[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.55.547[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.55.547[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.55.563[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.55.688[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.56.056[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.56.056[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.56.064[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.56.189[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.56.565[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.56.565[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.56.565[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.56.627[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.56.987[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.57.002[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.57.002[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.57.080[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.57.440[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.57.440[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.57.455[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.57.502[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.57.862[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.57.862[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.57.877[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.57.924[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.58.346[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.58.346[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.58.362[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.58.408[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.58.768[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.58.768[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.58.768[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.59.018[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.59.377[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.59.377[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.59.377[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.59.424[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.33.59.784[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.33.59.784[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.33.59.799[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.33.59.846[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.00.205[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.00.205[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.00.205[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.00.268[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.00.627[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.00.627[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.00.627[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.00.784[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.01.148[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.01.148[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.01.163[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.01.226[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.01.585[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.01.585[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.01.601[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.01.648[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.02.007[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.02.007[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.02.007[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.02.070[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.02.434[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.02.434[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.02.449[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.02.591[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.02.951[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.02.951[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.02.966[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.03.013[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.03.377[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.03.377[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.03.392[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.03.439[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.03.798[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.03.798[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.03.798[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.03.861[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.04.220[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.04.220[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.04.220[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.04.345[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.04.705[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.04.705[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.04.705[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.04.767[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.05.127[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.05.127[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.05.127[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.05.236[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.05.627[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.05.627[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.05.627[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.05.814[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.06.174[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.06.174[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.06.174[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.06.236[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.06.595[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.06.595[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.06.595[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.06.642[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.07.002[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.07.002[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.07.017[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.07.064[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.07.424[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.07.424[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.07.439[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.07.533[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.07.897[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.07.897[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.07.897[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.08.116[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.08.256[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.09.34.08.256[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.09.34.08.491[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.08.491[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.08.491[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.08.553[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.08.569[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.09.34.08.585[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.09.34.08.913[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.08.913[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.08.928[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.08.975[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.09.335[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.09.335[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.09.350[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.09.444[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.09.803[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.09.803[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.09.819[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.09.866[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.10.225[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.10.225[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.10.241[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.10.272[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.10.632[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.10.632[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.10.647[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.10.694[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.11.054[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.11.054[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.11.069[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.11.304[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.11.663[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.11.663[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.11.679[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.11.725[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.12.085[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.12.085[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.12.100[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.12.147[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.12.503[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.12.503[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.12.519[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.12.690[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.13.050[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.13.050[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.13.050[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.13.112[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.13.487[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.13.487[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.13.487[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.13.550[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.13.909[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.13.909[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.13.925[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.13.972[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.14.331[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.14.331[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.14.331[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.14.378[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.14.737[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.14.737[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.14.753[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.14.886[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.15.246[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.15.246[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.15.246[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.15.293[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.15.668[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.15.668[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.15.668[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.15.746[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.16.121[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.16.121[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.16.121[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.16.183[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.16.543[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.16.543[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.16.558[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.16.606[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.16.967[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.16.967[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.16.967[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.17.014[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.17.374[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.17.389[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.17.389[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.17.452[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.17.811[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.17.811[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.17.827[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.17.999[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.18.358[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.18.358[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.18.374[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.18.420[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.18.780[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.18.780[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.18.780[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.18.999[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.19.358[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.19.358[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.19.358[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.19.421[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.19.780[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.19.780[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.19.780[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.19.842[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.20.202[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.20.202[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.20.202[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.20.249[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.20.624[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.20.624[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.20.624[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.20.686[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.21.046[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.21.046[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.21.046[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.21.108[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.21.468[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.21.468[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.21.483[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.21.530[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.21.889[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.21.905[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.21.905[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.21.952[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.22.311[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.22.311[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.22.311[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.22.562[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.22.921[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.22.921[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.22.937[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.23.155[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.23.530[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.23.530[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.23.530[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.23.688[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.24.048[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.24.048[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.24.063[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.24.110[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.24.485[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.24.485[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.24.485[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.24.532[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.24.891[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.24.891[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.24.907[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.24.954[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.25.313[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.25.313[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.25.329[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.25.376[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.25.735[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.25.735[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.25.735[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.25.798[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.26.188[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.26.188[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.26.188[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.26.253[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.26.612[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.26.612[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.26.628[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.26.721[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.27.096[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.27.096[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.27.096[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.27.221[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.27.598[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.27.598[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.27.598[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.27.645[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.28.004[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.28.020[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.28.020[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.28.067[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.28.426[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.28.426[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.28.442[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.28.489[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.28.833[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.28.833[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.28.848[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.28.895[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.29.257[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.29.257[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.29.272[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.29.429[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.29.793[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.29.793[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.29.802[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.29.849[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.30.209[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.30.209[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.30.271[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.30.349[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.30.709[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.30.709[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.30.724[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.30.927[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.31.302[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.31.302[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.31.349[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.31.505[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.31.896[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.31.896[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.31.912[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.32.005[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.32.365[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.32.365[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.32.380[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.32.443[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.32.797[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.32.797[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.32.812[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.32.875[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.33.234[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.33.234[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.33.265[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.33.390[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.33.780[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.33.780[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.33.780[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.34.155[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.34.514[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.34.514[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.34.561[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.34.717[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.35.077[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.35.077[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.35.124[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.35.327[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.35.717[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.35.717[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.35.717[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.35.780[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.36.139[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.36.139[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.36.155[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.36.202[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.36.561[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.36.577[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.36.577[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.36.624[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.36.999[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.36.999[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.36.999[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.37.046[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.37.405[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.37.405[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.37.421[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.37.468[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.37.827[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.37.827[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.37.827[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.37.889[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.38.249[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.38.249[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.38.249[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.38.296[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.38.671[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.38.671[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.38.671[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.38.889[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.39.249[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.39.249[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.39.249[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.39.358[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.39.718[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.39.718[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.39.733[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.39.780[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.40.140[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.40.140[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.40.140[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.40.186[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.40.561[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.40.561[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.40.561[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.40.624[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.40.979[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.40.979[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.40.979[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.41.042[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.41.404[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.41.404[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.41.404[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.41.466[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.41.826[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.41.826[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.41.841[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.42.029[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.42.404[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.42.404[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.42.404[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.42.701[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.43.076[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.43.076[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.43.091[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.43.216[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.43.607[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.43.607[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.43.607[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.43.716[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%古一線%'))and CA.POINTNAME like '%瓦%'
+2021.07.06.09.34.44.107[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":272150,"fdr1":1,"CODETXT":"XA21","EQUIPNAME":"古一線"}]
+2021.07.06.09.34.44.107[Normal][GetPowerRate](System)：[{"equipname":"古一線 XA21","unikey":15300061,"datavalue":1725.0}]
+2021.07.06.09.34.44.107[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":1725.0,"Breakdowns":0.0}
+2021.07.06.09.34.44.373[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=115,OID=5010366
+2021.07.06.09.34.44.373[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5010366,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.34.44.373[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5010366,設備類別碼有效性檢查PASSED
+2021.07.06.09.34.44.404[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5010366,抓到座標值是TWD67座標下X=171221,y=2631881
+2021.07.06.09.34.44.404[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5010366,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.34.44.404[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.34.44.404[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=115,得到表格名稱=sxfmr
+2021.07.06.09.34.44.419[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5010366,表格名稱=sxfmr,基本設備資訊查詢完成
+2021.07.06.09.34.44.419[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=sxfmr,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.34.44.435[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.06.09.34.44.451[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.06.09.34.46.345[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：Authentication to host '192.168.1.60' for user 'ximple' using method 'mysql_native_password' failed with message: Unknown database 'ul_fdcc'[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.06.09.34.55.419[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=110,OID=10929396
+2021.07.06.09.34.55.419[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.34.55.434[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,設備類別碼有效性檢查PASSED
+2021.07.06.09.34.55.450[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,抓到座標值是TWD67座標下X=171750,y=2631197
+2021.07.06.09.34.55.450[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.34.55.450[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.34.55.450[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.34.55.466[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.34.55.466[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.34.55.466[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.34.55.466[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.35.07.434[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=110,OID=10881877
+2021.07.06.09.35.07.434[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.35.07.450[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,設備類別碼有效性檢查PASSED
+2021.07.06.09.35.07.450[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,抓到座標值是TWD67座標下X=171725,y=2631217
+2021.07.06.09.35.07.450[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.35.07.465[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.35.07.465[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.35.07.465[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.35.07.481[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.35.07.481[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.35.07.481[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.39.55.352[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=110,OID=10881877
+2021.07.06.09.39.55.352[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.39.55.352[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,設備類別碼有效性檢查PASSED
+2021.07.06.09.39.55.368[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,抓到座標值是TWD67座標下X=171725,y=2631217
+2021.07.06.09.39.55.368[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.39.55.368[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.39.55.368[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.39.55.383[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10881877,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.39.55.383[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.39.55.383[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.39.55.383[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.39.58.684[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=110,OID=10929396
+2021.07.06.09.39.58.684[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.39.58.684[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,設備類別碼有效性檢查PASSED
+2021.07.06.09.39.58.700[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,抓到座標值是TWD67座標下X=171750,y=2631197
+2021.07.06.09.39.58.700[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.39.58.700[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.39.58.700[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.39.58.716[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10929396,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.39.58.716[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.39.58.716[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.39.58.716[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.42.59.747[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=115,OID=10912020
+2021.07.06.09.42.59.794[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.42.59.809[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,設備類別碼有效性檢查PASSED
+2021.07.06.09.42.59.825[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,抓到座標值是TWD67座標下X=171743,y=2631210
+2021.07.06.09.42.59.825[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.42.59.841[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.42.59.841[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=115,得到表格名稱=sxfmr
+2021.07.06.09.42.59.841[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,表格名稱=sxfmr,基本設備資訊查詢完成
+2021.07.06.09.42.59.856[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=sxfmr,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.42.59.856[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.06.09.42.59.872[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.06.09.42.59.888[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：Authentication to host '192.168.1.60' for user 'ximple' using method 'mysql_native_password' failed with message: Unknown database 'ul_fdcc'[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.06.09.47.06.709[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=115,OID=10912020
+2021.07.06.09.47.06.756[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.47.06.771[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,設備類別碼有效性檢查PASSED
+2021.07.06.09.47.06.771[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,抓到座標值是TWD67座標下X=171743,y=2631210
+2021.07.06.09.47.06.771[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,原無饋線編號,抓饋線編號先抓到FDR1值為43
+2021.07.06.09.47.06.787[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=43,得到饋線編號為XE23
+2021.07.06.09.47.06.787[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=115,得到表格名稱=sxfmr
+2021.07.06.09.47.06.787[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:10912020,表格名稱=sxfmr,基本設備資訊查詢完成
+2021.07.06.09.47.06.802[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=sxfmr,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.47.06.802[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.06.09.47.06.818[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.06.09.47.07.068[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K0262BC30,第一段SQL END
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換擁有者設備資訊的欄位名稱......
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：ufid,對應中文名稱：設備流水號
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：poletype,對應中文名稱：設備型式
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：tpclid,對應中文名稱：圖號座標
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：addr,對應中文名稱：電桿的地址或桿號
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid1,對應中文名稱：導線代號 1
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid2,對應中文名稱：導線代號 2
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid3,對應中文名稱：導線代號 3
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid4,對應中文名稱：導線代號 4
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：polenum,對應中文名稱：桿號
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：polelen,對應中文名稱：長度
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：x,對應中文名稱：X 座標
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：y,對應中文名稱：Y 座標
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：vlevel,對應中文名稱：電壓別
+2021.07.06.09.47.07.084[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：cabtype,對應中文名稱：主/副饋線別
+2021.07.06.09.47.07.099[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換擁有者設備資訊的欄位名稱完畢。
+2021.07.06.09.47.27.113[Normal][INERADMS.Controllers.GisMapController.ExecuteFeederQuery](System)：FSC=110,饋線編號=XE23
+2021.07.06.09.47.27.113[Normal][INERADMS.Controllers.GisMapController.ExecuteFeederQuery](System)：饋線編號=XE23,找到對應饋線代碼=43
+2021.07.06.09.47.27.222[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508219,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.47.27.222[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508219,設備類別碼有效性檢查PASSED
+2021.07.06.09.47.27.222[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508219,抓到座標值是TWD67座標下X=171361,y=2631881
+2021.07.06.09.47.27.222[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.47.27.238[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508219,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.47.27.238[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.47.27.238[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.47.27.253[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.47.27.253[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508221,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.47.27.253[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508221,設備類別碼有效性檢查PASSED
+2021.07.06.09.47.27.269[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508221,抓到座標值是TWD67座標下X=171221,y=2631876
+2021.07.06.09.47.27.269[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.47.27.269[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10508221,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.47.27.285[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.47.27.285[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.47.27.285[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.47.27.285[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10791648,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.47.27.300[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10791648,設備類別碼有效性檢查PASSED
+2021.07.06.09.47.27.300[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10791648,抓到座標值是TWD67座標下X=171188,y=2632197
+2021.07.06.09.47.27.300[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.47.27.316[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10791648,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.47.27.316[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.47.27.316[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.47.27.316[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.47.27.331[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830275,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.47.27.331[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830275,設備類別碼有效性檢查PASSED
+2021.07.06.09.47.27.347[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830275,抓到座標值是TWD67座標下X=173939,y=2631180
+2021.07.06.09.47.27.347[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.47.27.347[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830275,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.47.27.363[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.47.27.363[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.47.27.363[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.47.27.363[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830276,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.47.27.378[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830276,設備類別碼有效性檢查PASSED
+2021.07.06.09.47.27.378[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830276,抓到座標值是TWD67座標下X=173932,y=2631216
+2021.07.06.09.47.27.378[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.47.27.394[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:10830276,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.47.27.394[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.47.27.394[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.47.27.410[Error][INERADMS.Controllers.GisMapController.ExecuteFeederQuery](System)：位置 0 沒有資料列。[StackTrace]   於 System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   於 System.Data.DataRowCollection.get_Item(Int32 index)
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 199
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.ExecuteFeederQuery(String FeederID, Int32 FSC) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 332
+2021.07.06.09.55.12.327[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=107,OID=11155304
+2021.07.06.09.55.12.374[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:107,設備OID:11155304,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.55.12.374[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:107,設備OID:11155304,設備類別碼有效性檢查PASSED
+2021.07.06.09.55.12.389[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:107,設備OID:11155304,抓到座標值是TWD67座標下X=167985,y=2629879
+2021.07.06.09.55.12.389[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:107,設備OID:11155304,原無饋線編號,抓饋線編號先抓到FDR1值為153
+2021.07.06.09.55.12.389[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=153,得到饋線編號為XP24
+2021.07.06.09.55.12.389[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=107,得到表格名稱=hicustomer
+2021.07.06.09.55.12.405[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:107,設備OID:11155304,表格名稱=hicustomer,基本設備資訊查詢完成
+2021.07.06.09.55.12.452[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=hicustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.55.12.467[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=411,得到表格名稱=dsbnroom
+2021.07.06.09.55.12.483[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=dsbnroom,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.06.09.55.12.561[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:J9759DD96,第一段SQL END
+2021.07.06.09.55.12.561[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.55.12.561[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.09.55.12.561[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換擁有者設備資訊的欄位名稱......
+2021.07.06.09.55.12.561[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：ufid,對應中文名稱：設備流水號
+2021.07.06.09.55.12.561[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：dsbntype,對應中文名稱：設備型式
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：tpclid,對應中文名稱：圖號座標
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：addr,對應中文名稱：地址
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：building,對應中文名稱：建物名稱
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：fdr1,對應中文名稱：主要饋線
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：fdr2,對應中文名稱：備用饋線 1
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：fdr3,對應中文名稱：備用饋線 2
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：door,對應中文名稱：門牌號碼
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：telno,對應中文名稱：連絡電話
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：x,對應中文名稱：X 座標
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：y,對應中文名稱：Y 座標
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：vlevel,對應中文名稱：電壓別
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：cabtype,對應中文名稱：主/副饋線別
+2021.07.06.09.55.12.577[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換擁有者設備資訊的欄位名稱完畢。
+2021.07.06.09.55.19.403[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=110,OID=11174527
+2021.07.06.09.55.19.403[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11174527,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.09.55.19.418[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11174527,設備類別碼有效性檢查PASSED
+2021.07.06.09.55.19.418[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11174527,抓到座標值是TWD67座標下X=167987,y=2629880
+2021.07.06.09.55.19.418[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11174527,原無饋線編號,抓饋線編號先抓到FDR1值為153
+2021.07.06.09.55.19.434[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=153,得到饋線編號為XP24
+2021.07.06.09.55.19.434[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.07.06.09.55.19.434[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11174527,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.07.06.09.55.19.434[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.07.06.09.55.19.450[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.09.55.19.450[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.10.57.06.436[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.10.57.06.436[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.10.57.06.452[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.10.57.06.452[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.11.00.45.146[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.00.45.146[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.11.01.01.973[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.11.01.01.973[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.11.01.02.051[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.11.01.02.067[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.01.02.067[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.11.01.04.176[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.11.01.04.176[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.11.38.13.951[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.11.38.14.054[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.11.38.14.211[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.11.38.14.367[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.38.14.369[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.11.38.29.618[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.11.38.29.659[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.11.42.14.519[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.11.42.14.558[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.11.42.14.684[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.11.42.14.787[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.42.14.789[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.11.42.17.382[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.11.42.17.414[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.11.47.59.851[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.11.47.59.869[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.11.47.59.993[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.11.48.00.015[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.48.00.016[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.11.48.01.101[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.11.48.01.146[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.11.59.06.712[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.11.59.06.799[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.11.59.06.938[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.11.59.06.977[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.59.06.978[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.11.59.25.377[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.11.59.25.422[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.11.59.40.433[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.59.40.442[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.11.59.49.627[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,NyYK4PBqQ7NF2D5jUTymnvGEzftKDIUPRn+rYo+cYmA=
+2021.07.06.11.59.49.686[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,NyYK4PBqQ7NF2D5jUTymnvGEzftKDIUPRn+rYo+cYmA=,登入檢查失敗
+2021.07.06.11.59.57.077[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.11.59.57.132[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.11.59.57.294[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.11.59.57.337[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.11.59.57.339[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.12.00.00.860[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.12.00.00.914[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.12.04.17.826[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.12.04.17.868[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.12.04.18.004[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.12.04.18.041[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.12.04.18.042[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.12.04.20.789[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.12.04.20.871[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.12.04.44.013[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.12.04.44.017[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.12.04.51.645[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.12.04.51.676[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.12.04.51.792[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.12.04.51.819[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.12.04.51.820[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.12.04.54.425[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.12.04.54.508[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.12.05.06.126[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.12.05.06.147[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.12.05.06.254[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.12.05.06.279[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.12.05.06.280[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.12.05.07.622[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.12.05.07.704[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.12.05.16.646[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.12.05.16.669[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.12.05.16.770[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.12.05.16.796[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.12.05.16.797[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.12.05.17.989[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.12.05.18.063[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.13.24.54.746[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.13.24.54.771[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.13.24.54.870[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.13.24.54.891[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.24.54.892[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.13.25.04.710[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.13.25.04.789[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.13.25.14.464[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.13.25.14.486[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.13.25.14.616[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.13.25.14.641[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.25.14.642[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.13.25.15.645[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.13.25.15.721[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.13.26.19.898[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.13.26.19.922[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.13.26.19.980[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.13.26.20.003[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.26.20.005[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.13.26.20.560[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.13.26.20.636[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.13.30.03.522[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.30.03.525[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.13.30.10.236[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.13.30.10.261[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.13.30.10.327[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.13.30.10.353[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.30.10.354[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.13.30.18.776[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.13.30.18.849[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.13.30.46.019[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.13.30.46.044[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.13.30.46.154[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.13.30.46.180[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.30.46.181[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.13.30.47.111[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.13.30.47.169[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.13.35.59.905[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.35.59.908[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.13.36.06.790[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.13.36.08.164[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.13.36.08.263[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.13.36.08.285[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.13.36.08.286[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.13.36.18.429[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.13.36.18.508[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.03.26.049[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.03.26.076[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.03.26.189[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.03.26.216[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.03.26.217[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.03.34.891[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.03.34.974[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.08.39.233[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.08.39.242[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.14.08.47.429[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.08.47.454[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.08.47.570[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.08.47.596[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.08.47.598[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.09.01.528[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.09.01.585[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.09.09.013[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.09.09.041[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.09.09.200[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.09.09.230[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.09.09.235[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.09.10.495[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.09.10.553[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.13.53.293[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.13.53.297[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.14.03.605[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.14.03.643[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.14.25.406[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.14.25.433[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.14.25.538[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.14.25.563[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.14.25.564[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.14.26.811[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.14.26.865[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.16.52.787[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.16.52.847[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.16.52.990[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.16.53.036[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.16.53.037[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.16.54.805[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.16.54.836[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.20.18.620[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.20.18.620[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.20.18.792[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.20.18.792[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.14.20.30.434[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.20.30.481[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.20.30.574[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.20.30.606[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.20.30.606[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.20.34.281[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.20.34.297[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.21.52.765[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.21.52.765[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.22.01.275[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.22.01.291[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.23.01.419[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.23.01.419[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.23.09.969[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.23.09.985[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.23.19.206[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.23.19.222[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.23.19.331[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.23.19.362[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.23.19.362[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.23.20.338[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.23.20.353[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.55.33.543[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.55.33.543[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.06.14.55.41.466[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.55.41.497[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.55.41.606[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.55.41.638[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.55.41.638[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.55.42.419[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.55.42.435[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.56.04.506[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.56.04.522[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.56.04.568[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.56.04.600[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.56.04.600[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.56.04.987[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.56.05.002[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.56.31.783[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.56.31.814[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.56.31.954[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.56.31.986[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.56.31.986[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.56.32.533[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.56.32.548[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.14.59.40.283[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.14.59.40.307[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.14.59.40.443[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.14.59.40.488[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.14.59.40.489[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.14.59.53.817[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.14.59.53.877[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.02.35.478[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=115,OID=5711502
+2021.07.06.15.02.35.650[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5711502,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.15.02.35.681[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5711502,設備類別碼有效性檢查PASSED
+2021.07.06.15.02.36.721[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5711502,抓到座標值是TWD67座標下X=182305,y=2620520
+2021.07.06.15.02.36.721[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5711502,原無饋線編號,抓饋線編號先抓到FDR1值為36
+2021.07.06.15.02.36.752[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=36,得到饋線編號為XD31
+2021.07.06.15.02.36.752[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=115,得到表格名稱=sxfmr
+2021.07.06.15.02.36.986[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:5711502,表格名稱=sxfmr,基本設備資訊查詢完成
+2021.07.06.15.02.37.018[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=sxfmr,欄位名稱翻譯資訊查詢完成
+2021.07.06.15.02.37.033[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.06.15.02.37.080[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.06.15.02.40.065[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K1541CA91,第一段SQL END
+2021.07.06.15.02.40.112[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換擁有者設備資訊的欄位名稱......
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：ufid,對應中文名稱：設備流水號
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：poletype,對應中文名稱：設備型式
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：tpclid,對應中文名稱：圖號座標
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：addr,對應中文名稱：電桿的地址或桿號
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid1,對應中文名稱：導線代號 1
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid2,對應中文名稱：導線代號 2
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid3,對應中文名稱：導線代號 3
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid4,對應中文名稱：導線代號 4
+2021.07.06.15.02.40.237[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：polenum,對應中文名稱：桿號
+2021.07.06.15.02.40.252[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：polelen,對應中文名稱：長度
+2021.07.06.15.02.40.252[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：x,對應中文名稱：X 座標
+2021.07.06.15.02.40.252[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：y,對應中文名稱：Y 座標
+2021.07.06.15.02.40.252[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：vlevel,對應中文名稱：電壓別
+2021.07.06.15.02.40.252[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：cabtype,對應中文名稱：主/副饋線別
+2021.07.06.15.02.40.252[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換擁有者設備資訊的欄位名稱完畢。
+2021.07.06.15.03.03.520[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.03.03.535[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.03.04.786[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.03.04.817[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.03.17.832[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.03.17.848[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.03.21.395[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.03.21.395[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.03.22.520[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.03.22.551[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.03.34.948[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.15.03.34.979[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.15.03.35.104[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.15.03.35.135[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.03.35.135[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.03.35.651[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.03.35.667[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.05.48.149[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=109,OID=10238125
+2021.07.06.15.05.48.211[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.15.05.48.227[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,設備類別碼有效性檢查PASSED
+2021.07.06.15.05.48.852[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,抓到座標值是TWD67座標下X=186905,y=2628535
+2021.07.06.15.05.48.868[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,原無饋線編號,抓饋線編號先抓到FDR1值為86
+2021.07.06.15.05.48.883[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=86,得到饋線編號為XI22
+2021.07.06.15.06.08.056[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=109,OID=10238125
+2021.07.06.15.06.08.102[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.15.06.08.134[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,設備類別碼有效性檢查PASSED
+2021.07.06.15.06.08.149[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,抓到座標值是TWD67座標下X=186905,y=2628535
+2021.07.06.15.06.08.149[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:109,設備OID:10238125,原無饋線編號,抓饋線編號先抓到FDR1值為86
+2021.07.06.15.06.08.180[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=86,得到饋線編號為XI22
+2021.07.06.15.06.12.431[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=115,OID=100942
+2021.07.06.15.06.12.431[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:100942,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.06.15.06.12.446[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:100942,設備類別碼有效性檢查PASSED
+2021.07.06.15.06.12.493[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:100942,抓到座標值是TWD67座標下X=186693,y=2628452
+2021.07.06.15.06.12.493[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:100942,原無饋線編號,抓饋線編號先抓到FDR1值為86
+2021.07.06.15.06.12.509[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=86,得到饋線編號為XI22
+2021.07.06.15.06.12.509[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=115,得到表格名稱=sxfmr
+2021.07.06.15.06.12.540[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:115,設備OID:100942,表格名稱=sxfmr,基本設備資訊查詢完成
+2021.07.06.15.06.12.571[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=sxfmr,欄位名稱翻譯資訊查詢完成
+2021.07.06.15.06.12.587[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.06.15.06.12.634[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.06.15.06.12.696[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K2056GE84,第一段SQL END
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換擁有者設備資訊的欄位名稱......
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：ufid,對應中文名稱：設備流水號
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：poletype,對應中文名稱：設備型式
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：tpclid,對應中文名稱：圖號座標
+2021.07.06.15.06.12.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：addr,對應中文名稱：電桿的地址或桿號
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid1,對應中文名稱：導線代號 1
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid2,對應中文名稱：導線代號 2
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid3,對應中文名稱：導線代號 3
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：childufid4,對應中文名稱：導線代號 4
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：polenum,對應中文名稱：桿號
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：polelen,對應中文名稱：長度
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：x,對應中文名稱：X 座標
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：y,對應中文名稱：Y 座標
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：vlevel,對應中文名稱：電壓別
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：欄位名稱：cabtype,對應中文名稱：主/副饋線別
+2021.07.06.15.06.12.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換擁有者設備資訊的欄位名稱完畢。
+2021.07.06.15.11.42.822[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.06.15.11.42.853[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.06.15.11.42.962[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.06.15.11.42.993[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.11.42.993[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.11.51.463[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.11.51.494[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.12.48.711[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.12.48.711[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.13.00.738[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.13.00.753[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.14.26.298[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.14.26.298[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.14.35.000[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.14.35.016[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.06.15.30.31.637[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.06.15.30.31.637[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.06.15.30.32.950[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.06.15.30.32.966[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成

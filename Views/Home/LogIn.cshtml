@@ -1,0 +1,131 @@
+﻿@model INERADMS.Models.UserData
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>智慧電力圖資演算地理資訊應用系統 - 登入</title>
+    <link rel="stylesheet" type="text/css" href="~/Utils/FontAwesome-Free-5.8.2-Web/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Home.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/login.min.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.min.js"></script>
+</head>
+<body>
+	@{var year = DateTime.Now.Year;}
+    @using (Html.BeginForm("LogIn", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            <table id="tblLogInForm">
+                <tr>
+                    <td colspan="2" class="CenterAlign SystemName">智慧電力圖資演算地理資訊應用系統</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="CenterAlign">
+                        <div class="LogIn_IconInputContainer">
+                            <label id="lblLogInUserID" class="lblLogInUserInputAreaIcon UserIDIcon">
+                                @Html.TextBoxFor(m => m.UserID, htmlAttributes: new { @id = "iptLogInUserID", @class = "iptLogInUserInputDataBox", @type = "text", @placeholder = "輸入帳號", @required  = "required" })
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="CenterAlign">
+                        <div class="LogIn_IconInputContainer">
+                            <label id="lblLogInUserPassword" class="lblLogInUserInputAreaIcon PasswordIDIcon">
+                                @Html.TextBoxFor(m => m.UserPassword, htmlAttributes: new { @id = "iptLogInPassword", @class = "iptLogInUserInputDataBox", @type = "password", @placeholder = "輸入密碼", @required  = "required" })
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+				<tr>
+                    <td colspan="2" class="CenterAlign">
+                        <div class="LogIn_IconInputContainer">
+                            <label id="lblLogInUserUDPIp" class="lblLogInUserInputAreaIcon SCADAIPIcon">
+                                @Html.TextBoxFor(m => m.UDPIp, htmlAttributes: new { @id = "iptLogInSCADAIP", @class = "iptLogInUserInputDataBox", @type = "text", @placeholder = "輸入SCADA IP", @required  = "required"})
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+				<tr>
+                    <td colspan="2" class="CenterAlign">
+                        <div class="LogIn_IconInputContainer">
+                            <label id="lblLogInUserUDPPort" class="lblLogInUserInputAreaIcon SCADAPORTIcon">
+                                @Html.TextBoxFor(m => m.UDPPort, htmlAttributes: new { @id = "iptLogInSCADAPORT", @class = "iptLogInUserInputDataBox", @type = "text", @placeholder = "輸入SCADA PORT", @required  = "required" })
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="CenterAlign">
+                        <button class="button loginBtn link" type="submit" id="btnLogIn" runat="server">登入</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="RightAlign" style="padding-right: calc( 50% - 185px )">
+                        <label class="rememberMe"><input id="remember" type="checkbox">記住我</label><br>
+                    </td>
+                </tr>
+				<tr>
+                    <td class="CenterAlign" style="color:black; width:100%">
+                    核能研究所版權所有 © @year，提供之圖資設備資訊僅供參考
+                    </td>
+                </tr>
+                <tr>
+                    <td class="RightAlign">
+                        @Html.Label(Model.LogInFailReason, htmlAttributes: new { @id = "lblWarning" })
+                    </td>
+                    <td class="EmptySpace"></td>
+                </tr>
+            </table>
+        </div>
+    }
+</body>
+</html>
+<script>
+$(document).ready(function(){
+    getLoginInfo();
+    $("#btnLogIn").click(function(){
+        const userID = $("#iptLogInUserID").val();
+        const userPass = $("#iptLogInPassword").val();
+		const SCADAIP = $("#iptLogInSCADAIP").val();
+        const SCADAPORT = $("#iptLogInSCADAPORT").val();
+        if($("#remember").prop("checked")){
+            $.cookie('name', userID);
+            $.cookie('pass', userPass);
+			$.cookie('SCADAIP', SCADAIP, {path: "/;SameSite=Lax"});
+            $.cookie('SCADAPORT', SCADAPORT);
+        }else{
+            $.cookie('name', "",{ expires: -1});
+            $.cookie('pass', "",{ expires: -1});
+			$.cookie('SCADAIP', "",{ expires: -1});
+            $.cookie('SCADAPORT', "",{ expires: -1});
+        }
+    })
+})
+
+function getLoginInfo(){
+    const userID = $("#iptLogInUserID");
+    const userPass = $("#iptLogInPassword");
+	const SCADAIP = $("#iptLogInSCADAIP");
+    const SCADAPORT = $("#iptLogInSCADAPORT");
+    const _u = $.cookie(`name`);
+    const _p = $.cookie(`pass`);
+	const _SCADAIP = $.cookie(`SCADAIP`);
+    const _SCADAPORT = $.cookie(`SCADAPORT`);
+    
+    if(_u && _p){
+        userID.val(_u);
+        userPass.val(_p);
+		SCADAIP.val(_SCADAIP);
+        SCADAPORT.val(_SCADAPORT);
+        $("#remember").prop("checked",true)
+    }
+}
+</script>

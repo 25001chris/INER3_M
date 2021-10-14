@@ -1,0 +1,611 @@
+﻿/*
+    This is GISMAP.min.css 內容的原始樣態，經過壓縮後變成GISMAP.min.css的內容
+*/
+label,input[type=button]
+{/*文字顯示字型通則*/
+    font-family:'Noto Sans TC','Microsoft JhengHei';
+}
+@media(max-width:768px) {
+    a.MobileSystemMenu {
+        /*系統條處手機版專用功能選單叫出紐*/
+        position: absolute;
+        right: 31px;
+        top: 18px;
+        width: 17px;
+        height: 14px;
+    }
+
+    #nav_sub {
+        display: none;
+        /*電腦版功能選單手機模式下隱藏*/
+    }
+
+    #divBodyContainer {
+        /*_Layout下BODY容器*/
+        margin-top: 50px;
+        width: 100%;
+        height: calc(100vh - 50px);
+    }
+
+    .CoordinateBox {
+        /*座標顯示區塊*/
+        display: none;
+    }
+
+    .tdCheckAutoUpdate {
+        /*是否"開啟自動更新"勾選處*/
+        display: none;
+    }
+    .StateBarHeight {
+        /*狀態列高度*/
+        height: 30px;
+        background: #506375;
+        opacity: 0.8;
+        z-index:1005;
+    }
+    
+    #btnImmediateUpdate {
+        /*立即更新*/
+        margin-top: 3px;
+        margin-left: 6px;
+        width: 74px;
+        height: 17px;
+        border: none;
+        border-radius: 5px;
+        background: #FCD76E;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 17px;
+        color: #3C5165;
+    }
+    .tdUpdateText {
+        /*系統更新資訊*/
+        margin-left: 4px;
+        margin-top: 7px;
+        margin-right: 6px;
+        font-family: Noto Sans TC,'Microsoft JhengHei';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 17px;
+        color: #E5E5E5;
+    }
+    #divQueryBox {
+        /*饋線、框選查詢外容器*/
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        height: 110px;
+        background-color: #F4F7FA;
+        border-radius: 0;
+    }
+
+    #tblQueryBox {
+        /*饋線、框選查詢內容器*/
+        margin: 4px 10px 4px 10px;
+        width: calc(100% - 20px);
+        border: none;
+    }
+    #tblQueryBox > tr:nth-child(2) {
+        height: 7px;
+    }
+    #divQueryContent, #divQueryContent2 {
+        text-align: center;
+        position: relative;
+    }
+    #divQueryContent > label,
+    #divQueryContent2 > label
+    {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        color: #484848;
+    }
+    #divKeyInFeederSeries, #divKeyInFeederSeries2 {
+        /*設備類別選擇+饋線編號輸入框+查詢紐+XX清除紐*/
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 40px;
+    }
+    #selEquipmentClass{
+        /*設備類別選擇in"divKeyInFeederSeries"*/
+        position:absolute;
+        left:0;
+        top:10px;
+        width:calc(50% - 18px);
+        height:36px;
+        border-radius:5px 0 0 5px;
+    }
+    #iptQueryFeederNo {
+        /*饋線編號輸入框in"divKeyInFeederSeries"*/
+        position: absolute;
+        left: calc(50% - 18px);
+        top: 10px;
+        width: calc(50% - 18px);
+        height: 36px;
+    }
+    #btnQueryFeeder {
+        /*查詢紐in"divKeyInFeederSeries"*/
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 36px;
+        height: 36px;
+        background-color:#4c7da2;
+        border-radius: 0 5px 5px 0;
+    }
+}
+
+@media(min-width:769px) {
+    #navbarSupportedContent {
+        justify-content: space-between;
+    }
+
+    #divBodyContainer {
+        /*_Layout下BODY容器*/
+        width: 100%;
+        height: calc(100vh - 98px);
+    }
+
+    a.MobileSystemMenu {
+        /*系統條處手機版專用功能選單叫出紐*/
+        display: none;
+    }
+
+    #div2D3DMapSwitcher {
+        /*2D3D圖台切換*/
+        width: 218px;
+        position: relative;
+    }
+
+    #divShuttleArea {
+        /*"2D3D圖台切換"&"叫出相對應工具窗格的按鈕區"中間緩衝*/
+        flex-grow: 4;
+        flex-shrink: 4;
+    }
+
+    .GisMapModeButton {
+        /*圖台模式按鈕*/
+        position: absolute;
+        top: -12px;
+        width: 116px;
+        height: 29px;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Microsoft JhengHei';
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 147.8%;
+        letter-spacing: 0.1em;
+        color: #344059;
+    }
+
+    #Btn2DModeMap {
+        left: 0;
+    }
+
+    #Btn3DModeMap {
+        left: 109px;
+    }
+
+    .GisMapModeButton_Off {
+        background: #AAC9DF;
+        z-index: 1;
+    }
+
+    .GisMapModeButton_On {
+        background: #FCD76E;
+        z-index: 10;
+    }
+
+    .GisMapToolboxButton {
+        /*工具窗格按鈕*/
+        flex: 0;
+        margin-right: 2px;
+        margin-top: 0;
+        width: 117px;
+        height: 29px;
+        background-color: transparent;
+        border-radius: 5px;
+        font-family: MicrosoftJhenghei;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 147.8%;
+        letter-spacing: 0.205em;
+        color: #FFFFFF;
+    }
+
+    .GisMapToolboxButton_Pressed {
+        border: 1px solid #FFFFFF;
+    }
+
+    .GisMapToolboxButton_Normal {
+        border: none;
+    }
+
+    .StateBarGeneral {
+        /*狀態列通用*/
+        font-family: 'Microsoft JhengHei';
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 19px;
+        color: #E5E5E5;
+        vertical-align: middle;
+    }
+
+    .CoordinateBox {
+        /*座標顯示區塊*/
+        width: 250px;
+    }
+
+    .tdCheckAutoUpdate {
+        /*是否"開啟自動更新"勾選處*/
+        width: 115px;
+    }
+
+    .chkAutoUpdate {
+        /*自動更新Checkbox替代用IMG*/
+        margin-left: 2px;
+        margin-top: 3px;
+        width: 23px;
+        height: 23px;
+        background-color: #E5E5E5;
+        border-radius: 5px;
+    }
+    .StateBarHeight {
+        /*狀態列高度*/
+        height: 40px;
+        background:#506375;
+        opacity:0.8;
+    }
+    
+    #btnImmediateUpdate {
+        /*立即更新*/
+        margin-top: 3px;
+        margin-left: 6px;
+        width: 84px;
+        height: 23px;
+        border: none;
+        border-radius: 5px;
+        background: #FCD76E;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 19px;
+        color: #3C5165;
+    }
+    .SmallUpdateOrDisplay {
+        /*"更新""展示"*/
+        margin-top: 3px;
+        margin-left: 6px;
+        width: 50px;
+        height: 23px;
+        border: none;
+        border-radius: 5px;
+        background: #FCD76E;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 19px;
+        color: #3C5165;
+    }
+    .tdUpdateText {
+        /*系統更新資訊*/
+        margin-left: 4px;
+        margin-top: 10px;
+        margin-right: 6px;
+        font-family: Noto Sans TC,'Microsoft JhengHei';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 19px;
+        color: #E5E5E5;
+    }
+    #divQueryBox {
+        /*饋線、框選查詢外容器*/
+        position:absolute;
+        left:10px;
+        top:100px;
+        width:266px;
+        height:110px;
+        background-color:#F4F7FA;
+        border-radius:5px;
+    }
+    #tblQueryBox {
+        /*饋線、框選查詢內容器*/
+        margin: 4px;
+        width:calc(100% - 8px);
+        border: none;
+    }
+    #tblQueryBox > tr:nth-child(2){
+        height:7px;
+    }
+    #divQueryContent, #divQueryContent2 {
+        text-align: center;
+        position: relative;
+    }
+    #divQueryContent > label,
+    #divQueryContent2 > label
+    {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        color: #484848;
+    }
+    #divKeyInFeederSeries, #divKeyInFeederSeries2 {
+        /*設備類別選擇+饋線編號輸入框+查詢紐+XX清除紐*/
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 100%;
+        height: 40px;
+    }
+
+    #selEquipmentClass, #selEquipmentClass2 {
+        /*設備類別選擇in"divKeyInFeederSeries"*/
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 112px;
+        height: 36px;
+        border-radius: 5px 0 0 5px;
+    }
+
+    #iptQueryFeederNo {
+        /*饋線編號輸入框in"divKeyInFeederSeries"*/
+        position: absolute;
+        left: 112px;
+        top: 0;
+        width: 112px;
+        height: 36px;
+    }
+    #iptQueryFeederNo2 {
+        /*饋線編號輸入框in左側收合窗*/
+        position: absolute;
+        left: 112px;
+        top: 0;
+        width: 96px;
+        height: 36px;
+    }
+    #btnQueryFeeder {
+        /*查詢紐in"divKeyInFeederSeries"*/
+        position: absolute;
+        left: 224px;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        background-color: #4c7da2;
+        border-radius: 0 5px 5px 0;
+    }
+    #btnQueryFeeder2 {
+        /*查詢紐in左側收合窗*/
+        position: absolute;
+        left: 208px;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        background-color: #4c7da2;
+        border-radius: 0;
+    }
+    #btnClearFeeder {
+        /*清除紐,左側收合窗only*/
+        position: absolute;
+        left: 244px;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        background-color: #4c7da2;
+        border-radius: 0 5px 5px 0;
+    }
+    #navQueryWindow {
+        /*有查詢結果時(沒錯的話)才會出現的結果窗*/
+        position: absolute;
+        z-index: 1000;
+        top: 98px;
+        left: 0;
+        width: 300px;
+        height: calc(100% - 98px);
+        transition: transform 0.4s ease;
+        background: #FFFFFF;
+    }
+    .OpeningNav {
+        transform: translate3d(0,0,0);
+    }
+
+    .ClosingNav {
+        /*查詢功能窗  關閉狀態*/
+        transform: translate3d(-300px,0,0);
+    }
+    #aToggleButton{
+    display:block;
+    position:absolute;
+    left: 300px;
+    top: 100px;
+    width: 25px;
+    height:80px;
+    background-color:#408BC5;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    }
+    #aToggleButton > i {
+    position:relative;
+    left:10px;
+    top:10px;
+    width:14px;
+    height:13px;
+    color:#FFFFFF;
+    cursor: pointer;
+    }
+    #tblQueryResultContainer{
+        /*查詢結果條列區外容器*/
+        position:absolute;
+        left:4px;
+        top:89px;
+        width:292px;
+        height:calc(100% - 89px);
+        max-height:calc(100% - 89px);
+        overflow-y:auto;
+    }
+    #tblQueryResultContainer::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #tblQueryResultContainer::-webkit-scrollbar-track {
+        background: #E5EEF4;
+    }
+
+    #tblQueryResultContainer::-webkit-scrollbar-thumb {
+        background: #AAC9DF;
+    }
+    #tblQueryResult{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:auto;
+        table-layout:fixed;
+        border:none;
+        height:auto;
+    }
+    #tblQueryResult > tbody > tr{
+        height:113px;
+    }
+    #tblQueryResult > tbody > tr:nth-child(odd){
+        background:#f4f7f9;
+        border-radius:5px;
+    }
+    #tblQueryResult > tbody > tr:nth-child(even){
+        background:#ffffff;
+    }
+    #tblQueryResult > tbody > tr > td{
+        position:relative;
+    }
+    #tblQueryResult > tbody > tr > td > label{
+        position:absolute;
+        font-style:normal;
+        font-size:14px;
+        line-height:28px;
+    }
+    .ItemName{
+        /*查詢結果項目名稱*/
+        left:9px;
+        color:#344059;
+        font-weight:500;
+    }
+    .ItemValue{
+        /*查詢結果項目的值*/
+        left:85px;
+        color:#484848;
+        font-weight:normal;
+    }
+    .ViewDetail {
+        /*"看詳細"*/
+        position:absolute;
+        right:15px;
+        bottom:17px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 19px;
+        text-decoration-line: underline;
+        color: #4C7DA2;
+        cursor:pointer;
+    }
+    #tblQueryBox2{
+        position:absolute;
+        left:10px;
+        top:10px;
+        width:280px;
+    }
+    #tblRealtimeInfo > thead {
+        background:#d0eaec;
+        border-top-left-radius:5px;
+        border-top-right-radius:5px;
+    }
+    #tblRealtimeInfo > thead > tr{
+        display:block;
+        height:36px;
+    }
+    #tblRealtimeInfo > tbody{
+        display:block;
+        overflow-y:auto;
+        width:100%;
+        max-height:140px;
+    }
+    #tblRealtimeInfo > tbody > tr{
+        display:block;
+        height:41px;
+    }
+    #tblRealtimeInfo > tbody > tr:nth-child(2n+1){
+        background:#ffffff;
+    }
+    #tblRealtimeInfo > tbody > tr:nth-child(2n){
+        background:#f4f7f9;
+    }
+    #tblRealtimeInfo > tbody::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #tblRealtimeInfo > tbody::-webkit-scrollbar-track {
+        background: #E5EEF4;
+    }
+
+    #tblRealtimeInfo > tbody::-webkit-scrollbar-thumb {
+        background: #AAC9DF;
+    }
+    label.RealtimeValue {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        color: #484848;
+        margin-top:5px;
+    }
+    label.PointName{
+        /*"設備點"的值可能overflow*/
+        word-break:keep-all;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        width:122px;
+    }
+}
+#divMapBaseOperation {
+    /*基本的Home和放大縮小鈕容器*/
+    position: absolute;
+    right: 10px;
+    bottom: 60px;
+    width: 45px;
+    height: 129px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 3px rgba(83, 122, 139, 0.13);
+    border-radius:5px;
+    display:flex;
+    flex-direction:column;
+}
+.MapItem{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+#DivCompass{
+    position:absolute;
+    right:10px;
+    bottom:200px;
+    width:47px;
+    height:47px;
+    border:none;
+    background-color:transparent;
+}

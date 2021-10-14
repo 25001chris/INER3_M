@@ -1,0 +1,155 @@
+2021.08.21.15.07.49.601[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.07.49.601[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.08.21.15.07.53.545[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.08.21.15.07.53.623[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.08.21.15.07.53.748[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.08.21.15.07.53.779[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.07.53.779[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.07.56.811[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.07.56.811[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.19.53.770[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.19.53.770[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.19.55.008[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.19.55.024[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.21.11.551[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.21.11.567[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.21.12.786[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.21.12.802[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.21.22.101[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.21.22.101[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.21.23.304[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.21.23.319[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.22.05.244[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.22.05.244[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.22.06.478[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.22.06.494[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.22.33.826[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.22.33.826[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.22.42.686[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.22.42.702[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.24.04.942[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.24.04.942[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.24.13.786[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.24.13.786[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.24.14.958[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.24.14.974[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.37.59.873[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.37.59.873[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.38.01.360[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.38.01.375[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.41.29.729[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.41.29.729[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.41.31.035[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.41.31.051[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.15.46.55.510[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.15.46.55.510[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.15.46.56.853[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.15.46.56.869[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.20.51.29.692[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.20.51.29.692[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.08.21.20.52.20.133[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.08.21.20.52.20.336[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.08.21.20.52.20.445[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.08.21.20.52.20.492[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.20.52.20.492[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.20.52.23.557[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.20.52.23.572[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.20.52.48.654[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.52.49.013[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.52.49.029[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.52.49.123[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.53.08.470[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.53.08.829[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.53.08.829[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.53.08.845[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.53.27.856[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.53.28.216[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.53.28.216[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.53.28.216[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.53.46.061[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.53.46.421[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.53.46.421[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.53.46.421[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.54.05.844[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.54.06.204[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.54.06.204[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.54.06.235[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.54.25.160[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.54.25.520[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.54.25.520[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.54.25.520[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.54.44.536[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.54.44.882[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.54.44.882[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.54.44.897[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.55.04.914[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.55.05.265[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.55.05.265[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.55.05.265[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.55.23.463[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.55.23.806[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.55.23.806[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.55.23.822[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.55.45.609[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.55.45.979[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.55.45.980[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.55.46.031[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.56.06.386[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.56.06.747[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.56.06.748[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.56.06.754[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.20.56.25.339[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%元七線%'))and CA.POINTNAME like '%瓦%'
+2021.08.21.20.56.25.683[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":270,"fdr1":62,"CODETXT":"XF27","EQUIPNAME":"元七線"}]
+2021.08.21.20.56.25.683[Normal][GetPowerRate](System)：[{"equipname":"元長SS-元七線 XF27","unikey":39300069,"datavalue":3795.0}]
+2021.08.21.20.56.25.698[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":3795.0,"Breakdowns":0.0}
+2021.08.21.21.04.48.627[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.04.48.627[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.04.50.065[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.21.04.50.065[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.21.06.52.976[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.06.52.976[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.07.01.460[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.07.01.460[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.07.01.556[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.07.01.556[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.07.03.103[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.21.07.03.166[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.21.10.52.528[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.10.52.528[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.08.21.21.11.25.098[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.08.21.21.11.25.145[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.08.21.21.11.25.286[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.08.21.21.11.25.301[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.11.25.301[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.11.52.048[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.11.52.048[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.11.53.284[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.11.53.284[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.11.56.706[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.11.56.706[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.11.58.206[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.11.58.206[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.12.23.995[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.12.23.995[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.12.25.386[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.12.25.386[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.12.43.278[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.12.43.278[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.12.45.559[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.12.45.559[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.12.51.363[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.12.51.363[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.13.41.776[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.13.41.776[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.14.10.736[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.14.10.736[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.14.18.087[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.14.18.087[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.14.19.103[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.14.19.103[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.14.19.165[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.21.14.19.165[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.08.21.21.21.13.957[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.08.21.21.21.13.958[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.08.21.21.21.15.612[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.08.21.21.21.15.633[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成

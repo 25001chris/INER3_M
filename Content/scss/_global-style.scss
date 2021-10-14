@@ -1,0 +1,319 @@
+@import "./../scss/global-variables";
+//共用
+//寬度樣式
+.w-100{
+    width: $w-100 !important;
+}
+.w-90{
+    width: $w-90 !important;
+}
+.w-80{
+    width: $w-80 !important;
+}
+.w-75{
+    width: $w-75 !important;
+}
+.w-70{
+    width: $w-70 !important;
+}
+.w-60{
+    width: $w-60 !important;
+}
+.w-50{
+    width: $w-50 !important;
+}
+.w-40{
+    width: $w-40 !important;
+}
+.w-30{
+    width: $w-30 !important;
+}
+.w-25{
+    width: $w-25 !important;
+}
+.w-20{
+    width: $w-20 !important;
+}
+.w-15{
+    width: $w-15 !important;
+}
+
+//螢幕比例寬度樣式
+.vw-75{
+    width: 75vw !important;
+}
+
+.vw-25{
+    width: 25vw !important;
+}
+
+//螢幕比例高度樣式
+.vh-50{
+    height: 50vh !important;
+}
+
+//高度樣式
+.min-h-640{
+    min-height: 640px !important;
+}
+.min-h-540{
+    min-height: 540px !important;
+}
+.min-h-360{
+    min-height: 360px !important;
+}
+.min-h-240{
+    min-height: 240px !important;
+}
+.min-h-120{
+    min-height: 120px !important;
+}
+.min-h-100{
+    min-height: 100px !important;
+}
+.min-h-60{
+    min-height: 60px !important;
+}
+.min-h-50{
+    min-height: 50px !important;
+}
+//高度樣式
+
+//左右對齊樣式
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.ml{
+    margin-left: 1rem;
+}
+
+.mr{
+    margin-right: 1rem;
+}
+
+//文字樣式
+.success{
+    color: #43AC8C !important;
+    &.bold{
+        font-weight: bold;
+    }
+}
+.warn{
+    color: #DD4242 !important;
+    &.bold{
+        font-weight: bold;
+    }
+}
+
+.contentTop{
+    margin-top: 98px;
+}
+
+@mixin breakpoint($point){
+    //判斷變數是pc、pad還是mobile，再依照判斷出來的載入對應的media query
+    @if $point == view-1024{
+        @media only screen and (max-width: 1024px){
+            @content
+        }
+    }
+    @else if $point == view-1200{
+        @media only screen and (max-width: 1200px) and (min-width: 1024px){
+            @content
+        }
+    }
+    @else if $point == view-1440{
+        @media only screen and (max-width: 1440px) and (min-width: 1200px){
+            @content
+        }
+    }
+}
+
+//ICON套用樣式
+.icon{
+    margin: 0 6px 0px 6px;
+    padding: 8px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    border: 0;
+    &.display{
+        background-image: url("./../images/ICON/display.svg");
+    }
+    &.hide{
+        background-image: url("./../images/ICON/hide.svg");
+    }
+    &.clip{
+        background-image: url("./../images/ICON/clip.svg");
+    }
+    &.film{
+        background-image: url("./../images/ICON/film.svg");
+    }
+    &.success{
+        background-image: url("./../images/ICON/vector.svg");
+    }
+    &.error{
+        background-image: url("./../images/ICON/error.svg");
+    }
+    &.location{
+        background-image: url("./../images/ICON/location.svg");
+    }
+    &.note{
+        background-image: url("./../images/ICON/note.svg");
+    }
+    &.delete{
+        background-image: url("./../images/ICON/delete.svg");
+    }
+    &.edit{
+        background-image: url("./../images/ICON/ma.svg");
+    }
+    &.link{
+        cursor: url("./../images/Hover.cur"), pointer !important;
+    }
+    &.float{
+        position: absolute;
+    }
+    &.iLeft{
+        left:1rem;
+        top: 0.75rem;
+    }
+    &.iRight{
+        right:1rem;
+        top: 0.75rem;
+    }
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.button{
+    font-family: Noto Sans TC !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    border-radius: 5px !important;
+    min-width: 92px !important;
+    height: 36px !important;
+    &:hover{
+        background: $color-major !important;
+        color: white !important;
+        cursor: url("./../images/Hover.cur"), pointer !important;
+    }
+    &.btnL{
+        width: 115px !important;
+    }
+    &.btnM{
+        width: 108px !important;
+    }
+    &.btnS{
+        width: 92px !important;
+    }
+    &.mainBtn{
+        background-color: $color-major !important;
+        color: $color-white !important;
+        &:hover{
+            background: $color-dark !important;
+            color: $color-white !important;
+        }
+    }
+    &.loginBtn{
+        background-color: $color-major !important;
+        color: $color-white !important;
+        height: 55px !important;
+        font-size: 20px !important;
+        &:hover{
+            background: $color-dark !important;
+            color: $color-white !important;
+        }
+    }
+    &.blankBtn{
+        border: 2px solid $color-major !important;
+        background-color: $color-white !important;
+        color: $color-major !important;
+        &:hover{
+            background: $color-major !important;
+            color: $color-white !important;
+        }
+    }
+    &.selectBtn{
+        background-color: $color-scroll !important;
+        color: $color-dark !important;
+        margin: 5px 2.5px !important;
+    }
+    &.submitBtn{
+        background-color: $color-major !important;
+        color: white !important;
+        margin: 5px 2.5px !important;
+    }
+    &.openBtn{
+        background-color: $color-white !important;
+        color: $color-major !important;
+        border: 1px solid $color-major !important;
+        margin: 5px 2.5px !important;
+    }
+    &.cancelBtn{
+        background-color: $color-cancel-btn !important;
+        color: $color-btn-text !important;
+        &:hover{
+            background: $color-major !important;
+            color: $color-white !important;
+        }
+    }
+    &.searchBtn{
+        background-color: $color-major !important;
+        color: $color-white !important;
+    }
+    &.filterBtn{
+        background: url(../Images/ICON/filter.svg) no-repeat left #4C7DA2 !important;
+        background-origin: content-box !important;
+    }
+    &.updateBtn{
+        background: url(../Images/ICON/update_now.svg) no-repeat left $color-white !important;
+        background-origin: content-box !important;
+        border: 2px solid $color-major !important;
+        color: $color-major !important;
+        &:hover{
+            background: url(../Images/ICON/update_now_hover.svg) no-repeat left #4C7DA2 !important;
+            background-origin: content-box !important;
+            color: $color-white !important;
+        }
+    }
+    &.isdisable{
+        background-color: $color-text-major !important;
+        color: white !important;
+    }
+    @include breakpoint(view-1200){
+        min-width: 80px !important;
+        font-size: 0.5rem !important;
+    }
+}
+
+.swal2-confirm{
+    background : #4C7DA2 !important;
+    color: $color-white !important;
+}
+
+.swal2-cancel{
+    background : #6e7d88 !important;
+    color: $color-white !important;
+}
+
+.swal2-deny{
+    background : #ea5455 !important;
+    color: $color-white !important;
+}
+
+.active{
+    display: block !important;
+}
+
+.closed{
+    display: none !important;
+}
+
+.initial{
+    display: initial !important;
+}

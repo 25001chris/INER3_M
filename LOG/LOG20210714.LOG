@@ -1,0 +1,132 @@
+2021.07.14.14.28.18.123[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.14.14.28.18.233[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.14.14.28.18.389[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.14.14.28.18.498[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.28.18.498[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.14.28.22.124[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.14.28.22.139[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.14.14.30.29.396[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=411,OID=10528100
+2021.07.14.14.30.30.537[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:411,設備OID:10528100,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.14.14.30.30.630[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:411,設備OID:10528100,設備類別碼有效性檢查PASSED
+2021.07.14.14.30.30.646[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=411,得到表格名稱=dsbnroom
+2021.07.14.14.30.30.709[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:411,設備OID:10528100,表格名稱=dsbnroom,基本設備資訊查詢完成
+2021.07.14.14.30.30.740[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=dsbnroom,欄位名稱翻譯資訊查詢完成
+2021.07.14.14.30.30.740[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.14.14.30.30.802[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。
+2021.07.14.14.48.36.466[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.48.36.466[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.14.14.55.10.359[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.14.14.55.10.391[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.14.14.55.10.500[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.14.14.55.10.531[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.55.10.531[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.14.55.11.688[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.14.55.11.703[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.14.14.55.28.617[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=114,OID=10471247
+2021.07.14.14.55.28.633[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10471247,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.14.14.55.28.649[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10471247,設備類別碼有效性檢查PASSED
+2021.07.14.14.55.28.696[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10471247,抓到座標值是TWD67座標下X=191933,y=2623055
+2021.07.14.14.55.28.696[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10471247,原無饋線編號,抓饋線編號先抓到FDR1值為95
+2021.07.14.14.55.28.711[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=95,得到饋線編號為XJ21
+2021.07.14.14.55.28.711[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=114,得到表格名稱=switch
+2021.07.14.14.55.28.758[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10471247,表格名稱=switch,基本設備資訊查詢完成
+2021.07.14.14.55.28.789[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=switch,欄位名稱翻譯資訊查詢完成
+2021.07.14.14.55.28.805[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.14.14.55.28.852[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.14.14.55.29.649[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K2746DA35,第一段SQL END
+2021.07.14.14.55.29.711[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：索引在陣列的界限之外。[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.14.14.57.07.906[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.57.07.922[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.14.14.57.16.235[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.14.14.57.16.328[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.14.14.57.16.485[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.14.14.57.16.578[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.57.16.578[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.14.57.19.426[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.14.57.19.458[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.14.14.57.28.832[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.57.28.832[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.14.57.29.067[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.14.57.29.098[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.14.14.57.29.598[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=114,OID=10251747
+2021.07.14.14.57.30.770[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.14.14.57.30.879[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,設備類別碼有效性檢查PASSED
+2021.07.14.14.57.30.942[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,抓到座標值是TWD67座標下X=180683,y=2612338
+2021.07.14.14.57.30.942[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,原無饋線編號,抓饋線編號先抓到FDR1值為62
+2021.07.14.14.57.30.957[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=62,得到饋線編號為XF27
+2021.07.14.14.57.30.973[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=114,得到表格名稱=switch
+2021.07.14.14.57.31.020[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,表格名稱=switch,基本設備資訊查詢完成
+2021.07.14.14.57.31.051[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=switch,欄位名稱翻譯資訊查詢完成
+2021.07.14.14.57.31.082[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.14.14.57.31.145[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.14.14.57.31.692[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K1324CD83,第一段SQL END
+2021.07.14.14.57.31.785[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：索引在陣列的界限之外。[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.14.14.57.45.652[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=114,OID=10251747
+2021.07.14.14.57.45.652[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.14.14.57.45.683[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,設備類別碼有效性檢查PASSED
+2021.07.14.14.57.45.714[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,抓到座標值是TWD67座標下X=180683,y=2612338
+2021.07.14.14.57.45.714[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,原無饋線編號,抓饋線編號先抓到FDR1值為62
+2021.07.14.14.57.45.745[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=62,得到饋線編號為XF27
+2021.07.14.14.57.45.745[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=114,得到表格名稱=switch
+2021.07.14.14.57.45.777[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,表格名稱=switch,基本設備資訊查詢完成
+2021.07.14.14.57.45.808[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=switch,欄位名稱翻譯資訊查詢完成
+2021.07.14.14.57.45.839[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.14.14.57.45.902[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.14.14.57.45.917[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K1324CD83,第一段SQL END
+2021.07.14.14.57.45.949[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：索引在陣列的界限之外。[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.14.14.58.36.832[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.58.36.832[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.14.58.38.537[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.14.58.38.553[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.14.14.58.50.089[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.14.14.58.50.104[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.14.14.58.50.323[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.14.14.58.50.464[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.14.58.50.464[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.14.58.53.573[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.14.58.53.604[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.14.14.59.26.415[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=114,OID=10251747
+2021.07.14.14.59.27.540[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.14.14.59.27.650[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,設備類別碼有效性檢查PASSED
+2021.07.14.14.59.27.681[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,抓到座標值是TWD67座標下X=180683,y=2612338
+2021.07.14.14.59.27.681[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,原無饋線編號,抓饋線編號先抓到FDR1值為62
+2021.07.14.14.59.27.697[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=62,得到饋線編號為XF27
+2021.07.14.14.59.27.712[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=114,得到表格名稱=switch
+2021.07.14.14.59.27.744[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:10251747,表格名稱=switch,基本設備資訊查詢完成
+2021.07.14.14.59.27.775[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=switch,欄位名稱翻譯資訊查詢完成
+2021.07.14.14.59.27.790[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.14.14.59.27.822[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.14.14.59.28.369[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K1324CD83,第一段SQL END
+2021.07.14.14.59.28.462[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：索引在陣列的界限之外。[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.14.14.59.58.203[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=114,OID=5720427
+2021.07.14.14.59.58.250[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:5720427,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.14.14.59.58.266[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:5720427,設備類別碼有效性檢查PASSED
+2021.07.14.14.59.58.297[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:5720427,抓到座標值是TWD67座標下X=181219,y=2612999
+2021.07.14.14.59.58.297[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:5720427,原無饋線編號,抓饋線編號先抓到FDR1值為62
+2021.07.14.14.59.58.328[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=62,得到饋線編號為XF27
+2021.07.14.14.59.58.328[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=114,得到表格名稱=switch
+2021.07.14.14.59.58.360[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:114,設備OID:5720427,表格名稱=switch,基本設備資訊查詢完成
+2021.07.14.14.59.58.391[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=switch,欄位名稱翻譯資訊查詢完成
+2021.07.14.14.59.58.422[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入擁有者TID=407,得到表格名稱=pole
+2021.07.14.14.59.58.485[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成,共14筆
+2021.07.14.14.59.59.016[Normal][EquipmentInfo.GetRealtimeData](System)：台電圖號座標:K1425AE19,第一段SQL END
+2021.07.14.14.59.59.094[Error][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：索引在陣列的界限之外。[StackTrace]   於 INERADMS.Models.EquipmentInfo.GetRealtimeData(String TaipowerCoordinate, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 361
+   於 INERADMS.Models.EquipmentInfo.GetEquipmentInfo(Int32 EquipmentClassCode, Int32 EquipmentID, String FeederID, PostgreSqlAccess& PSA) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Models\EquipmentInfo.cs: 行 154
+   於 INERADMS.Controllers.GisMapController.GetEquipmentInfo(Int32 TID, Int32 OID, PostgreSqlAccess& PSA, String FeederID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 787
+   於 INERADMS.Controllers.GisMapController.GetInfoWindowData(Int32 TID, Int32 OID) 於 D:\Gary New Project\2020_09_核研所\CODE\核研所專案G\INERADMS\Controllers\GisMapController.cs: 行 409
+2021.07.14.15.00.07.376[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.14.15.00.07.376[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.14.15.00.09.376[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.14.15.00.09.391[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成

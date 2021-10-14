@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>setTransfer</title>
+    <script type="text/javascript" src="~/Scripts/goJS.js"></script>
+    <script type="text/javascript" src="~/Scripts/feederFileDiagram.js"></script>
+</head>
+<body>
+    <div id="feederLineCalculation" class="w-100 left systemTransfer">
+        <div class="tblBox w-100">
+            <div class="w-100 systemDataTitle left">
+                <label class="mainTitle left">電力共同資訊模型 / 饋線監控系統模型 單線圖繪製</label>
+            </div>
+            <div id="transferBtn w-100" class="btnBox min-h-120">
+                <!-- <input type="file" id="files" name="files" /> -->
+                <button id="openSETXMLBtn" type="button" class="openBtn button left" onclick="openSETXML.click()"><i class="icon film"></i>開啟模型</button>
+                <input id="openSETXML" type="file" onchange="uploadFeederLineDiagramData(this)" data-box="setDataBox" style="display: none" />
+                <div id="selectXMLSETBox" class="selectBox box2">
+                    <span><i class="icon clip"></i></span>
+                    <select>
+                        <option value="0">請選擇饋線</option>
+                    </select>
+                </div>
+                <button id="btnTransfer" type="button" class="submitBtn button left isdisable" disabled="disabled">繪製</button>
+            </div>
+            <div id="myDiagramDiv" class="calculationBox w-100" style="background:#000"></div>   
+        </div>
+    </div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+    
+    init();
+    // if (window.File && window.FileReader && window.FileList && window.Blob) {
+    //     document.getElementById('openSETXML').addEventListener('change', handleFileSelect, false);
+    // } 
+    $("#BtnFeederLineCalculation").click(function(){
+        $("#divfeederLineCalculationContent").siblings("div").hide();
+        $("#divfeederLineCalculationContent").show();
+        toggleToolboxButton(this);
+    })
+
+    $("#selectXMLSETBox").find("select").on("change",function(){
+        const $btnTransfer = $("#btnTransfer");
+        btnDisable($btnTransfer, false);
+    })
+})
+</script>

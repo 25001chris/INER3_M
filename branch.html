@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/goJS.js"></script>
+    <script src="Scripts/feederFileDiagram.js"></script>
+</head>
+<body style="padding:0;margin:0;overflow:hidden">
+    <div id="myDiagramDiv"
+        style="width:700px; height:500px; background-color: #000"></div>
+</body>
+<script>
+
+    var FLD;
+    init();
+
+    var url = new URL(window.location.href);
+    var targetKey = url.searchParams.get("tcplid");
+    var targetType = url.searchParams.get("type");
+    var targetGText = url.searchParams.get("g");
+    var targetLText = "\n" + url.searchParams.get("l").replace("@", "#");
+    var targetStroke = url.searchParams.get("c1").replace("@", "#");
+    var targetlStroke = url.searchParams.get("c2").replace("@", "#");
+    var dataList = { "class": "go.GraphLinksModel", "nodeParentKeyProperty": "key2", };
+    var nodeDataArray = [];
+    var linkDataArray = [];
+    dataList.nodeDataArray = nodeDataArray;
+    dataList.linkDataArray = linkDataArray;
+    //
+    var item = {
+        "key": targetKey,
+        "key2": "",
+        "category": targetType,
+        "text": targetKey,
+        "stroke": targetStroke,
+        "lStroke": targetlStroke,
+        "g_text": targetGText,
+        "l_text": targetLText
+    }
+    dataList.nodeDataArray.push(item);
+    //
+    var data = sessionStorage.getItem('nodeData');
+    var obj = JSON.parse(data);
+
+    function moveArrayItemToNewIndex(arr, old_index, new_index) {
+        if (new_index >= arr.length) {
+            var k = new_index - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        return arr;
+    };
+
+    function getAllIndexes(arr, val) {
+        var indexes = [], i;
+        for (i = 0; i < arr.length; i++)
+            if (arr[i].key2 === val && arr[i].visible == false)
+                indexes.push(i);
+        return indexes;
+    }
+
+    var index = getAllIndexes(obj.nodeDataArray, targetKey);
+    for (i = 0; i < index.length; i++) {
+        moveArrayItemToNewIndex(obj.nodeDataArray, index[i], index[0] + i);
+    }
+
+    for (i = index[0]; i < Object.keys(obj.nodeDataArray).length; i++) {
+        var subNodeFromKey = obj.nodeDataArray[i].key2;
+        var subNodeToKey = obj.nodeDataArray[i].key;
+        var subNodeCategory = obj.nodeDataArray[i].category;
+        var subNodeVisible = obj.nodeDataArray[i].visible;
+        var subNodeEdgeType = obj.nodeDataArray[i].edgeType;
+        var subNodeGreenText = obj.nodeDataArray[i].g_text;
+        var subNodeLocation = obj.nodeDataArray[i].l_text;
+        var subNodeStroke = obj.nodeDataArray[i].stroke;
+        var subNodelStroke = obj.nodeDataArray[i].lStroke;
+        if (subNodeEdgeType == "001" || subNodeEdgeType == "003")
+            break;
+        else
+            var item = {
+                "key": subNodeToKey,
+                "key2": subNodeFromKey,
+                "category": subNodeCategory,
+                "text": subNodeToKey,
+                "stroke": subNodeStroke,
+                "lStroke": subNodelStroke,
+                "g_text": subNodeGreenText,
+                "l_text": subNodeLocation
+            }
+        dataList.nodeDataArray.push(item);
+     }
+
+    for (i = 0; i < Object.keys(obj.linkDataArray).length; i++) {
+        var subNodeFrom = obj.linkDataArray[i].from;
+        var subNodeTo = obj.linkDataArray[i].to;
+        var subNodeText = obj.linkDataArray[i].text;
+        var item = {
+            "from": subNodeFrom,
+            "to": subNodeTo,
+            "text": "區間"
+        }
+        dataList.linkDataArray.push(item);
+    }
+
+   
+
+    const myJSON = JSON.stringify(dataList);
+    sessionStorage.setItem("subNodeData", myJSON);
+    FLD.model = go.Model.fromJson(
+        myJSON
+    );
+
+   
+</script>
+</html>

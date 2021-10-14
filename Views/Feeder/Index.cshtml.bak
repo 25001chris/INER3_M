@@ -1,0 +1,777 @@
+﻿@using System.Web.Script.Serialization;
+@using INERADMS.ViewModels
+@using INERADMS.Helpers
+@*@model HomeViewModels*@
+@model List<INERADMS.Models.FILTERLOOKUP>
+@{
+    //ViewBag.Title = "饋線監控系統告警篩選";
+    ViewBag.ListTitle = "訊息篩選清單";
+    ViewBag.SettingTitle = "訊息篩選邏輯設定";
+    JavaScriptSerializer js = new JavaScriptSerializer();
+    string jsonStr = js.Serialize(Model);
+
+    string UserAuth = "";
+    string tLoginUser = "";
+    string tUserName = "";
+    if (Session["CURRENTUSERID"] != null)
+    {
+        tLoginUser = Session["CURRENTUSERID"].ToString();
+        tUserName = Session["CURRENTUSERNAME"].ToString();
+    }
+    string tLocationImg =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAYAAAA/mJfHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGjSURBVHgBrVS7TgJBFD2zSyIkFpSGClsTEwpiKMcvcGkMVsIf6BewfAH8gdgA5VJZMnZGJdnEWLsVscTQoFkY7+yDh8wChbeZ2bkz5z7OuQv8o7EkR5FXOLnrtOXRkWsArWfRvU96Y+oOz/ilJWE80Da/cnwkASuXP/kaee9PuneG7lDCbIYrPMrOYgw83Afx6wVuZfcCU+XJKCODofoqOv2XQffRgF+OrmRNZC72ApuvlCalXPTUhDnGDkttgqUdA9934RdrlnilnMZ0PAGzY2TK2NOBadks8qsBliyumerdUHSPdT5DH4HdItnsJIdWGiPv7TOXP1WMlbCWlWwPRa+RBJaKS1L0K9Zih4+DRgo/nCAKIRC8GbABROyTsJlNN2wjKYor2mMfc5IDC1icgZVd0fOwxRZgpILsJmDPo9JqKqorOi52mJKGG5RJo0Jr/+8FYs6hxUkCILKqMszLZQVeyafAPqL8GoeYtoRwdgqU00hNkGlREtexXAKdEQk3tDTji8s5TDYWTYqknhIx56oNC9FqfjlbTYEwzF0fqMXE/ALZvZCaTXhr2gAAAABJRU5ErkJggg==";
+    string tRemoveImg =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKVSURBVHgBjVVLbhpBEH3dEDnxJuQEcW4wjj/KsjlB8CbCbIATQE4AnCDkBMAmWFnNDdzZRZEtzw3MEcaKHFvRzHRezScywxBSEuqe7q5Xv1eFQoUY02rcY7/r4IwDPAUcyDn3K+4DDfg/7HJRpavKB6fmQytBfUb1Bn82gfYVXJgBqoamEW5bKgMfl4HXAI9MZ0rlAbfTCA+TwPphlReeaR/UgJGC6tHM5MpejDcAj01nzJAGNbhh2eqJac9cFva3p8rH5nzI5ZM4cGWXH+VM5wpiaQRE/arcJFCGtg2tvy7O3tFLfg+YBolieMRU/QXk4xELML+2X31UiORL1lyZnrVNBH2TcB8DTfFQoTbzWEwt3kk4vJhgp7gwi0Zd0oEwhmsG9ksQYU90G8+w19W0+p5B+YG9WG2DYaFW2apoXJEBCGI8HBY6gZ2L55aOGYasJBcW/yESCQHnZECzzAAa8x20V+czj1wLt4FkJJeipJDja7usTE2M5E7TOY1/iFTyHi8uc8pAKWWxQ7S0k0bSqAKLmXxS5oCfvssrvU1q0C+5BHXpTeZFOPS5uDwxHS8CxLOUFoFdBtghLm3JZKWZTCukFQ5lYCmNclokh0IL6Qj+bk7NebcKTKLh0nLS957pNer4fUsbcwLfZR0DcsudCS3kcQR1m+uGbLFXZUBGNEvoIQv2RguH6E2f50MBo3d+RouMY494TgaonAVuI3SZTtTvcTuW77TKRJaWm2ZP4sVTjonBiKHTUC/C49m6Z+1ePuqETukMWBtfnDgjuWRe5zUkk+9buke4+RP742LUFZNmA1DkLa0ScJRPaV+KJqSVO6EGwxNGmGxQRP3yQFHYIgKs0z5PgT05K/4CyE1O8l+LqgH8BwH5PJGZ/TDqAAAAAElFTkSuQmCC";
+    string tHistoryImg =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHBSURBVHgB1ZVNTsJAFMf/U6qJrLiBeALRQOLO4Qa4MEE20hOIJxBPwBFgpSRuuAHDjgRM6g16A7tA1FBmfK+lWpDIh3HhSwrTvje/9zWvFSeynA0gmgAkthKjbMDpq7YXP7F+B2QRMgCaySd2AuiS1w42EqtEe3IMXoRG/mDcgWrfYgMpUOkMRO6bK/yB/B+ova6hlKXMC9KXgObG+BrT3gRv12krXd8KmpcXtRHQoE6DW4rwN1XbwZ430ZOzgXpwk/Yr08/LSh0hkJHCpz81u9gFdd/uFuR5bm0oTxttvZkBW1OMD4bqvshXAHNAUI9UGYNUY20oTdtVBIT3qO4cV3X8WOfSWNLZdqI7IZPRrko/NBTQ7jLlULVVvNawD9eF+hFU+Es9ymomXidtVkBFGCHVsxTVd15svFfjdQD99LmLuvtM2zJ89gzMXEQWxBnVs8t6Okge6R1Omc/sCOnaVxPhTfF6FNecoBfcudqyOHctkZ1oXTTR6/HnnAicgin2wwaSHMtyNQWcLhryxLD3vCxLBpNxNqmnyFsClkerehIssIEUZCVHqe7zOsC4F6fLE4fZgPCXYCPoaoe6QV8B5wPri66KG6doBwAAAABJRU5ErkJggg==";
+
+    List<int> fList = UserAuthorityTool.GetFeederAuth();
+    string tDataTitle = "";
+    string tDataField = "";
+
+    if (fList.Contains((int)FeederAuthority.FeederIndexEdit))
+    {
+        tDataTitle = string.Join(",", new string[] { "編號", "邏輯", "警報時間", "設備編號", "設備名稱", "設備主體", "設備點", "警報訊息", "警報等級", "定位",
+"解除", "歷史" });
+        tDataField = string.Join(",", new string[] { "ID", "LOGIC", "TIME", "KEY", "ENAME", "PNAME", "SNAME", "REMARK", "LEVEL",
+"LOCATION", "REMOVE", "HISTORY" });
+    }
+    else if (fList.Contains((int)FeederAuthority.FeederIndexOnly))
+    {
+        tDataTitle = string.Join(",", new string[] { "編號", "邏輯", "警報時間", "設備編號", "設備名稱", "設備主體", "設備點", "警報訊息", "警報等級", "定位",
+"歷史" });
+        tDataField = string.Join(",", new string[] { "ID", "LOGIC", "TIME", "KEY", "ENAME", "PNAME", "SNAME", "REMARK", "LEVEL",
+"LOCATION", "HISTORY" });
+    }
+    else if (fList.Contains((int)FeederAuthority.FeederIndexEdit))
+    {
+
+    }
+    else
+    {
+        tDataTitle = string.Join(",", new string[] { "編號", "邏輯", "警報時間", "設備編號", "設備名稱", "設備主體", "設備點", "警報訊息", "警報等級", "歷史" });
+        tDataField = string.Join(",", new string[] { "ID", "LOGIC", "TIME", "KEY", "ENAME", "PNAME", "SNAME", "REMARK", "LEVEL",
+"HISTORY" });
+    }
+
+}
+@*@Styles.Render("~/Content/bootstrap.min.css")*@
+@Styles.Render("~/Content/base.min.css")
+@*@Styles.Render("~/Content/Feeder/Feeder.min.css")*@
+@Styles.Render("~/css/Feeder.css")
+<style>
+    .feederActive{
+        background-color: #FFF4E8 !important
+    }
+</style>
+<div class="">
+    <!-- <div class="mt30 mb5 pageTitle">
+        <div class="pd10 fw700 pageNameTitle">@ViewBag.Title</div>
+    </div> -->
+    <div id="switchTab" class="switch-tab mt30 mb5 ">
+        <div class="switch-tab-title pd10" onclick="select(0);">@ViewBag.ListTitle</div>
+        @if (Session["CURRENTUSERID"] != null)
+        {
+            <div class="switch-tab-title pd10" onclick="select(1);">@ViewBag.SettingTitle</div>
+            <div class="scroll-bar"></div>
+        }
+    </div>
+    <div class="systemAlertList" style="display:block;">
+        <div class="alertMessage">
+            <div class="SetupTest">
+                <select id="selectLogic" class="form-control">
+                    <option value="-999">請選擇邏輯</option>
+                    <!-- @foreach (var data in Model)
+                    {
+                        <option title="@data.filter_remark" value="@data.filter_logicid">邏輯 @data.filter_logicid</option>
+                    } -->
+                </select>
+            </div>
+            <div class="SetupTest">
+                <input id="DeviceNo" type="text" class="form-control" placeholder="輸入設備編號" />
+            </div>
+            <div class="SetupTest">
+                <input id="DeviceName" type="text" class="form-control" placeholder="輸入設備名稱" />
+            </div>
+            <div class="SetupTest">
+                <select id="Level" class="form-control">
+                    <option value="-999">警報等級</option>
+                    <option value="AL1">AL1</option>
+                    <option value="AL2">AL2</option>
+                    <option value="AL3">AL3</option>
+                </select>
+            </div>
+            <div class="SetupTest newCol">
+                <input id="startdate" class="input-box datepicker" placeholder="變更起始時間" data-toggle="datetimepicker"
+                    data-target="#startdate" />
+            </div>
+            <div class="SetupTest newCol">
+                <input id="enddate" class="input-box datepicker" placeholder="變更結束時間" data-toggle="datetimepicker"
+                    data-target="#enddate" />
+            </div>
+            <div class="SetupTest newCol">
+                <button id="btnSearch_Filter" class="btn btn-primary btn-search">搜尋</button>
+            </div>
+            <div class="pagechange">
+                <img id="pre_page" src="~/Images/left.png" title="前一頁" />
+                <input id="page_select" type="text" value="1" />
+                <span>/</span>
+                <span id="totalPage_search"></span>
+                <img id="next_page" src="~/Images/right.png" title="下一頁" />
+            </div>
+        </div>
+        <div class="container-fluid messageTable">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="scrolling outer">
+                        <div class="inner">
+                            <table id="tabletest" class="table table-striped table-hover table-condensed"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="warningMsg" class="modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+    data-keyboard="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p id="modalMsg"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="modalOK_warn" class="btn">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="ooo" class="modal inmodal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+    data-keyboard="true">
+    <div class="modal-dialog modal-pop modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                    </button>*@
+                <div class="modal-title ">
+                    <h4 id="modalTitle" class="modal-title fw700">解除告警</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalMsg">告警解除後，將從介面中移除</p>
+            </div>
+            <div class="modal-footer">
+                <button id="modalCancel" class="btn w-40 cancelBtn">取消</button>
+                <button id="modalOK" class="btn w-40 submitBtn">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="historyModal" class="modal right fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog modal-history" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close ml-n3" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <label class="modal-title ml-3" id="myModalLabel2"></label>
+            </div>
+            <div class="mt-md-2 md mg5">
+                <label class="modal-title">時間區間</label>
+            </div>
+            <div class="mt-md-2 md mg5">
+                <input id="startdate_history" class="input-box datepicker md" placeholder="變更起始時間"
+                    data-toggle="datetimepicker" data-target="#startdate_history" />
+                <label class="modal-title">到</label>
+                <input id="enddate_history" class="input-box datepicker md" placeholder="變更結束時間"
+                    data-toggle="datetimepicker" data-target="#enddate_history" />
+            </div>
+
+            <div class="mt-1 mt-md-2 mg5 d-flex justify-content-center justify-content-md-end">
+                <button id="searchData_His" class="btn btn-filter">
+                    開始篩選
+                </button>
+            </div>
+            <div class="ml-2 ml-md-0 mt-2 mt-md-3 mg5">
+                <button id="exportexcel" class="btn btn-export">報表匯出</button>
+                <div class="pagechange">
+                    <img id="pre_page_his" src="~/Images/left.png" title="前一頁" />
+                    <input id="page_select_his" type="text" value="1" />
+                    <span>/</span>
+                    <span id="totalPage_search_his"></span>
+                    <img id="next_page_his" src="~/Images/right.png" title="下一頁" />
+                </div>
+            </div>
+            <div class="modal-body pt-4 pl-4 pr-4">
+                @*<div class="row">
+                    </div>*@
+                @*<div class="col-md-10">
+
+                    </div>*@
+                <div id="div_HistoryDetail" class="mt-md-2">
+                    <table id="table_History">
+                    </table>
+                </div>
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div>
+<div id="addalert_modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title fw700">新增篩選邏輯</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body row" style="display: flex;">
+                <form class="col-12 col-sm-12" id="addLogicBox">
+                    <div class="mb10">
+                        <label>篩選情境</label>
+                        <div class="warnlevel">
+                            <select id="scenario" class="form-control">
+                                <option value="-999">請選取篩選情境</option>
+                                <option value="操作對應">操作對應</option>
+                                <option value="訊息篩選">訊息篩選</option>
+                                <option value="控制失敗">控制失敗</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb10">
+                        <label>狀態種類</label>
+                        <div id="statusArea">
+                            <input id="logicStatus" type="text" class="form-control input-box w-100" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="mb10">
+                        <label>動作狀態1</label>
+                        <div id="action1Area">
+                            <input id="action1" type="text" class="form-control input-box w-100" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="mb10">
+                        <label>動作狀態2</label>
+                        <div id="action2Area">
+                            <input id="action2" type="text" class="form-control input-box w-100" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="mb10">
+                        <label>邏輯描述</label>
+                        <div id="logicDescriptArea">
+                            <input id="logicDescription" type="text" class="form-control input-box w-100" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="mb10 closed">
+                        <label>建立人員</label>
+                        <div id="logicUserArea">
+                            <input id="logicCreator" type="text" class="form-control input-box w-100" placeholder=""/>
+                        </div>
+                    </div>
+                    <div class="mb10">
+                        <label>觸發警示</label>
+                        <div class="form-inline">
+                            <div class="rowModal">
+                                <input name="isAlert" data-value="true" class="" type="radio" id="isOpe_Y" value="0" />
+                                <label class="form-check-label" for="isOpe_Y"> 啟用 </label>
+                                <input name="isAlert" data-value="false" class="" type="radio" id="isOpe_N" value="1" />
+                                <label class="form-check-label" for="isOpe_N"> 停用 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb10">
+                        <label>啟用</label>
+                        <div class="form-inline">
+                            <div class="rowModal">
+                                <input name="isOpen" data-value="true" class="" type="radio" id="isEnable_Y" />
+                                <label class="form-check-label" for="isEnable_Y"> 啟用 </label>
+                                <input name="isOpen" data-value="false" class="" type="radio" id="isEnable_N"  />
+                                <label class="form-check-label" for="isEnable_N"> 停用 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area mb10">
+                        <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button id="addAlert" type="button" class="btn btn-primary" onclick="logicSettingEvent(this)">確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section table{
+<script type="text/javascript" src="~/Scripts/api.js"></script>  
+<script type="text/javascript" src="~/Scripts/state.js"></script>       
+<script type="text/javascript" src="~/Scripts/feeder.js"></script>   
+<script type="text/javascript" src="~/Scripts/convert.js"></script>
+<script>
+    var tEname;
+    var tStartT;
+    var tEndT;
+    var tUserAuth = "";
+    $(function () {
+        console.log("@tLoginUser");
+        mutation.setUserName(stateData, {item: 'userName',value: "@tUserName"});
+        select(0);
+        //初始
+        if ("@tLoginUser") {
+            getAuthority("@tLoginUser");
+        }
+        else {
+            getSearchData();
+        }
+        RenderBsDatepicker();
+
+
+        setTableRange();
+        //getSearchData();
+        //查詢
+        $("#btnSearch_Filter").click(function () {
+            getSearchData();
+        });
+        //setTimeout(function () { $("#btnSearch_Filter").click(); },1000);
+        $('#modalOK_warn').click(function () {
+            $('#warningMsg').modal('toggle');
+        });
+        $("#pre_page").click(function () {
+            if (parseInt($("#page_select").val()) == 1) {
+                $("#modalMsg").text("已是第一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select").val()) > 1) {
+                $("#page_select").val(parseInt($("#page_select").val()) - 1);
+                getSearchData();
+            }
+        });
+        $("#next_page").click(function () {
+            if (parseInt($("#page_select").val()) == parseInt($("#totalPage_search").text())) {
+                $("#modalMsg").text("已是最後一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select").val()) < parseInt($("#totalPage_search").text())) {
+                $("#page_select").val(parseInt($("#page_select").val()) + 1);
+                getSearchData();
+            }
+        });
+
+        $("#scenario").on("change",function(){
+            let data = $(this).val();
+            const $yorz = $("#action2");
+            const $t = $("#logicStatus").val();
+            const $x = $("#action1").val();
+            switch (data) {
+                case "訊息篩選":
+                    $yorz.val("-");
+                    $yorz.attr("disabled",true);
+                    break;
+                default:
+                    $yorz.attr("disabled",false);
+                    break;
+            }
+        })
+
+        $("#searchData_His").click(function () {
+            var tStart = $("#startdate_history").val();
+            var tEnd = $("#enddate_history").val();
+            console.log("開始：" + tStart + "\n" + "結束：" + tEnd);
+            $("#page_select_his").val(1);
+            getHistoryData("", tStart, tEnd);
+        });
+        $("#pre_page_his").click(function () {
+            if (parseInt($("#page_select_his").val()) == 1) {
+                $("#modalMsg").text("已是第一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select_his").val()) > 1) {
+                $("#page_select_his").val(parseInt($("#page_select_his").val()) - 1);
+                getHistoryData("", $("#startdate_history").val(), $("#enddate_history").val());
+            }
+        });
+        $("#next_page_his").click(function () {
+            if (parseInt($("#page_select_his").val()) == parseInt($("#totalPage_search_his").text())) {
+                $("#modalMsg").text("已是最後一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select_his").val()) < parseInt($("#totalPage_search_his").text())) {
+                $("#page_select_his").val(parseInt($("#page_select_his").val()) + 1);
+                getHistoryData("", $("#startdate_history").val(), $("#enddate_history").val());
+            }
+        });
+        $("#pre_page").click(function () {
+            if (parseInt($("#page_select").val()) == 1) {
+                $("#modalMsg").text("已是第一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select").val()) > 1) {
+                $("#page_select").val(parseInt($("#page_select").val()) - 1);
+                getSearchData();
+            }
+        });
+        $("#next_page").click(function () {
+            if (parseInt($("#page_select").val()) == parseInt($("#totalPage_search").text())) {
+                $("#modalMsg").text("已是最後一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select").val()) < parseInt($("#totalPage_search").text())) {
+                $("#page_select").val(parseInt($("#page_select").val()) + 1);
+                getSearchData();
+            }
+        });
+        $("#btn-addLogic").click(function () {
+            addAlertModal({type:'新增'});
+        });
+
+        getLogicData(false);
+    });
+    function getAuthority(pUserID) {
+        getSearchData();
+    }
+    function setTableRange() {
+        var tHeaderH = $("#nav_major").height() + $("#nav_sub").height();
+        var tPageTitle = $(".pageTitle").height() + $(".alertMessage").height();
+        //$(".messageTable").css('height', 'calc(100vh - ' + tPageTitle + 'px - ' + $("footer").height() + 'px - ' + tHeaderH + 'px)');
+        $(".messageTable").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle + 'px - ' + $("footer").height() + 'px - 45px)');
+    }
+    function getSearchData() {
+        $("#tabletest").find('tbody').remove();
+        var tDataTitle = '@tDataTitle'.split(',');
+        var tDataField = '@tDataField'.split(',');
+
+        var tData = {
+            Logic: $("#selectLogic").val(),
+            DeviceNo: $("#DeviceNo").val(),
+            DeviceName: $("#DeviceName").val(),
+            Level: $("#Level").val(),
+            StartTime: $("#startdate").val(),
+            EndTime: $("#enddate").val()
+        }
+        autoGetFilterData(tDataTitle, tDataField, tData)
+
+    }
+
+    function autoGetFilterData(tDataTitle, tDataField, tData) {
+        var req = $.ajax({
+            type: "Get",
+            url: '@Url.Action("GetFilterData", "Feeder")',
+            data: tData,
+            dataType: "json",
+            async: true
+        })
+        $.when(req).done(function (res) {
+            console.log(res)
+            var data = res.reverse();
+            var tPage = $("#page_select").val();
+            var tStartNo = (tPage - 1) * 10;
+            var tEndNo = (tStartNo + 10) > data.length ? data.length : (tStartNo + 10);
+            $("#totalPage_search").text(jsTool_getCalPage(data.length));
+            var root = document.getElementById('tabletest');
+            var root_body = document.createElement('tbody');
+            var th_title = document.createElement('th');
+            var tr_title = document.createElement('tr');
+            var $th_title = $(th_title);
+            var tr_title = document.createElement('tr');
+            var th_detail_arr = []
+            var positionPX = 120;
+            var newData = sessionStorage.getItem('newFilterData')
+            $(".inner").css({
+                marginRight: ((tDataField.length - 9) * 120) + "px"
+            });
+
+            if (!sessionStorage.getItem('lastFilterData')) {
+                sessionStorage.setItem('lastFilterData', data[0]["ID"])
+                sessionStorage.setItem('newFilterData', data[0]["ID"])
+            }
+
+            if (data[0]["ID"] > sessionStorage.getItem('newFilterData')) {
+                sessionStorage.setItem('lastFilterData', newData)
+                sessionStorage.setItem('newFilterData', data[0]["ID"])
+            }
+
+            $(root).find("tr").removeClass("feederActive")
+            $(root).find("th").removeClass("feederActive")
+        
+            //create table head loop
+            for (var j = 0; j < tDataTitle.length; j++) {
+                var th_title = document.createElement('th');
+                th_title.innerHTML = tDataTitle[j];
+                $(th_title).css({
+                    position: 'absolute',
+                    width: '120px'
+                });
+                if (j < 4) {
+                    tr_title.appendChild(th_title);
+                    $(th_title).css({
+                        left: (j * positionPX) + "px",
+                    });
+                }
+                else if (j > 8) {
+                    tr_title.appendChild(th_title);
+                    $(th_title).css({
+                        right: ((tDataTitle.length - 1 - j) * positionPX) + "px",
+                    });
+                }
+                else {
+                    var td_title = document.createElement('td');
+                    td_title.innerHTML = tDataTitle[j];
+                    tr_title.appendChild(td_title);
+                }
+            }
+            //append table head
+            root_body.appendChild(tr_title);
+
+            //create table content loop
+            for (var i = tStartNo; i < tEndNo; i++) {
+                var tr = document.createElement('tr');
+                var positionPX = 120;
+                var isNewData = data[i]["ID"] > sessionStorage.getItem('lastFilterData')
+
+                for (var k = 0; k < tDataField.length; k++) {
+                    if (k < 4) {
+                        var th_detail = document.createElement('th');
+                        th_detail_arr.push(th_detail)
+                        $(th_detail).css({
+                            position: 'absolute',
+                            left: (k * positionPX) + "px",
+                            width: '120px'
+                        });
+                        if (tDataField[k] == "LOGIC") {
+                            th_detail.innerHTML = "邏輯" + data[i][tDataField[k]];
+                            th_detail.title = data[i]["LOGICDES"];
+                        }
+                        else if (tDataField[k] == "TIME") {
+                            th_detail.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
+
+                        }
+                        else {
+                            th_detail.innerHTML = data[i][tDataField[k]];
+                        }
+
+                        tr.appendChild(th_detail);
+                        if (isNewData) {
+                            $(th_detail).addClass("feederActive")
+                        }
+                    }
+                    else if (k > 8) {
+                        var th_detail = document.createElement('th');
+                        th_detail_arr.push(th_detail)
+                        $(th_detail).css({
+                            position: 'absolute',
+                            right: ((tDataField.length - 1 - k) * positionPX) + "px",
+                            width: '120px',
+                        });
+                        if (isNewData) {
+                            $(th_detail).addClass("feederActive")
+                        }
+
+                        if (tDataField[k] == "LOCATION") {
+                            var a_location = document.createElement("a");
+                            var img_location = document.createElement("img");
+                            //img_location.src = "../Images/location.png";
+                            img_location.src = "@tLocationImg";
+                            a_location.href = "https://demo.supergeotek.com/INERADMS/GISMAP/MAP?Method=Coordinate&Value=" + data[i]["Coor"];
+                            a_location.appendChild(img_location);
+
+                            th_detail.appendChild(a_location);
+                        }
+                        else if (tDataField[k] == "REMOVE") {
+                            var img = document.createElement("img");
+                            //img.src = "../Images/status.png";
+                            img.src = "@tRemoveImg";
+                            img.className = "coursor-pointer";
+                            $(img).data("locat", data[i]["ID"]);
+
+                            $(img).click(function (pID) {
+                                return function () {
+                                    $('#ooo').modal('toggle');
+
+                                    $('#modalCancel').click(function () {
+                                        $('#ooo').modal('toggle');
+                                    });
+                                    $('#modalOK').click(function () {
+                                        $('#ooo').modal('toggle');
+                                        ChangeDisarmed(pID);
+                                    });
+
+                                };
+                            }($(img).data("locat")));
+
+                            th_detail.appendChild(img);
+
+                        } else if (tDataField[k] == "HISTORY") {
+                            var img = document.createElement("img");
+                            //img.src = "../Images/status.png";
+                            img.src = "@tHistoryImg";
+                            img.className = "coursor-pointer";
+                            $(img).data("history", data[i]["ENAME"]);
+                            $(img).attr("data-toggle", "modal");
+                            $(img).attr("data-target", "#historyModal");
+
+                            $(img).click(function (pEname) {
+                                return function () {
+                                    $("#startdate_history").val(jsTool_parseDateTimeStr(new Date(new Date().getTime() - 1 * 60 * 60 * 1000)));
+                                    $("#enddate_history").val(jsTool_parseDateTimeStr(new Date()));
+                                    getHistoryData(pEname, $("#startdate_history").val(), $("#enddate_history").val());
+                                    $("#exportexcel").click(function () { Export('@Url.Action("HistoryDetailExport", "Feeder")', { EquipName: pEname, startdate: $("#startdate_history").val(), enddate: $("#enddate_history").val() }); });
+                                };
+                            }($(img).data("history")));
+
+                            th_detail.appendChild(img);
+                        }
+                        tr.appendChild(th_detail);
+                    }
+                    else {
+                        var td_detail = document.createElement('td');
+
+                        if (tDataField[k] == "LOCATION") {
+                            var a_location = document.createElement("a");
+                            var img_location = document.createElement("img");
+                            //img_location.src = "../Images/location.png";
+                            img_location.src = "@tLocationImg";
+                            a_location.href = "https://demo.supergeotek.com/INERADMS/GISMAP/MAP?Method=Coordinate&Value=" + data[i]["Coor"];
+                            a_location.appendChild(img_location);
+
+                            td_detail.appendChild(a_location);
+                        }
+                        else if (tDataField[k] == "REMOVE") {
+                            var img = document.createElement("img");
+                            //img.src = "../Images/status.png";
+                            img.src = "@tRemoveImg";
+                            img.className = "coursor-pointer";
+                            $(img).data("locat", data[i]["ID"]);
+
+                            $(img).click(function (pID) {
+                                return function () {
+                                    $('#ooo').modal('toggle');
+
+                                    $('#modalCancel').click(function () {
+                                        $('#ooo').modal('toggle');
+                                    });
+                                    $('#modalOK').click(function () {
+                                        $('#ooo').modal('toggle');
+                                        ChangeDisarmed(pID);
+                                    });
+                                };
+                            }($(img).data("locat")));
+
+                            td_detail.appendChild(img);
+                        }
+                        else {
+                            td_detail.innerHTML = data[i][tDataField[k]];
+                        }
+                        if (isNewData) {
+                            $(tr).addClass("feederActive")
+                        }
+                        tr.appendChild(td_detail);
+                    }
+                }
+                root_body.appendChild(tr);
+                root.appendChild(root_body);
+                var hr_height = $(root).find("tbody tr").eq(i + 1).height();
+                th_detail_arr.forEach(function(value,item){
+                    if (isNewData) {
+                        $(value).css({
+                            height: hr_height,
+                        });
+                    }
+                })
+            }
+            setTimeout(getSearchData, 30000)
+        }).fail(function (err) {
+            console.log(err)
+        })
+
+    }
+
+    //告警解除
+    function ChangeDisarmed(pFilterID) {
+        var tData = {}
+        $.ajax({
+            type: "Put",
+            url: '@Url.Action("UpdateFilterData", "Feeder")' + '/' + pFilterID,
+            data: tData,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                if (data.Status == true) {
+                    $("#btnSearch_Filter").click();
+                }
+                else {
+                    alert(data.Msg);
+                }
+            },
+            failure: function (error) { }
+        });
+    }
+
+    function getHistoryData(pEname, pStartTime, pEndTime) {
+        $("#myModalLabel2").val("");
+        $("#table_History").find('tr').remove();
+        var tDataTitle = ["編號", "警報時間", "設備編號", "設備名稱", "設備點", "警報訊息"];
+        var tDataField = ["idx", "rectime", "unikey", "sitename", "pointname", "remark"];
+        if (pEname != "") {
+            tEname = pEname;
+        }
+        else {
+            pEname = tEname;
+        }
+        $("#myModalLabel2").text(pEname);
+        if (pStartTime != "") {
+            tStartT = pStartTime;
+        }
+        else {
+            pStartTime = tStartT;
+        }
+        if (pEndTime != "") {
+            tEndT = pEndTime;
+        }
+        else {
+            pEndTime = tEndT;
+        }
+
+        var tData = {
+            EquipName: pEname,
+            StartTime: pStartTime,
+            EndTime: pEndTime
+        }
+        $.ajax({
+            type: "Get",
+            url: '@Url.Action("GetMSGLogData", "Feeder")',
+            data: tData,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                var tPage = $("#page_select_his").val();
+                var tStartNo = (tPage - 1) * 10;
+                var tEndNo = (tStartNo + 10) > data.length ? data.length : (tStartNo + 10);
+                $("#totalPage_search_his").text(jsTool_getCalPage(data.length));
+                //var root = $("#div_HistoryDetail");
+                var root = document.getElementById('table_History');
+                var tr_title = document.createElement('tr');
+                for (var j = 0; j < tDataTitle.length; j++) {
+                    var th_title = document.createElement('th');
+                    th_title.innerHTML = tDataTitle[j];
+                    tr_title.appendChild(th_title);
+                }
+                root.appendChild(tr_title);
+                for (var i = tStartNo; i < tEndNo; i++) {
+                    var tr = document.createElement('tr');
+                    for (var k = 0; k < tDataField.length; k++) {
+                        var td_title = document.createElement('td');
+                        if (tDataField[k] == "rectime") {
+                            td_title.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
+                        }
+                        else {
+                            td_title.innerHTML = data[i][tDataField[k]];
+                        }
+
+                        tr.appendChild(td_title);
+                    }
+                    root.appendChild(tr);
+                }
+            },
+            failure: function (error) { }
+        });
+    }
+</script>
+}

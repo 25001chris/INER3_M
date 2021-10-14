@@ -1,0 +1,30 @@
+﻿@model  INERADMS.ViewModels.PaginationViewModel
+
+@Html.Hidden("hf_PageTotal_Modal", Model.Total)
+<table class="sadms-table">
+    <thead>
+        <tr>
+            <th scope="col">日期</th>
+            <th scope="col">數值</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ if (Model.Count > 0)
+            {
+                foreach (INERADMS.ViewModels.HistoryDetail d in Model.Data)
+                {
+                    <tr>
+                        <td>@d.Time</td>
+                        <td>@d.DataValue</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td class="td-empty" colspan="8">無查詢結果</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

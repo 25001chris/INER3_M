@@ -1,0 +1,223 @@
+2021.07.19.10.47.15.826[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.19.10.47.15.826[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.19.10.47.25.717[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.19.10.47.25.889[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.19.10.47.26.029[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.19.10.47.26.201[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.19.10.47.26.201[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.19.10.47.43.718[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.19.10.47.45.265[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.19.11.01.52.390[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.19.11.01.52.406[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.19.11.01.52.531[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.19.11.01.52.578[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.19.11.01.52.578[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.19.11.01.53.531[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.19.11.01.53.546[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.19.11.03.56.836[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.03.57.250[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.03.57.273[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.03.57.354[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.04.02.821[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.03.243[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.03.259[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.03.353[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.08.634[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.09.228[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.09.228[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.09.275[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.14.244[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.15.177[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.04.15.177[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.04.15.192[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.04.20.804[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.21.554[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.04.21.554[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.04.21.585[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.04.27.644[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.28.128[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.28.128[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.28.144[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.34.300[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.35.145[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.35.145[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.35.176[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.40.615[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.41.037[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.41.037[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.41.052[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.46.537[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.46.959[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.46.959[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.46.959[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.52.064[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.52.486[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.52.486[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.52.501[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.04.57.725[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.04.58.501[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.04.58.501[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.04.58.532[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.05.173[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.05.548[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.05.564[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.05.564[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.11.268[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.11.646[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.11.646[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.11.677[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.18.729[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.19.330[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.19.332[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.19.352[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.24.256[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.24.709[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.24.709[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.24.725[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.31.007[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.31.524[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.31.524[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.31.571[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.36.637[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.37.385[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.37.387[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.37.404[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.42.315[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.42.765[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.42.769[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.42.794[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.49.112[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.49.550[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.49.550[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.49.565[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.05.54.144[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.05.54.581[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.05.54.581[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.05.54.597[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.00.285[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.00.644[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.06.00.660[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.06.00.660[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.06.426[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.06.926[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.06.06.941[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.06.06.957[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.14.301[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.14.723[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.06.14.739[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.06.14.739[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.19.723[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.20.161[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.06.20.161[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.06.20.176[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.25.536[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.26.083[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.06.26.083[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.06.26.099[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.06.31.397[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.31.788[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.06.31.803[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.06.31.819[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.37.522[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.37.929[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.06.37.929[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.06.37.975[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.06.43.633[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.44.133[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.06.44.133[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.06.44.149[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.06.49.712[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.50.087[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.06.50.087[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.06.50.118[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.06.55.650[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.06.56.103[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.06.56.103[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.06.56.134[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.07.01.265[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.01.797[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.07.01.797[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.07.01.843[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.07.07.203[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.07.750[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.07.07.750[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.07.07.781[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.07.13.389[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.14.029[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.07.14.029[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.07.14.045[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.07.19.639[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.20.077[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.07.20.077[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.07.20.092[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.07.25.202[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.25.827[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.07.25.827[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.07.25.843[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.07.32.452[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.32.859[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.07.32.859[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.07.32.905[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.07.38.719[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.39.125[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.07.39.141[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.07.39.157[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.07.44.454[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.44.860[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.07.44.860[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.07.44.876[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.07.50.185[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.50.662[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.07.50.668[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.07.50.689[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.07.55.532[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.07.56.096[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.07.56.097[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.07.56.112[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.08.01.849[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.02.302[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.08.02.302[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.08.02.318[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.08.07.073[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.07.541[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.08.07.541[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.08.07.557[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.08.12.816[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.13.253[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.08.13.253[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.08.13.269[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.08.18.266[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.18.783[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.08.18.783[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.08.18.799[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.11.08.24.958[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.25.419[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.08.25.420[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.08.25.439[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.08.30.741[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%土十五線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.31.460[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":15744,"fdr1":40,"CODETXT":"XD35","EQUIPNAME":"土十五線"}]
+2021.07.19.11.08.31.460[Normal][GetPowerRate](System)：[{"equipname":"土庫SS-土十五線 XD35","unikey":39300220,"datavalue":2932.5}]
+2021.07.19.11.08.31.491[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":2932.5,"Breakdowns":0.0}
+2021.07.19.11.08.36.844[Normal][GetPowerRate](System)：select CA.EQUIPNAME,CA.UNIKEY,RA.DATAVALUE from (SELECT unikey,max(datavalue)AS datavalue FROM ai_record GROUP BY unikey) RA left join PUBLIC.CONFIGAI CA on RA.UNIKEY=CA.UNIKEY where ((CA.EQUIPNAME like '%斗63線%'))and CA.POINTNAME like '%瓦%'
+2021.07.19.11.08.37.281[Normal][GetPowerRate](System)：[{"fsc":108,"ufid":10150016,"fdr1":305,"CODETXT":"XN63","EQUIPNAME":"斗63線"}]
+2021.07.19.11.08.37.281[Normal][GetPowerRate](System)：[{"equipname":"斗63線 XN63","unikey":24300063,"datavalue":8587.5}]
+2021.07.19.11.08.37.297[Normal][GetPowerRate](System)：停電區間負載量計算結束,取得值：{"PowerFailures":8587.5,"Breakdowns":0.0}
+2021.07.19.14.51.05.800[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.19.14.51.05.801[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.19.15.21.48.875[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.07.19.15.21.48.958[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.07.19.15.21.49.058[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.07.19.15.21.49.091[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.19.15.21.49.092[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.07.19.15.21.50.859[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.07.19.15.21.50.876[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.07.19.15.22.55.421[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.07.19.15.22.55.422[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號不存在。
+2021.07.19.15.23.22.597[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=407,OID=5018103
+2021.07.19.15.23.22.608[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:407,設備OID:5018103,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.07.19.15.23.22.627[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:407,設備OID:5018103,設備類別碼有效性檢查PASSED
+2021.07.19.15.23.22.646[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=407,得到表格名稱=pole
+2021.07.19.15.23.22.710[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:407,設備OID:5018103,表格名稱=pole,基本設備資訊查詢完成
+2021.07.19.15.23.22.728[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=pole,欄位名稱翻譯資訊查詢完成
+2021.07.19.15.23.22.729[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.07.19.15.23.22.799[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。

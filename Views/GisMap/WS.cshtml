@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WS</title>
+    <script type="text/javascript">
+        //連線
+        var ws = new WebSocket("@Url.Action(null, null, null,
+Url.RequestContext.HttpContext.Request.Url.Scheme.Replace("http", "ws"),
+Url.RequestContext.HttpContext.Request.Url.Host + ":" + Url.RequestContext.HttpContext.Request.Url.Port)");
+        ws.onopen = function() {
+            ws.send("test");
+        }
+        ws.onmessage = function (data) {
+		console.log(data);
+		};
+    </script>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>

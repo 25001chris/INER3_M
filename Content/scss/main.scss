@@ -1,0 +1,53 @@
+﻿@import "global-style";
+
+.navbar{
+    position: fixed;
+    top:0;
+    z-index: 1000;
+    @include breakpoint(view-1440){
+        .m-title{
+            font-size: 1rem !important;
+        }
+    }
+    @include breakpoint(view-1200){
+        .m-title{
+            font-size: 0.75rem !important;
+        }
+        .navbar-nav{
+            .nav-item{
+                padding: 0 !important;
+                .nav-link,label{
+                    font-size: 0.75rem !important;
+                }
+            }
+        }
+    }
+    @include breakpoint(view-1024){
+        .m-title{
+            font-size: 0.75rem !important;
+        }
+        .navbar-nav{
+            .nav-item{
+                padding: 0 !important;
+                .nav-link,label{
+                    font-size: 0.75rem !important;
+                }
+            }
+        }
+    }
+}
+
+#divMapBaseOperation{
+    z-index: 999 !important;
+}
+
+.GLayerSwitchDialog{
+    z-index: 1000 !important;
+}
+
+#tblLogInForm{
+    position: absolute !important;
+    left: calc(50% - 400px) !important;
+    top: calc(50% - 120px) !important;
+    width: 800px !important;
+}

@@ -1,0 +1,36 @@
+//@import "./../scss/global-variables";
+@import "./../scss/global-style";
+//@import "layout-styles";
+
+.force-overflow{
+    .sadms-table{
+        .td-empty{
+            height: 50vh;
+            line-height: 50vh;
+            min-height: 200px;
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: 0.125em;
+            color: #4A4A4A;
+        }
+    }
+}
+
+.modal-content{
+    .row{
+        div{
+            label{
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                color: #344059;
+                margin-bottom: 0.25rem;
+            }
+        }
+    }
+}

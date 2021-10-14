@@ -1,0 +1,33 @@
+2021.10.12.11.51.02.693[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.10.12.11.51.02.803[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.10.12.11.51.02.959[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.10.12.11.51.03.021[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.12.11.51.03.021[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.12.11.51.06.397[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.12.11.51.06.397[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.12.11.51.15.288[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.12.11.51.15.303[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.12.11.51.23.038[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.12.11.51.23.054[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.12.11.51.55.518[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.12.11.51.55.518[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.12.11.51.57.205[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.12.11.51.57.205[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.12.15.12.41.792[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin,Hp6uPRWAKR1mVAGezJxf1qfAr0/4Q9QFw+ICg+bqJCA=
+2021.10.12.15.12.41.808[Normal][INERADMS.Controllers.HomeController.LogIn](System)：ineradmin登入檢查過關
+2021.10.12.15.12.41.933[Normal][INERADMS.Controllers.HomeController.LogIn](System)：目前登入者帳號是：ineradmin,登入紀錄OK
+2021.10.12.15.12.41.949[Normal][INERADMS.Controllers.GisMapController.Map](System)：檢查登入者帳號....
+2021.10.12.15.12.41.949[Normal][INERADMS.Controllers.GisMapController.Map](System)：目前登入者帳號是：ineradmin
+2021.10.12.15.12.42.964[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,準備撈設備類別
+2021.10.12.15.12.42.980[Normal][INERADMS.Controllers.GisMapController.GetEquipmentClasses](System)：設備類別資訊取得完成
+2021.10.12.15.17.57.209[Normal][INERADMS.Controllers.GisMapController.GetInfoWindowData](System)：資料庫連接字串：Server=192.168.1.22;Port=5432;Database=GISADMS;User Id=postgres;Password=ok;,傳入TID=110,OID=11143202
+2021.10.12.15.17.57.225[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11143202,EquipmentInfo.GetEquipmentInfo函數啟動
+2021.10.12.15.17.57.241[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11143202,設備類別碼有效性檢查PASSED
+2021.10.12.15.17.57.272[Normal][EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11143202,抓到座標值是TWD67座標下X=183609,y=2620248
+2021.10.12.15.17.57.272[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11143202,原無饋線編號,抓饋線編號先抓到FDR1值為30
+2021.10.12.15.17.57.287[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入FDR=30,得到饋線編號為XD25
+2021.10.12.15.17.57.287[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：傳入TID=110,得到表格名稱=distributedcustomer
+2021.10.12.15.17.57.303[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：設備FSC:110,設備OID:11143202,表格名稱=distributedcustomer,基本設備資訊查詢完成
+2021.10.12.15.17.57.303[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：表格名稱=distributedcustomer,欄位名稱翻譯資訊查詢完成
+2021.10.12.15.17.57.303[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：開始轉換基本設備資訊的欄位名稱......
+2021.10.12.15.17.57.412[Normal][INERADMS.Models.EquipmentInfo.GetEquipmentInfo](System)：轉換基本設備資訊的欄位名稱完畢。

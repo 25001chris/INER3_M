@@ -1,0 +1,288 @@
+﻿@using INERADMS.ViewModels
+@using INERADMS.Helpers
+@model  INERADMS.ViewModels.PaginationViewModel
+@{
+    //所屬權限(群組)
+    string grouplist = ViewData["Grouplist"].ToString();
+    //狀態
+    string statuslist = "1,啟用中#0,停用中";
+    //判斷是否有本頁的編輯權限
+    string EditAuth = ViewData["EditAuth"].ToString();
+}
+
+<div class="row">
+    <div class="col-6 col-md-2 text-center">
+        <a id="a_AccountMa" class="custom-black font-weight-bold" onclick="Authority_RenderAjax('@Url.Action("AccountMa", "System")'); return false;"
+           title="使用者帳號管理">
+            使用者帳號管理
+            <div id="LightStick_AccountMa" class="LightStick"></div>
+        </a>
+    </div>
+    <div class="col-6 col-md-2 ml-md-n4 text-center">
+        <a id="a_AuthGroupMa" class="custom-black" onclick="Authority_RenderAjax('@Url.Action("AuthGroupMa", "System")'); return false;"
+           title="權限群組管理">
+            權限群組管理
+            <div id="LightStick_AuthGroupMa"></div>
+        </a>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-12 col-md-2 mr-md-n4 mt-3 mt-md-0 d-flex justify-content-center justify-content-md-start">
+        <select id="group_id" class="select-box" name="">
+            <option value="">所屬權限</option>
+            @foreach (string group in grouplist.Split('#'))
+            {
+                <option value="@group.Split(',')[0]">@group.Split(',')[1]</option>
+            }
+        </select>
+    </div>
+    <div class="col-12 col-md-2 ml-md-n5 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-start">
+        <input id="startdate" class="input-box datepicker" name="" placeholder="變更起始時間" data-toggle="datetimepicker" data-target="#startdate" />
+    </div>
+    <div class="col-12 col-md-2 ml-md-3 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-start">
+        <input id="enddate" class="input-box datepicker" name="" placeholder="變更結束時間" data-toggle="datetimepicker" data-target="#enddate" />
+    </div>
+    <div class="col-md-2 ml-md-3 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-start">
+        <button class="btn btn-search"
+                onclick="Search('@Url.Action("AccountMa", "System", new { id = ""})',
+        { group_id: $('#group_id').val(), startdate: $('#startdate').val(), enddate: $('#enddate').val() });">
+            搜尋
+        </button>
+    </div>
+    <div class="col-md-4 ml-md-4 mt-1 mt-md-0 d-flex justify-content-center justify-content-md-end">
+        @if (EditAuth == "y")
+        {
+            <button id="btn-add_account" class="btn btn-add" onclick="showModifyAccount('新增帳號');">+ 新增帳號</button>
+        }
+    </div>
+    <div class="col-md-12 d-flex justify-content-end">
+        <div id="page-selection"></div>
+    </div>
+    <div class="col-md-12">
+        <div class="force-overflow">
+            <table class="sadms-table">
+                <thead>
+                    <tr>
+                        <th scope="col">帳號</th>
+                        <th scope="col">名稱</th>
+                        <th scope="col">所屬權限</th>
+                        <th scope="col">最後變更時間</th>
+                        <th scope="col">狀態</th>
+                        <th scope="col">管理</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ if (Model.Count > 0)
+                        {
+                            foreach (Account user in Model.Data)
+                            {
+                                <tr>
+                                    <td>@user.user_id</td>
+                                    <td>@user.user_name</td>
+                                    <td>@user.group_name</td>
+                                    <td>@user.update_time</td>
+                                    @if (user.user_status == 1)
+                                    {
+                                        <td><img class="" src="~/Images/ICON/enable.svg" /><font class="custom-black">啟用中</font></td>
+                                    }
+                                    else
+                                    {
+                                        <td><img class="" src="~/Images/ICON/disable.svg" /><font class="custom-warming">停用中</font></td>
+                                    }
+                                    <td>
+                                        @if (EditAuth == "y")
+                                        {
+                                            <img class="" src="~/Images/ICON/ma.svg" onclick="showModifyAccount('編輯帳號', '@user.user_id');" />
+                                        }
+                                        else
+                                        {
+                                            <img class="" src="~/Images/ICON/search.svg" onclick="showModifyAccount('檢視帳號', '@user.user_id');" />
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td class="td-empty" colspan="8">無查詢結果</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        AjaxPagination(@Model.Total, @Model.Current, "@Url.Action("AccountMa", "System", new { id = ""})");
+        if (post != undefined) {
+            $("#group_id").val(post.group_id);
+            $("#startdate").val(post.startdate);
+            $("#enddate").val(post.enddate);
+        }
+
+        RenderBsDatepicker();
+    });
+          //新增&編輯帳號
+    function showModifyAccount(type, user_id) {
+        //header標題
+        let header = "<h3>" + type + "</h3>";
+
+        //資料區
+        let content = "<div class='row'>";
+        content += "<div class='col-12 col-md-6 order-md-1 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<input id='modal_user_name' class='input-box' placeholder='輸入名稱' title='輸入名稱' />";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 order-md-3 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<input id='modal_user_id' class='input-box CusRequired CusValidateAccount' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='bottom' placeholder='輸入帳號' data-cusrequired='帳號' title='輸入帳號'" + (type === "編輯帳號" ? "readonly" : "") + "/>";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 order-md-5 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<input id='modal_user_pwd' type='password' class='input-box CusValidatePWD' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='bottom' data-offset='40' placeholder='輸入8-15位英數字密碼' data-cusrequired='密碼' title='輸入8-15位英數字密碼'" + (type === "編輯帳號" ? "readonly" : "") + "/>";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 order-md-7 d-flex justify-content-center d-flex justify-content-md-end'>";
+        if (type === "編輯帳號" && "@EditAuth" == "y") {
+            content += "<a class='' onclick='$(this).hide();$(\"#modal_pwd_again\").removeClass(\"d-none\").addClass(\"CusRequired\").show();$(\"#modal_user_pwd\").removeAttr(\"readonly\").val(\"\");'>變更密碼</a>";
+        }
+        content += "<input id='modal_pwd_again' type='password' class='input-box " + (type === "編輯帳號" ? "d-none" : "CusRequired") + "' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='bottom' data-offset='10' placeholder='再次輸入密碼' data-cusrequired='再次輸入密碼' title='再次輸入密碼'" + "" + " />";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 mt-md-0 order-md-2 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<select id='modal_group_id' class='select-box CusRequired' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='bottom' data-cusrequired='群組權限' title='群組權限'><option value=''>群組權限</option>";
+        let grouplist = "@grouplist";
+         grouplist.split('#').forEach(function (item, index, array) {
+            content += "<option value='" + item.split(',')[0] + "'>" + item.split(',')[1] + "</option>";
+         });
+        content += "</select>";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 order-md-4 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<input id='modal_user_mail' class='input-box' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='bottom' placeholder='電子信箱' title='電子信箱' />";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 order-md-6 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<input id='modal_user_tel' class='input-box CusValidatePhoneNum' onclick='$(this).tooltip(\"hide\");' data-toggle='tooltip' data-trigger='manual' data-placement='bottom' placeholder='聯絡電話' data-cusrequired='聯絡電話' title='聯絡電話' />";
+        content += "</div>";
+        content += "<div class='col-12 col-md-6 mt-3 order-md-8 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<select id='modal_user_status' class='select-box' name=''><option value=''>帳戶狀態</option>";
+        let statuslist = "@statuslist";
+        statuslist.split('#').forEach(function (item, index, array) {
+            if (index == 0) {
+                content += "<option value='" + item.split(',')[0] + "' selected>" + item.split(',')[1] + "</option>";
+            }
+            else {
+                content += "<option value='" + item.split(',')[0] + "'>" + item.split(',')[1] + "</option>";
+            }
+        });
+        content +="</select>";
+        content += "</div>";
+
+        //footer按鈕區
+        content += "<div id='div_msgfooter' class='col-12 d-flex justify-content-center d-flex justify-content-md-end'>";
+        content += "<button class='btn btn-cancel' onclick='$(\"#msgModal\").modal(\"toggle\");'>取消</button>";
+        if ("@EditAuth" == "y") {
+            content += "<button class='btn btn-agree' onclick='ModifyAccountDetail(\"" + type + "\");'>確定</button>";
+        }
+        content += "</div>";
+        content += "</div>";
+
+        showMsgSm(header, content, null);
+        //添加新樣式以和卡控訊息樣式區別
+        $(".modal-dialog").removeClass("modal-dialog-AuthGroupMa");
+        $(".modal-dialog").addClass("modal-dialog-AccountMa");
+        //取得帳號資料明細並填入輸入框
+        if (type == "編輯帳號" || type == "檢視帳號") {
+            GetAccountDetail(user_id);
+        }
+    }
+
+    //取得帳號資料明細
+    function GetAccountDetail(user_id) {
+        //開啟Loading遮罩
+        ajaxStart();
+
+        $.ajax({
+            url: "@Url.Action("GetAccountDetail", "System", new { id = ""})/" + user_id,
+            success: function (result) {
+                $("#modal_user_name").val(result[0].user_name);
+                $("#modal_user_id").val(result[0].user_id);
+                $("#modal_user_pwd").val(result[0].user_pwd);
+                $("#modal_group_id").val(result[0].group_id);
+                $("#modal_user_mail").val(result[0].user_mail);
+                $("#modal_user_tel").val(result[0].user_tel);
+                $("#modal_user_status").val(result[0].user_status);
+            },
+            error: function (msg) {
+                alert("取得畫面資料失敗！");
+            },
+            complete: function () {
+                //關閉Loading遮罩
+                ajaxStop();
+            }
+        });
+    }
+
+     //新增&編輯帳號資料明細
+    function ModifyAccountDetail(type) {
+        //開啟Loading遮罩
+        //ajaxStart();
+
+        //驗證欄位資料 start
+        //1.必填
+        let msg = jsTool_CusRequired();
+        //2.英數字帳號
+        msg += jsTool_ValidateAccount();
+        //2.8-15位英數字密碼
+        msg += jsTool_ValidatePWD();
+        //3.再次輸入密碼
+        if (!$("#modal_pwd_again").hasClass("d-none") &&
+            $("#modal_pwd_again").val() != "" &&
+            $("#modal_user_pwd").val() != $("#modal_pwd_again").val()) {
+            msg += "密碼不符";
+            RenderBootstrapTooltip($("#modal_pwd_again"), "密碼不符");
+        }
+        //4.電子信箱
+        msg += jsTool_Email($("#modal_user_mail"));
+        //5.電話
+        msg += jsTool_ValidatePhoneNum();
+
+        if (msg) return false;
+        //驗證欄位資料 end
+
+        let data = {
+            user_name: $("#modal_user_name").val() == "" ? $("#modal_user_id").val() : $("#modal_user_name").val(),
+            user_id: $("#modal_user_id").val(),
+            user_pwd: $("#modal_user_pwd").val(),
+            group_id: $("#modal_group_id").val(),
+            user_mail: $("#modal_user_mail").val(),
+            user_tel: $("#modal_user_tel").val(),
+            user_status: $("#modal_user_status").val() == "" ? 1 : $("#modal_user_status").val(),
+            type: type
+        };
+
+        $.ajax({
+            url: "@Url.Action("ModifyAccountDetail", "System", new { id = ""})",
+            type: 'POST',
+            data: data,
+            success: function (result) {
+                if (result.Status) {
+                    alert(result.Message);
+                    $("#msgModal").modal("toggle");
+                    $("#a_AccountMa").click();  //點擊標籤重整頁面
+                }
+                else {
+                    if (result.Message.includes("帳號已存在")) {
+                        //alert(result.Message);
+                        RenderBootstrapTooltip($("#modal_user_id"), result.Message);
+                        $("#modal_user_id").focus();
+                    }
+                }
+            },
+            error: function (msg) {
+                alert("取得畫面資料失敗！");
+            },
+            complete: function () {
+                //關閉Loading遮罩
+                //ajaxStop();
+            }
+        });
+    }
+</script>

@@ -1,0 +1,149 @@
+{
+	"version":8,
+	"name":"Supergeo",
+	"sources":{
+		"Supergeo Map":{
+			"type":"vector",
+			"tiles":["TextData"],
+			"minzoom":13,
+			"maxzoom":13
+		}
+	},
+	"layers":[
+		{
+			"id":"annotation",
+			"source":"Supergeo Map",
+			"source-layer":"annotation",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"dsbnroom_t",
+			"source":"Supergeo Map",
+			"source-layer":"dsbnroom_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"pole_t",
+			"source":"Supergeo Map",
+			"source-layer":"pole_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"substation_t",
+			"source":"Supergeo Map",
+			"source-layer":"substation_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"substation_n",
+			"source":"Supergeo Map",
+			"source-layer":"substation_n",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"connection_t",
+			"source":"Supergeo Map",
+			"source-layer":"connection_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"switch_t",
+			"source":"Supergeo Map",
+			"source-layer":"switch_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"breaker_t",
+			"source":"Supergeo Map",
+			"source-layer":"breaker_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		},
+		{
+			"id":"hicustomer_t",
+			"source":"Supergeo Map",
+			"source-layer":"hicustomer_t",
+			"type":"symbol",
+			"layout": {
+				"text-field": "context",
+				"text-size": 14
+			},
+			"paint": {
+				"text-color": ["get", "symcolor"],
+				"text-halo-color": "#000000"
+			},
+			"minzoom":16
+		}
+	]
+}

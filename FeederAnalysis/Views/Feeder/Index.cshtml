@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="jstree">
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <script type="text/javascript">
+            $(function() {
+                $('#jstree').jstree({
+                    'core': {
+                        'data': @Html.Raw(ViewBag.Json)
+                    }
+                });
+                $('#jstree').on('changed.jstree', function (e, data) {
+                    console.log(data.node);
+                    console.log(data.selected);
+                });
+                $('#jstree').on('ready.jstree', function () { $(this).jstree('open_all') });
+            });
+    </script>
+</body>
+</html>

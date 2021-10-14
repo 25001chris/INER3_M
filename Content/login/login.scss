@@ -1,0 +1,38 @@
+// @import "./../scss/global-variables";
+@import "./../scss/global-style";
+//@import "layout-styles";
+
+body{
+    background-size: cover;
+}
+.SystemName{
+    color:$color-black !important;
+    font-size: 24px !important;
+}
+.rememberMe{
+    color:$color-black !important;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 147.8%;
+    letter-spacing: 0.1em;
+}
+
+.lblLogInUserInputAreaIcon{
+    input{
+        border: 1px solid #C1D5DC !important;
+        border-radius: 10px !important;
+    }
+    &.UserIDIcon{
+        &::before{
+            background-image: url("./../images/ICON/user.svg") !important;
+        }
+    }
+    &.PasswordIDIcon{
+        &::before{
+            background-image: url("./../images/ICON/lock.svg") !important;
+        }
+    }
+
+}

@@ -1,0 +1,117 @@
+﻿@import "global-variables";
+
+h3 {
+    font-weight: bold;
+    font-size: 1rem;
+    color: $color-black;
+    //margin-top: 2rem;
+}
+
+/*pagination start*/
+#page-selection, #page-selection2 {
+    margin: 10px;
+    height: 35px;
+
+    li.active .page-link {
+        color: $color-black;
+        background-color: #FFFFFF;
+        /* LINE */
+        border: 1px solid #C1D5DC;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+}
+/*pagination end*/
+
+/*responsive start*/
+@media (min-width: 300px) {
+    #a_AccountMa, #a_AuthGroupMa {
+        font-size: 14px;
+    }
+
+    .LightStick {
+        background-color: #FCD76E;
+        width: 100%;
+        height: 0.3125rem;
+        border-radius: 0.625rem;
+    }
+
+    #div_Authority_content {
+        margin-top: 50px;
+
+        // #btn-add_account {
+        //     margin-right: -15px;
+        // }
+    }
+
+    #div_Log_content {
+        margin-top: 50px;
+    }
+
+    #div_EquipHistory_content {
+        margin-top: 47px;
+
+        #lbl-lastupdate {
+            font-weight: normal;
+            font-size: 14px;
+            color: #7E909D;
+            margin-top: 15px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #a_AccountMa, #a_AuthGroupMa {
+        font-size: 16px;
+    }
+
+    #div_Authority_content {
+        margin-top: 30px;
+
+        #btn-add_account {
+            margin-right: -15px;
+        }
+    }
+
+    #div_Log_content {
+        margin-top: 10px;
+
+        .btn-print {
+            margin-right: -110px;
+        }
+    }
+
+    #div_EquipHistory_content {
+        margin-top: 25px;
+
+        .input-box {
+            width: 152px;
+        }
+
+        .select-box {
+            width: 152px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+}
+/*responsive end*/
+
+.reset {
+    @extend .LightStick;
+    background-color: #E5EEF4;
+}
+
+@media print {
+    #div_Log_content {
+        * {
+            -webkit-print-color-adjust: exact !important;
+        }
+
+        .noPrint {
+            display: none !important;
+        }
+    }
+}

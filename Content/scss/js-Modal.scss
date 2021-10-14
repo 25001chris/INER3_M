@@ -1,0 +1,278 @@
+﻿@import "global-variables.scss";
+
+.modal-dialog-AccountMa {
+    @media (min-width: 300px) {
+        .modal-content {
+            width: 375px;
+            height: 600px;
+            //box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.48);
+            box-shadow: none;
+            border-radius: 5px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+
+            .close {
+                color: $color-black;
+
+                &:hover {
+                    color: $color-black;
+                }
+            }
+        }
+
+        .modal-body {
+            width: 375px;
+
+            .input-box, .select-box {
+                width: 308px;
+                height: 42px;
+
+                &.hidden {
+                    border: 0px;
+                    background: $color-second2;
+                    cursor: default;
+                }
+            }
+
+            a {
+                font-weight: bold;
+                font-size: 14px;
+                text-decoration-line: underline;
+                color: $color-black;
+            }
+
+            #div_msgfooter {
+                position: absolute;
+                top: 480px;
+
+                button {
+                    width: 160px;
+                }
+            }
+        }
+
+        .modal-footer {
+            border-top: none;
+
+            button {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .modal-content {
+            width: 689px;
+            height: 436px;
+            //box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.48);
+            box-shadow: none;
+            border-radius: 5px;
+        }
+
+        .modal-body {
+            width: 689px;
+
+            #div_msgfooter {
+                position: absolute;
+                top: 320px;
+
+                button {
+                    width: 115px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+    }
+}
+
+.modal-dialog-AuthGroupMa {
+    @extend .modal-dialog-AccountMa;
+
+    @media (min-width: 300px) {
+        .modal-content {
+            width: 375px;
+            height: 575px;
+        }
+
+        .modal-body {
+            width: 375px;
+            margin-top: -25px;
+
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            .sadms-table {
+                margin-top: 5px;
+
+                th {
+                    min-width: 90px;
+
+                    &:nth-child(1) {
+                        text-align: start;
+                        padding-left: 15px;
+                    }
+                }
+
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .major-action {
+                    background-color: #F4F7F9;
+
+                    td:nth-child(1) {
+                        text-align: start;
+                        padding-left: 25px;
+                    }
+                }
+
+                .sub-action {
+                    background-color: #FFFFFF;
+
+                    td:nth-child(1) {
+                        text-align: start;
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+            #div_msgfooter {
+                top: 480px;
+
+                button {
+                    width: 160px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .modal-content {
+            width: 557px;
+            height: 540px;
+        }
+
+        .modal-body {
+            width: 557px;
+
+            .sadms-table {
+                th {
+                    &:nth-child(1) {
+                        text-align: start;
+                        padding-left: 25px;
+                    }
+                }
+
+                .major-action {
+                    td:nth-child(1) {
+                        padding-left: 35px;
+                    }
+                }
+
+                .sub-action {
+                    td:nth-child(1) {
+                        padding-left: 50px;
+                    }
+                }
+            }
+
+            #div_msgfooter {
+                top: 450px;
+
+                button {
+                    width: 115px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+    }
+}
+/*modal fade*/
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+
+    @media (min-width: 300px) {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        width: 520px;
+    }
+
+    @media (min-width: 1200px) {
+    }
+
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.show .modal-dialog {
+    right: 0;
+}
+
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 0;
+    border: none;
+    background-color: #F4F7F9;
+}
+
+.modal.right .modal-header {
+    justify-content: normal;
+    border-bottom-color: #F4F7F9;
+    background-color: #F4F7F9;
+
+    .modal-title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
+
+.modal.right .modal-body {
+    label {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .datepicker {
+        @media (min-width: 300px) {
+            width: 95%;
+        }
+
+        @media (min-width: 768px) {
+            width: 148px;
+        }
+
+        @media (min-width: 1200px) {
+        }
+    }
+}
+
+.blockMsg {
+    z-index: 99999 !important;
+}

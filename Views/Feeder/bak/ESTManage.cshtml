@@ -1,0 +1,388 @@
+﻿@using INERADMS.ViewModels
+@using INERADMS.Helpers
+@{
+    ViewBag.Title = "狀態估測訊息管理";
+    string UserAuth = "";
+    string tLoginUser = "";
+    if (Session["CURRENTUSERID"] != null)
+    {
+        tLoginUser = Session["CURRENTUSERID"].ToString();
+    }
+
+    string tDataTitle = "";
+    string tDataField = "";
+    tDataTitle = string.Join(",", new string[] { "序號", "饋線編號", "座標圖號", "迴路別", "開關類別", "估測時間", "V_R(%)", "V_S(%)", "V_T(%)", "I_R(%)", "I_S(%)", "I_T(%)" });
+    tDataField = string.Join(",", new string[] { "Id", "Feederid", "Coor", "Loopid", "spsType", "estTime", "VR", "VS", "VT", "IR", "IS", "IT" });
+}
+@*@Styles.Render("~/Content/bootstrap.min.css")*@
+@Styles.Render("~/Content/base.min.css")
+@*@Styles.Render("~/Content/Feeder/Feeder.min.css")*@
+<style>
+    .feederActive {
+        background-color: #FFF4E8 !important
+    }
+</style>
+<div class="">
+    <div class="mt30 mb5 pageTitle">
+        <div class="pd10 fw700 pageNameTitle">@ViewBag.Title</div>
+    </div>
+    <div style="display:block;">
+        <div class="alertMessage">
+            <div class="SetupTest">
+                <input id="FeederID" type="text" class="form-control" placeholder="輸入饋線編號" />
+            </div>
+            <div class="SetupTest">
+                <input id="tpclid" type="text" class="form-control" placeholder="輸入圖號坐標" />
+            </div>
+            <div class="SetupTest">
+                <select id="switchType" class="form-control">
+                    <option value="1" selected>全部</option>
+                    <option value="2">一般開關</option>
+                    <option value="3">自動化開關</option>
+                </select>
+            </div>
+            <div class="SetupTest">
+                <input id="estStartDate" class="input-box datepicker" placeholder="選擇起始時間" data-toggle="datetimepicker" data-target="#estStartDate" />
+            </div>
+            <div class="SetupTest">
+                <input id="estEndDate" class="input-box datepicker" placeholder="選擇結束時間" data-toggle="datetimepicker" data-target="#estEndDate" />
+            </div>
+            <div class="SetupTest">
+                <button id="btnSearch" class="btn btn-primary btn-search">搜尋</button>
+            </div>
+            <div class="pagechange">
+                <img id="pre_page" src="~/Images/left.png" title="前一頁" />
+                <input id="page_select" type="text" value="1" />
+                <span>/</span>
+                <span id="totalPage_search"></span>
+                <img id="next_page" src="~/Images/right.png" title="下一頁" />
+            </div>
+        </div>
+        <div class="container-fluid messageTable">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="scrolling outer">
+                        <div class="inner">
+                            <table id="tabletest" class="table table-striped table-hover table-condensed"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="SetupTest float-right">
+            <button id="btnExport" class="btn btn-primary btn-search">匯出</button>
+        </div>
+    </div>
+</div>
+<div id="warningMsg" class="modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+     data-keyboard="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p id="modalMsg"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="modalOK_warn" class="btn">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section table{
+    <script>
+    var tEname;
+    var tStartT;
+    var tEndT;
+    var tUserAuth = "";
+    $(function () {
+        console.log("@tLoginUser");
+        //初始
+        if ("@tLoginUser") {
+            getAuthority("@tLoginUser");
+        }
+        else {
+            getSearchData();
+        }
+        RenderBsDatepicker();
+        setTableRange();
+
+        $("#btnSearch").click(function () {
+			$("#page_select").val(1);
+            getSearchData();
+        });
+
+        $('#modalOK_warn').click(function () {
+            $('#warningMsg').modal('toggle');
+        });
+
+        $("#pre_page").click(function () {
+            if (parseInt($("#page_select").val()) == 1) {
+                $("#modalMsg").text("已是第一頁");
+                $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select").val()) > 1) {
+                $("#page_select").val(parseInt($("#page_select").val()) - 1);
+                getSearchData();
+            }
+        });
+
+        $("#next_page").click(function () {
+            if (parseInt($("#page_select").val()) == parseInt($("#totalPage_search").text())) {
+               $("#modalMsg").text("已是最後一頁");
+               $("#warningMsg").modal('toggle');
+            }
+            else if (parseInt($("#page_select").val()) < parseInt($("#totalPage_search").text())) {
+                $("#page_select").val(parseInt($("#page_select").val()) + 1);
+                getSearchData();
+            }
+        });
+		
+		$("#page_select").keyup(function(e){
+				if(e.keyCode === 13)
+				{
+					getSearchData();
+				}
+			});
+
+    })
+
+    function setTableRange() {
+            var tHeaderH = $("#nav_major").height() + $("#nav_sub").height();
+            var tPageTitle = $(".pageTitle").height() + $(".alertMessage").height();
+            //$(".messageTable").css('height', 'calc(100vh - ' + tPageTitle + 'px - ' + $("footer").height() + 'px - ' + tHeaderH + 'px)');
+            $(".messageTable").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle + 'px - ' + $("footer").height() + 'px - 130px)');
+    }
+
+    function getAuthority(pUserID) {
+        getSearchData();
+    }
+
+    function getSearchData() {
+        $("#tabletest").find('tbody').remove();
+        var tDataTitle = '@tDataTitle'.split(',');
+        var tDataField = '@tDataField'.split(',');
+
+        var tData = {
+            FeedName: $("#FeederID").val(),
+            Coor: $("#tpclid").val(),
+            Type: $("#switchType").val(),
+            StartTime: $("#estStartDate").val(),
+            EndTime: $("#estEndDate").val()
+        }
+        autoGetEstData(tDataTitle, tDataField, tData);
+    }
+
+    $("#btnExport").click(
+        function () {
+            Export('@Url.Action("ESTExport", "Feeder")', {
+                FeedName: $("#FeederID").val(),
+                Coor: $("#tpclid").val(),
+                Type: $("#switchType").val(),
+                StartTime: $("#estStartDate").val(),
+                EndTime: $("#estEndDate").val()
+            });
+        }
+    );
+
+    function autoGetEstData(tDataTitle, tDataField, tData) {
+        var req = $.ajax({
+            type: "Get",
+            url: '@Url.Action("GetEstData", "Feeder")',
+            data: tData,
+            dataType: "json",
+            async: true
+        });
+        $.when(req).done(function (res) {
+            var data = res.reverse();
+            var tPage = $("#page_select").val();
+            var tStartNo = (tPage - 1) * 10;
+            var tEndNo = (tStartNo + 10) > data.length ? data.length : (tStartNo + 10);
+            $("#totalPage_search").text(jsTool_getCalPage(data.length));
+            var root = document.getElementById('tabletest');
+            var root_body = document.createElement('tbody');
+            var th_title = document.createElement('th');
+            var tr_title = document.createElement('tr');
+            var $th_title = $(th_title);
+            var tr_title = document.createElement('tr');
+            var th_detail_arr = []
+            var positionPX = 80;
+            var newData = sessionStorage.getItem('newESTData')
+            $(".inner").css({
+                marginRight: ((tDataField.length - 12) * 80) + "px"
+            });
+
+            if (!sessionStorage.getItem('lastESTData')) {
+                sessionStorage.setItem('lastESTData', data[0]["Id"])
+                sessionStorage.setItem('newESTData', data[0]["Id"])
+            }
+
+            if (data[0]["Id"] > sessionStorage.getItem('newESTData')) {
+                sessionStorage.setItem('lastESTData', newData)
+                sessionStorage.setItem('newESTData', data[0]["Id"])
+            }
+
+            $(root).find("tr").removeClass("feederActive")
+            $(root).find("th").removeClass("feederActive")
+            //
+            var spaceList = "";
+            //create table head loop
+            for (var j = 0; j < tDataTitle.length; j++) {
+                var th_title = document.createElement('th');
+                th_title.innerHTML = tDataTitle[j];
+                var space = tDataTitle[j].length > 2 ? 10 : 0;
+                $(th_title).css({
+                    position: 'absolute',
+                    width: '80px',
+                });
+
+                if (j < 5) {
+                    if (j == 1) {
+                        space = -10;
+                        tr_title.appendChild(th_title);
+                        $(th_title).css({
+                            left: ((j * positionPX) + space) + "px",
+                        });
+                    } else if (j == 2) {
+                        space = 0;
+                        tr_title.appendChild(th_title);
+                        $(th_title).css({
+                            left: ((j * positionPX) + space) + "px",
+                        });
+                    } else if (j == 3) {
+                        space = 35;
+                        tr_title.appendChild(th_title);
+                        $(th_title).css({
+                            left: ((j * positionPX) + space) + "px",
+                        });
+                    } else if (j == 4) {
+                        space = 45;
+                        tr_title.appendChild(th_title);
+                        $(th_title).css({
+                            left: ((j * positionPX) + space) + "px",
+                        });
+                    } else {
+                        tr_title.appendChild(th_title);
+                        $(th_title).css({
+                            left: ((j * positionPX) + space) + "px",
+                        });
+                    }
+                }
+                else if (j > 11) {
+                    tr_title.appendChild(th_title);
+                    $(th_title).css({
+                        right: (((tDataTitle.length - 1 - j) + space) * positionPX) + "px",
+                    });
+                }
+                else {
+                    var td_title = document.createElement('td');
+                    td_title.innerHTML = tDataTitle[j];
+                    tr_title.appendChild(td_title);
+                }
+
+                if (j + 1 == tDataTitle.length)
+                    spaceList += space;
+                else
+                    spaceList += space + ",";
+            }
+            //append table head
+            root_body.appendChild(tr_title);
+            var spaceList2 = spaceList.split(",");
+            //create table content loop
+            for (var i = tStartNo; i < tEndNo; i++) {
+                var tr = document.createElement('tr');
+                var positionPX = 80;
+                var isNewData = data[i]["Id"] > sessionStorage.getItem('lastESTData');
+
+                for (var k = 0; k < tDataField.length; k++) {
+                    if (k < 5) {
+                        var th_detail = document.createElement('th');
+                        th_detail_arr.push(th_detail)
+                        $(th_detail).css({
+                            position: 'absolute',
+                            left: ((k * positionPX) + parseInt(spaceList2[k])) + "px",
+                            width: '80px',
+                        });
+                        if (isNewData) {
+                            $(th_detail).addClass("feederActive")
+                        }
+
+                        if (tDataField[k] == "estTime") {
+                            th_detail.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
+                        } else {
+                            th_detail.innerHTML = data[i][tDataField[k]];
+                        }
+
+                        tr.appendChild(th_detail);
+                    }
+                    else if (k > 11) {
+                        var th_detail = document.createElement('th');
+                        th_detail_arr.push(th_detail)
+                        $(th_detail).css({
+                            position: 'absolute',
+                            right: (((tDataField.length - 1 - k) * positionPX) + parseInt(spaceList2[k])) + "px",
+                            width: '80px',
+                        });
+                        if (isNewData) {
+                            $(th_detail).addClass("feederActive")
+                        }
+
+                        if (tDataField[k] == "estTime") {
+                            th_detail.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
+                        } else {
+                            th_detail.innerHTML = data[i][tDataField[k]];
+                        }
+
+                        tr.appendChild(th_detail);
+                    }
+                    else {
+                        if (k == 5) {
+                            var td_detail = document.createElement('td');
+                            $(td_detail).css({
+                                width: '80px',
+                            });
+                            if (tDataField[k] == "estTime") {
+                                td_detail.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
+                            } else {
+                                td_detail.innerHTML = data[i][tDataField[k]];
+                            }
+
+                            if (isNewData) {
+                                $(th_detail).addClass("feederActive")
+                            }
+                            tr.appendChild(td_detail);
+                        } else {
+                            var td_detail = document.createElement('td');
+
+                            if (tDataField[k] == "estTime") {
+                                td_detail.innerHTML = jsTool_parseApiDateTimeStr(data[i][tDataField[k]]);
+                            } else {
+                                td_detail.innerHTML = data[i][tDataField[k]];
+                            }
+
+                            if (isNewData) {
+                                $(th_detail).addClass("feederActive")
+                            }
+                            tr.appendChild(td_detail);
+                        }
+                    }
+                }
+                root_body.appendChild(tr);
+                root.appendChild(root_body);
+                var hr_height = $(root).find("tbody tr").eq(i + 1).height();
+                th_detail_arr.forEach(function (value, item) {
+                    if (isNewData) {
+                        $(value).css({
+                            height: hr_height,
+                        });
+                    }
+                })
+            }
+        }).fail(function (err) {
+            console.log(err)
+        });
+    }
+
+
+
+
+    </script>
+}
