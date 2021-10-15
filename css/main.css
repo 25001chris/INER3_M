@@ -177,6 +177,34 @@
   background-image: url("./../images/ICON/ma.svg");
 }
 
+.icon.edit1 {
+  background-image: url("./../images/ICON/edit.svg");
+}
+
+.icon.phone {
+  background-image: url("./../images/ICON/phone.svg");
+}
+
+.icon.close {
+  background-image: url("./../images/ICON/close.svg");
+}
+
+.icon.arrowDown {
+  background-image: url("./../images/ICON/arrowDown.svg");
+}
+
+.icon.cloud {
+  background-image: url("./../images/ICON/cloud.svg");
+}
+
+.icon.stop {
+  background-image: url("./../images/ICON/stop.svg");
+}
+
+.icon.position {
+  background-image: url("./../images/ICON/position.svg");
+}
+
 .icon.link {
   cursor: url("./../images/Hover.cur"), pointer !important;
 }
@@ -193,6 +221,14 @@
 .icon.iRight {
   right: 1rem;
   top: 0.75rem;
+}
+
+.icon.iMiddle {
+  padding: 12px;
+}
+
+.icon.iLarge {
+  padding: 16px;
 }
 
 .button {
@@ -429,5 +465,131 @@
   left: calc(50% - 400px) !important;
   top: calc(50% - 120px) !important;
   width: 800px !important;
+}
+
+.divAnnounceBox {
+  position: absolute;
+  top: 98px;
+  right: 0;
+  width: 720px;
+  height: 480px;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.divAnnounceBox .divAnnounceTitle {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.115em;
+  color: #344059;
+  background: #DDECF6;
+  line-height: 30px;
+  position: relative;
+}
+
+.divAnnounceBox .divAnnounceTitle .float {
+  top: 5px;
+}
+
+.divAnnounceBox .divAnnounceTitle .arrowDown {
+  right: 3rem;
+}
+
+.divAnnounceBox .divSwitchTab .switch-tab-title {
+  width: 33%;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest {
+  width: 15%;
+  margin: 0 2.5px;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest input {
+  width: 100%;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest .setBtnArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest .setBtnArea .setBtnBox {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 2.5px;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest .setBtnArea .setBtnBox button {
+  min-width: 50px !important;
+  width: 100%;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .form-control {
+  font-size: 14px;
+  padding: 0.5em;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable {
+  margin-top: 5px;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table {
+  text-align: center;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table thead {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #344059;
+  background: #D0EAEC;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table thead th {
+  min-width: 40px;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table thead th.th_m {
+  min-width: 60px;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table thead th.th_l {
+  min-width: 100px;
+  max-width: 120px;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table tbody td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table tbody td .icon {
+  padding: 10px;
 }
 /*# sourceMappingURL=main.css.map */

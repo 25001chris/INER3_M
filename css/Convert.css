@@ -177,6 +177,34 @@
   background-image: url("./../images/ICON/ma.svg");
 }
 
+.icon.edit1 {
+  background-image: url("./../images/ICON/edit.svg");
+}
+
+.icon.phone {
+  background-image: url("./../images/ICON/phone.svg");
+}
+
+.icon.close {
+  background-image: url("./../images/ICON/close.svg");
+}
+
+.icon.arrowDown {
+  background-image: url("./../images/ICON/arrowDown.svg");
+}
+
+.icon.cloud {
+  background-image: url("./../images/ICON/cloud.svg");
+}
+
+.icon.stop {
+  background-image: url("./../images/ICON/stop.svg");
+}
+
+.icon.position {
+  background-image: url("./../images/ICON/position.svg");
+}
+
 .icon.link {
   cursor: url("./../images/Hover.cur"), pointer !important;
 }
@@ -193,6 +221,14 @@
 .icon.iRight {
   right: 1rem;
   top: 0.75rem;
+}
+
+.icon.iMiddle {
+  padding: 12px;
+}
+
+.icon.iLarge {
+  padding: 16px;
 }
 
 .button {

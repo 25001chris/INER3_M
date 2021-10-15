@@ -570,6 +570,7 @@
                 $("#BtnGroundHoleTool").hide();
                 $("#BtnSectionalViewTool").hide();
                 select(0);
+                select1(0);
                 _3DMouseUpDown.TurnClickQueryOnOff();
                 $("#navQueryWindow").addClass("ClosingNav");
                 $("#aToggleButton").find("i").addClass("fa-caret-right");
@@ -1464,6 +1465,38 @@
 				result = obj.values[field]
 			return result;
         }
+
+        //設定、佇列切換
+        function select1(i) {
+            var divSwitchTab = $(".divSwitchTab");
+            var tLabelWidth = divSwitchTab.find(".switch-tab-title").eq(0).width();
+            var tBarWidth = divSwitchTab.find(".switch-tab-title").eq(i).width();
+            divSwitchTab.find(".scroll-bar").width(tBarWidth);
+            divSwitchTab.find(".scroll-bar").css("transform", "translate3d(" + (i * tLabelWidth) + "px, 0px, 0px)");
+            switchDiv(i);
+            setTableRange(i);
+        }
+        function switchDiv(i) {
+            // if (i == 0) {
+            //     $(".alertSetup").show();
+            //     $(".alertQueue").hide();
+            // }
+            // else {
+            //     $(".alertSetup").hide();
+            //     $(".alertQueue").show();
+            // }
+        }
+        function setTableRange(i) {
+            var tHeaderH = $("#nav_major").height() + $("#nav_sub").height();
+            // if (i == 0) {
+            //     var tPageTitle_set = $(".switch-tab").height() + $(".setupArea").height();
+            //     $(".tabledisplay").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle_set + 'px - ' + $("footer").height() + 'px - 45px)');
+            // }
+            // else {
+            //     var tPageTitle_alt = $(".switch-tab").height() + $(".alertArea").height();
+            //     $(".alertTable").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle_alt + 'px - ' + $("footer").height() + 'px - 45px)');
+            // }
+        }
 		
 		/*
         function SameResult(re1, re2) {
@@ -1635,6 +1668,111 @@
             </tr>
         </table>
     </div>
+    <div id="divAnnounceBox" class="divAnnounceBox">
+        <div class="divAnnounceTitle w-100">
+            <i class="icon phone iLarge"></i>
+            行動通報
+            <i class="icon arrowDown iMiddle float iRight"></i>
+            <i class="icon close iMiddle float iRight"></i>
+        </div>
+        <div class="divSwitchTab switch-tab mb5">
+            <div class="switch-tab-title" onclick="select1(0);">通報接獲清單</div>
+            <div class="switch-tab-title" onclick="select1(1);">通報發布清單</div>
+            <div class="switch-tab-title" onclick="select1(2);">通報結案清單</div>
+            <div class="scroll-bar"></div>
+        </div>
+        <div class="divAnnounceContent">
+            <div class="setupArea">
+                <div class="SetupTest">
+                    <select id="announceUser" class="form-control">
+                        <option value="-999">通報人員</option>
+                        <option value="AL1">AL1</option>
+                        <option value="AL2">AL2</option>
+                        <option value="AL3">AL3</option>
+                    </select>
+                </div>
+                <div class="SetupTest">
+                    <select id="announceSource" class="form-control">
+                        <option value="-999">通報來源</option>
+                        <option value="AL1">AL1</option>
+                        <option value="AL2">AL2</option>
+                        <option value="AL3">AL3</option>
+                    </select>
+                </div>
+                <div class="SetupTest">
+                    <select id="announceItem" class="form-control">
+                        <option value="-999">通報事項</option>
+                        <option value="AL1">AL1</option>
+                        <option value="AL2">AL2</option>
+                        <option value="AL3">AL3</option>
+                    </select>
+                </div>
+                <div class="SetupTest">
+                    <select id="announceProcess" class="form-control">
+                        <option value="-999">處理進度</option>
+                        <option value="AL1">AL1</option>
+                        <option value="AL2">AL2</option>
+                        <option value="AL3">AL3</option>
+                    </select>
+                </div>
+                <div class="SetupTest newCol">
+                    @*<input id="StartTime" type="date" class="form-control" placeholder="起始時間" />*@
+                    <input id="startdate" class="input-box datepicker" placeholder="起始時間" data-toggle="datetimepicker" data-target="#startdate" />
+                </div>
+                <div class="SetupTest newCol">
+                    @*<input id="EndTime" type="date" class="form-control" placeholder="結束時間" />*@
+                    <input id="enddate" class="input-box datepicker" placeholder="結束時間" data-toggle="datetimepicker" data-target="#enddate" />
+                </div>
+
+                <div class="SetupTest newCol">
+                    <div class="setBtnArea">
+                        <div class="setBtnBox">
+                            <button id="btnSearch_Aset" class="btn btn-primary btn-search button searchBtn">搜尋</button>
+                        </div>
+                        <div class="setBtnBox">
+                            <button id="btn-addAlert" class="btn btn-primary btn-add button blankBtn">清除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="announceTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>編號</th>
+                            <th class="th_m">通報人員</th>
+                            <th class="th_m">來源</th>
+                            <th class="th_l">通報時間</th>
+                            <th class="th_m">通報事項</th>
+                            <th class="th_l">備註</th>
+                            <th>照片</th>
+                            <th class="th_m">處理進度</th>
+                            <th>定位</th>
+                            <th>解除</th>
+                            <th>編輯</th>
+                            <th>發布</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>陳XX</td>
+                            <td>行動端</td>
+                            <td>2020-06-23 17:26:25</td>
+                            <td>停電</td>
+                            <td>僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電</td>
+                            <td>照片</td>
+                            <td>處理進度</td>
+                            <td><i class="icon position"></i></td>
+                            <td><i class="icon stop"></i></td>
+                            <td><i class="icon edit1"></i></td>
+                            <td><i class="icon cloud"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 	<div id="divMapBaseEventOperation">
 		<div class="EventItem" id="PoweroffLocation">
             <img src="~/images/GisMap/Poweroff.svg" />
@@ -1702,7 +1840,6 @@
             </tr>
         </table>
         <div id="tblQueryResultContainer">
-
             <!--查詢結果(不論輸入還是框選)的外容器(有需要出現卷軸時使用)-->
             <table id="tblQueryResult">
                 <tbody></tbody>
