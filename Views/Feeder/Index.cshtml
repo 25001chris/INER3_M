@@ -34,6 +34,9 @@
     .feederActive{
         background-color: #FFF4E8 !important
     }
+    .tdCheck{
+        display:none;
+    }
 </style>
 <div class="">
     <div class="mt30 mb5 pageTitle">
@@ -65,10 +68,10 @@
                     data-target="#enddate" />
             </div>
             <div class="SetupTest newCol">
-                <button id="btnSearch_Filter" class="btn btn-primary btn-search searchBtn button">搜尋</button>
+                <button class="btn btn-primary btn-search searchBtn button">搜尋</button>
             </div>
             <div class="SetupTest newCol">
-                <button id="btnSearch_Filter" class="btn btn-primary btn-search searchBtn button">清除全部</button>
+                <button class="btn btn-primary btn-search selectBtn button">清除全部</button>
             </div>
             <div class="pagechange">
                 <img id="pre_page" src="~/Images/left.png" title="前一頁" />
@@ -89,6 +92,10 @@
                 </div>
             </div>
         </div>
+        <div class="SetupTest float-right">
+            <button id="btnExport" class="btn btn-primary btn-search button blankBtn" onClick="openCheckBox(this)">多筆定位</button>
+            <button id="btnExport" class="btn btn-primary btn-search button searchBtn closed" onClick="confirmPosition(this)">確定定位</button>
+        </div>
     </div>
 </div>
 @section table{
@@ -108,7 +115,7 @@
             getSearchData();
         }
         RenderBsDatepicker();
-        refreshPage(30,getSearchData);
+        //refreshPage(30,getSearchData);
         // getAnnounce().done(function(res){
         //     console.log(res);
         // })
@@ -208,8 +215,6 @@
         $("#btn-addLogic").click(function () {
             addAlertModal({type:'新增'});
         });
-
-        getLogicData(false);
     });
     function getAuthority(pUserID) {
         getSearchData();
@@ -217,7 +222,6 @@
     function setTableRange() {
         var tHeaderH = $("#nav_major").height() + $("#nav_sub").height();
         var tPageTitle = $(".pageTitle").height() + $(".alertMessage").height();
-        //$(".messageTable").css('height', 'calc(100vh - ' + tPageTitle + 'px - ' + $("footer").height() + 'px - ' + tHeaderH + 'px)');
         $(".messageTable").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle + 'px - ' + $("footer").height() + 'px - 45px)');
     }
 
@@ -275,7 +279,6 @@
         //     async: true
         // })
         getAnnounce().done(function (res) {
-            console.log(res)
             var data = res.data.reverse();
             var tPage = $("#page_select").val();
             var tStartNo = (tPage - 1) * 10;
@@ -289,7 +292,7 @@
             var tr_title = document.createElement('tr');
             var th_detail_arr = []
             var positionPX = 120;
-            var newData = sessionStorage.getItem('newFilterData')
+            var newData = sessionStorage.getItem('newFilterData');
             $(".inner").css({
                 marginRight: ((tDataField.length - 9) * 120) + "px"
             });
@@ -305,7 +308,13 @@
                     position: 'absolute',
                     width: '120px'
                 });
-                if (j < 4) {
+                
+                if (j === 0) {
+                    tr_title.appendChild(th_title);
+                    $(th_title).css({
+                        left: 30 + "px",
+                    });
+                }else if (j > 0 && j < 4) {
                     tr_title.appendChild(th_title);
                     $(th_title).css({
                         left: (j * positionPX) + "px",
@@ -323,6 +332,20 @@
                     tr_title.appendChild(td_title);
                 }
             }
+            var newCheckBox = document.createElement("input");
+            var th_check = document.createElement('th');
+            newCheckBox.type = 'checkbox';
+            newCheckBox.name = 'num' + j;
+            newCheckBox.value = 'num' + j;
+            th_check.appendChild(newCheckBox);
+            $(th_check).addClass('thCheck');
+            $(th_check).css({
+                position: 'absolute',
+                width: '20px',
+                left: 0 + "px",
+                minHeight: "41.33px",
+            });
+            tr_title.prepend(th_check);
             //append table head
             root_body.appendChild(tr_title);
 
@@ -335,10 +358,11 @@
                 for (var k = 0; k < tDataField.length; k++) {
                     if (k < 4) {
                         var th_detail = document.createElement('th');
+                        var th_left = k === 0 ? 30 : (k * positionPX)
                         th_detail_arr.push(th_detail)
                         $(th_detail).css({
                             position: 'absolute',
-                            left: (k * positionPX) + "px",
+                            left: th_left + "px",
                             width: '120px'
                         });
                         th_detail.innerHTML = data[i][tDataField[k]];
@@ -378,7 +402,8 @@
                             //var $span = document.createElement("span");
                             //$($span).addClass("primary");
                             //$span.innerHTML = data[i][tDataField[k]];
-                            let result = Tag({type:'primary',text:data[i][tDataField[k]]})
+                            let tagType = tagStyle(data[i][tDataField[k]]);
+                            let result = Tag({type:tagType,text:data[i][tDataField[k]]});
                             td_detail.appendChild(result);
                         }else{
                             td_detail.innerHTML = data[i][tDataField[k]];
@@ -390,6 +415,20 @@
                         }
                         tr.appendChild(td_detail);
                     }
+                    var newCheckBox1 = document.createElement("input");
+                    var td_check = document.createElement('td');
+                    newCheckBox1.type = 'checkbox';
+                    newCheckBox1.name = 'num' + k;
+                    newCheckBox1.value = 'num' + k;
+                    td_check.appendChild(newCheckBox1);
+                    $(td_check).addClass('tdCheck');
+                    $(td_check).css({
+                        position: 'absolute',
+                        width: '20px',
+                        left: 0 + "px",
+                        minHeight: "41.33px"
+                    });
+                    tr.prepend(td_check);
                 }
                 root_body.appendChild(tr);
                 root.appendChild(root_body);
@@ -411,9 +450,24 @@
         const type = tagObj.type;
         const text = tagObj.text;
         let html = document.createElement("span");
+        $(html).addClass("tag");
         $(html).addClass(type);
         html.innerHTML = text;
         return html;
+    }
+    function tagStyle(tagText){
+        let result = ""
+        switch (tagText) {
+            case '待審核':
+                result = 'pending'
+                break;
+            case '審核中':
+                result = 'active'
+                break;
+            default:
+                break;
+        }
+        return result;
     }
 
     function getHistoryData(pEname, pStartTime, pEndTime) {
@@ -484,6 +538,18 @@
             },
             failure: function (error) { }
         });
+    }
+    function openCheckBox(t){
+        $(t).addClass("closed");
+        $(t).siblings().removeClass("closed");
+        $(".thCheck").addClass("active");
+        $(".tdCheck").addClass("active");
+    }
+    function confirmPosition(t){
+        $(t).addClass("closed");
+        $(t).siblings().removeClass("closed");
+        $(".thCheck").removeClass("closed");
+        $(".tdCheck").removeClass("closed");
     }
 </script>
 }

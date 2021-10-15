@@ -6,7 +6,7 @@
             "SOURCE": "行動端",
             "LOCATION": "台北市",
             "ITEM": "停電",
-            "REMARK": "XXXXXXXX",
+            "REMARK": "XXXXXXXXXXXXXXX",
             "USER": "陳XX",
             "TEL" : "00-000-0000",
             "PHOTO": "照片",
@@ -19,7 +19,7 @@
             "SOURCE": "行動端",
             "LOCATION": "台北市",
             "ITEM": "停電",
-            "REMARK": "XXXXXXXX",
+            "REMARK": "XXXXXXXXXXXXXXXXXX",
             "USER": "陳XX",
             "TEL" : "00-000-0000",
             "PHOTO": "照片",
@@ -88,7 +88,7 @@
             "USER": "陳XX",
             "TEL" : "00-000-0000",
             "PHOTO": "照片",
-            "PROCESS": "待審核",
+            "PROCESS": "審核中",
             "POSITION":""
         },
         {
