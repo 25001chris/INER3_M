@@ -34,7 +34,7 @@
     .feederActive{
         background-color: #FFF4E8 !important
     }
-    .tdCheck{
+    .listCheck{
         display:none;
     }
 </style>
@@ -104,6 +104,7 @@
     var tStartT;
     var tEndT;
     var tUserAuth = "";
+    var test = false;
     $(function () {
         mutation.setUserName(stateData, {item: 'userName',value: "@tUserName"});
         select(0);
@@ -335,10 +336,15 @@
             var newCheckBox = document.createElement("input");
             var th_check = document.createElement('th');
             newCheckBox.type = 'checkbox';
-            newCheckBox.name = 'num' + j;
-            newCheckBox.value = 'num' + j;
+            newCheckBox.name = 'all';
+            newCheckBox.value = 'all';
             th_check.appendChild(newCheckBox);
-            $(th_check).addClass('thCheck');
+            $(th_check).addClass('listCheck');
+            if(test){
+                $(th_check).addClass('active');
+            }else{
+                $(th_check).removeClass('active');
+            }
             $(th_check).css({
                 position: 'absolute',
                 width: '20px',
@@ -420,8 +426,14 @@
                     newCheckBox1.type = 'checkbox';
                     newCheckBox1.name = 'num' + k;
                     newCheckBox1.value = 'num' + k;
+                    console.log(test)
                     td_check.appendChild(newCheckBox1);
-                    $(td_check).addClass('tdCheck');
+                    $(td_check).addClass('listCheck');
+                    if(test){
+                        $(td_check).addClass('active');
+                    }else{
+                        $(td_check).removeClass('active');
+                    }
                     $(td_check).css({
                         position: 'absolute',
                         width: '20px',
@@ -542,14 +554,14 @@
     function openCheckBox(t){
         $(t).addClass("closed");
         $(t).siblings().removeClass("closed");
-        $(".thCheck").addClass("active");
-        $(".tdCheck").addClass("active");
+        $(".listCheck").addClass("active");
+        test = true;
     }
     function confirmPosition(t){
         $(t).addClass("closed");
         $(t).siblings().removeClass("closed");
-        $(".thCheck").removeClass("closed");
-        $(".tdCheck").removeClass("closed");
+        $(".listCheck").removeClass("active");
+        test = false;
     }
 </script>
 }
