@@ -197,6 +197,10 @@
   background-image: url("./../images/ICON/cloud.svg");
 }
 
+.icon.finish {
+  background-image: url("./../images/ICON/finish.svg");
+}
+
 .icon.stop {
   background-image: url("./../images/ICON/stop.svg");
 }
@@ -240,6 +244,8 @@
   border-radius: 5px !important;
   min-width: 92px !important;
   height: 36px !important;
+  margin: 0 5px;
+  padding: 0;
 }
 
 .button:hover {
@@ -414,6 +420,18 @@
 
 .initial {
   display: initial !important;
+}
+
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.flex.flexEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 body {

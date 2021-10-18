@@ -50,7 +50,6 @@
 	<script type="text/javascript" src="/ServerGate/scripts/ClusterLayer.js"></script>
 	<script type="text/javascript" src="~/Scripts/jquery.cookie.min.js"></script>
     <script type="text/javascript">
-      
         var earth_ = null;
         var pGlobe = null;
         var pCam = null;
@@ -173,6 +172,8 @@
         var est_result_interval = 2000;
         var est_result_time;
 		var udpreceivelist = [];
+        var openAnnounceBoxStatus = false;
+        var toggleAnnounceBoxStatus = false;
 
         window.getServicePath = function () { return 'http://192.168.1.103' };
         window.getRootPath = function () { return 'http://192.168.1.103/INER3_M/' };
@@ -570,7 +571,6 @@
                 $("#BtnGroundHoleTool").hide();
                 $("#BtnSectionalViewTool").hide();
                 select(0);
-                select1(0);
                 _3DMouseUpDown.TurnClickQueryOnOff();
                 $("#navQueryWindow").addClass("ClosingNav");
                 $("#aToggleButton").find("i").addClass("fa-caret-right");
@@ -1465,7 +1465,260 @@
 				result = obj.values[field]
 			return result;
         }
-
+        let obj=
+        {
+            obj1:[
+                {
+                    name : '陳XX',
+                    source : '行動端',
+                    time : '2020-06-23 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '張XX',
+                    source : '行動端',
+                    time : '2020-06-24 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '李XX',
+                    source : '行動端',
+                    time : '2020-06-25 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '陳XX',
+                    source : '行動端',
+                    time : '2020-06-23 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '張XX',
+                    source : '行動端',
+                    time : '2020-06-24 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '李XX',
+                    source : '行動端',
+                    time : '2020-06-25 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '陳XX',
+                    source : '行動端',
+                    time : '2020-06-23 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '張XX',
+                    source : '行動端',
+                    time : '2020-06-24 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '李XX',
+                    source : '行動端',
+                    time : '2020-06-25 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '陳XX',
+                    source : '行動端',
+                    time : '2020-06-23 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '張XX',
+                    source : '行動端',
+                    time : '2020-06-24 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                },
+                {
+                    name : '李XX',
+                    source : '行動端',
+                    time : '2020-06-25 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                    status : '待審核'
+                }
+            ],
+            obj2:[
+                {
+                    name : '陳XX',
+                    source : '行動端',
+                    time : '2020-06-23 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    reply : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                },
+                {
+                    name : '張XX',
+                    source : '行動端',
+                    time : '2020-06-24 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    reply : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                },
+                {
+                    name : '李XX',
+                    source : '行動端',
+                    time : '2020-06-25 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    reply : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                }
+            ],
+            obj3:[
+                {
+                    name : '王XX',
+                    source : '行動端',
+                    time : '2020-06-23 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    reply : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                },
+                {
+                    name : '張XX',
+                    source : '行動端',
+                    time : '2020-06-24 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    reply : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                },
+                {
+                    name : '曾XX',
+                    source : '行動端',
+                    time : '2020-06-25 17:26:25',
+                    item : '停電',
+                    text : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    reply : '僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電',
+                    photo : '照片',
+                }
+            ]
+        }
+        function setAnnounceTableTh(i){
+            let result = '';
+            result += 
+            `<tr>
+                <th>
+                    <span class="tableNum">編號</span>
+                    <input type="checkbox" name='all' value='all' class="closed"/>
+                </th>
+                <th class="th_m">通報人員</th>
+                <th class="th_m">來源</th>
+                <th class="th_l">通報時間</th>
+                <th class="th_m">通報事項</th>
+                <th class="th_m">備註</td>
+                ${ i !== 0 ? `<th class="th_l">回覆</th>` : '' }
+                <th>照片</th>
+                ${ i === 0 ? `<th class="th_m">處理進度</th>` : '' }
+                <th>定位</th>
+                ${ i === 0 ? `<th>解除</th>` : '' }
+                ${ i === 0 ? `<th>編輯</th>` : '' }
+                ${ i === 0 ? `<th>發布</th>` : '' }
+                ${ i === 1 ? `<th>結案</th>` : '' }
+            </tr>`;
+            return result;
+        }
+        function setAnnounceTableTd(data,i){
+            let result = '';
+            data.forEach(function(item,index){
+                result += 
+                `<tr>
+                    <td>
+                        <span class="tableNum">${index}</span>
+                        <input type="checkbox" name=${index} value=${index} class="closed"/>
+                    </td>
+                    <td>${item.name}</td>
+                    <td>${item.source}</td>
+                    <td class="time">${item.time}</td>
+                    <td>${item.item}</td>
+                    <td>${item.text}</td>
+                    ${ item.reply ? `<td>${item.reply}</td>` : '' }
+                    <td>${item.photo}</td>
+                    ${ item.status ? `<td>${item.status}</td>` : '' }
+                    <td><i class="icon position"></i></td>
+                    ${ i === 0 ? `<td><i class="icon stop"></i></td>` : '' }
+                    ${ i === 0 ? `<td><i class="icon edit1" data-toggle="modal" data-target="#exampleModal"></td>` : '' }
+                    ${ i === 0 ? `<td><i class="icon cloud"></td>` : '' }
+                    ${ i === 1 ? `<td><i class="icon finish"></td>` : '' }
+                </tr>`;
+            })
+            return result;
+        }
+        function setAnnounceBtn(i){
+            let result = '';
+            result += `<button class="btn btn-primary btn-add button blankBtn" onclick="selectAnnounce('position')">多筆定位</button>
+            ${ i === 0 ? `<button class="btn btn-primary btn-add button blankBtn" onclick="selectAnnounce('cancel')">多筆解除</button>` : '' }
+            ${ i === 0 ? `<button class="btn btn-primary btn-add button blankBtn" onclick="selectAnnounce('combine')">多筆合併</button>` : '' }
+            ${ i === 1 ? `<button class="btn btn-primary btn-add button blankBtn" onclick="selectAnnounce('finish')">多筆結案</button>` : '' }
+            <button id="sendPosition" class="btn btn-primary btn-add button mainBtn closed">確定定位</button>
+            ${ i === 0 ? `<button id="sendCancel" class="btn btn-primary btn-add button mainBtn closed">確定解除</button>` : '' }
+            ${ i === 0 ? `<button id="sendCombine" class="btn btn-primary btn-add button mainBtn closed">確定合併</button>` : '' }
+            ${ i === 1 ? `<button id="sendFinish" class="btn btn-primary btn-add button mainBtn closed">確定結案</button>` : '' }`
+            return result;
+        }
+        function selectAnnounce(e){
+            $("#announceBtn").find(".blankBtn").addClass("closed");
+            $("#announceTable").find(":checkbox").removeClass("closed");
+            $("#announceTable").find("span").addClass("closed");
+            switch (e) {
+                case 'position':
+                    $("#sendPosition").removeClass("closed");
+                    break;
+                case 'cancel':
+                    $("#sendCancel").removeClass("closed");
+                    break;
+                case 'combine':
+                    $("#sendCombine").removeClass("closed");
+                    break;
+                case 'finish':
+                    $("#sendFinish").removeClass("closed");
+                    break;
+                default:
+                    break;
+            }
+        }
         //設定、佇列切換
         function select1(i) {
             var divSwitchTab = $(".divSwitchTab");
@@ -1474,28 +1727,40 @@
             divSwitchTab.find(".scroll-bar").width(tBarWidth);
             divSwitchTab.find(".scroll-bar").css("transform", "translate3d(" + (i * tLabelWidth) + "px, 0px, 0px)");
             switchDiv(i);
-            setTableRange(i);
         }
         function switchDiv(i) {
-            // if (i == 0) {
-            //     $(".alertSetup").show();
-            //     $(".alertQueue").hide();
-            // }
-            // else {
-            //     $(".alertSetup").hide();
-            //     $(".alertQueue").show();
-            // }
+            let resultTd,resultTh;
+            $("#announceTable").find("table tbody").html("");
+            if (i == 0) {
+                resultTd = setAnnounceTableTd(obj.obj1,i);
+            }else if (i == 1) {
+                resultTd = setAnnounceTableTd(obj.obj2,i);
+            }else if (i == 2) {
+                resultTd = setAnnounceTableTd(obj.obj3,i);
+            }
+            resultBtn = setAnnounceBtn(i);
+            resultTh = setAnnounceTableTh(i)
+            $("#announceTable").find("table thead").html(resultTh);
+            $("#announceTable").find("table tbody").html(resultTd);
+            $("#announceBtn").html(resultBtn);
+            
         }
-        function setTableRange(i) {
-            var tHeaderH = $("#nav_major").height() + $("#nav_sub").height();
-            // if (i == 0) {
-            //     var tPageTitle_set = $(".switch-tab").height() + $(".setupArea").height();
-            //     $(".tabledisplay").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle_set + 'px - ' + $("footer").height() + 'px - 45px)');
-            // }
-            // else {
-            //     var tPageTitle_alt = $(".switch-tab").height() + $(".alertArea").height();
-            //     $(".alertTable").css('height', 'calc(100vh - ' + tHeaderH + 'px - ' + tPageTitle_alt + 'px - ' + $("footer").height() + 'px - 45px)');
-            // }
+        function openAnnounceBox(){
+            openAnnounceBoxStatus = !openAnnounceBoxStatus;
+            if(openAnnounceBoxStatus){
+                $(".divAnnounceBox").removeClass("closed");
+                select1(0);
+            }else{
+                $(".divAnnounceBox").addClass("closed");
+            }
+        }
+        function toggleAnnounceBox(){
+            toggleAnnounceBoxStatus = !toggleAnnounceBoxStatus
+            if(toggleAnnounceBoxStatus){
+                $(".divAnnounceBox").addClass("toggleUp");
+            }else{
+                $(".divAnnounceBox").removeClass("toggleUp");
+            }
         }
 		
 		/*
@@ -1668,12 +1933,12 @@
             </tr>
         </table>
     </div>
-    <div id="divAnnounceBox" class="divAnnounceBox">
+    <div id="divAnnounceBox" class="divAnnounceBox closed">
         <div class="divAnnounceTitle w-100">
             <i class="icon phone iLarge"></i>
             行動通報
-            <i class="icon arrowDown iMiddle float iRight"></i>
-            <i class="icon close iMiddle float iRight"></i>
+            <i class="icon arrowDown iMiddle float iRight" onclick="toggleAnnounceBox()"></i>
+            <i class="icon close iMiddle float iRight" onclick="openAnnounceBox()"></i>
         </div>
         <div class="divSwitchTab switch-tab mb5">
             <div class="switch-tab-title" onclick="select1(0);">通報接獲清單</div>
@@ -1735,42 +2000,13 @@
                     </div>
                 </div>
             </div>
-            <div class="announceTable">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>編號</th>
-                            <th class="th_m">通報人員</th>
-                            <th class="th_m">來源</th>
-                            <th class="th_l">通報時間</th>
-                            <th class="th_m">通報事項</th>
-                            <th class="th_l">備註</th>
-                            <th>照片</th>
-                            <th class="th_m">處理進度</th>
-                            <th>定位</th>
-                            <th>解除</th>
-                            <th>編輯</th>
-                            <th>發布</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>陳XX</td>
-                            <td>行動端</td>
-                            <td>2020-06-23 17:26:25</td>
-                            <td>停電</td>
-                            <td>僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電僅自家無電</td>
-                            <td>照片</td>
-                            <td>處理進度</td>
-                            <td><i class="icon position"></i></td>
-                            <td><i class="icon stop"></i></td>
-                            <td><i class="icon edit1"></i></td>
-                            <td><i class="icon cloud"></i></td>
-                        </tr>
-                    </tbody>
+            <div id="announceTable" class="announceTable">
+                <table class="w-100">
+                    <thead></thead>
+                    <tbody></tbody>
                 </table>
             </div>
+            <div id="announceBtn" class="announceBtn"></div>
         </div>
     </div>
 	<div id="divMapBaseEventOperation">
@@ -1846,5 +2082,64 @@
             </table>
         </div>
     </nav>
+    <div class="modal fade modalBox" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header mheader">
+                <h5 class="modal-title" id="exampleModalLabel">編輯通報</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mbody">
+                <div class="modal-body-left w-50">
+                    <div class="form-group">
+                        <label for="announceNum">通報編號</label>
+                        <input type="password" class="form-control" id="announceNum" placeholder="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="announceTime">通報時間</label>
+                        <input type="text" class="form-control" id="announceTime" placeholder="2020-06-23 10:30:02">
+                    </div>
+                    <div class="form-group">
+                        <label for="announceItem">通報事項</label>
+                        <input type="text" class="form-control" id="announceItem" placeholder="設備異常">
+                    </div>
+                    <div class="form-group">
+                        <label for="announceText">備註</label>
+                        <input type="text" class="form-control" id="announceText" placeholder="現場查看確定設備異常">
+                    </div>
+                    <div class="form-group">
+                        <label for="announceUser">通報人員</label>
+                        <input type="text" class="form-control" id="announceUser" placeholder="陳xx">
+                    </div>
+                    <div class="form-group">
+                        <label for="announcePhone">通報人電話</label>
+                        <input type="text" class="form-control" id="announcePhone" placeholder="0933333333">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewUser">審核人員</label>
+                        <input type="text" class="form-control" id="reviewUser" placeholder="陳xx">
+                    </div>
+                </div>
+                <div class="modal-body-right w-50">
+                    <div><label>處理進度</label></div>
+                    <div class="btn-group w-100" role="group" aria-label="announceProcess">
+                        <button type="button" class="btn btn-secondary">審核中</button>
+                        <button type="button" class="btn btn-secondary">待審核</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="announceReply">回覆</label>
+                        <textarea class="form-control" id="announceReply" placeholder="請輸入回覆" rows="16"></textarea>
+                    </div>
+                    <div class="flex flexEnd"><span>0</span>/150</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary button cancelBtn" data-dismiss="modal">取消</button>
+                <button class="btn btn-primary button mainBtn">確定</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
