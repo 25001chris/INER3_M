@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": ";AAwFA,YAAY",
+    "sources": [
+        "../Content/scss/mixin.scss"
+    ],
+    "names": [],
+    "file": "mixin.css"
+}

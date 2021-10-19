@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .w-100 {
   width: 100% !important;
 }
@@ -434,6 +435,7 @@
           justify-content: flex-end;
 }
 
+/*按鈕預設*/
 .navbar {
   position: fixed;
   top: 0;
@@ -535,6 +537,7 @@
 }
 
 .divAnnounceBox .divAnnounceContent .setupArea {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -547,6 +550,18 @@
 
 .divAnnounceBox .divAnnounceContent .setupArea .SetupTest input {
   width: 100%;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest input.input-box {
+  cursor: pointer;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest input.input-box.hideIcon {
+  background: none;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest input .dropdown {
+  display: inline-block;
 }
 
 .divAnnounceBox .divAnnounceContent .setupArea .SetupTest .setBtnArea {
@@ -607,6 +622,10 @@
   text-align: center;
   color: #344059;
   background: #D0EAEC;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable table thead th {
@@ -647,8 +666,29 @@
   margin: 5px 0;
 }
 
+.divAnnounceBox .divAnnounceContent .announceSelect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+
+.modalBox {
+  font-family: Noto Sans TC;
+}
+
 .modalBox .modal-dialog {
   max-width: 800px;
+}
+
+.modalBox .modal-dialog .mheader .modal-title {
+  color: #344059;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .modalBox .modal-dialog .mbody {
@@ -664,6 +704,14 @@
 
 .modalBox .modal-dialog .mbody .modal-body-left .form-group, .modalBox .modal-dialog .mbody .modal-body-right .form-group {
   margin-bottom: 0.5em;
+}
+
+.modalBox .modal-dialog .mbody .modal-body-left .form-group label, .modalBox .modal-dialog .mbody .modal-body-right .form-group label {
+  color: #344059;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .modalBox .modal-dialog .mbody .modal-body-left .btn-group button, .modalBox .modal-dialog .mbody .modal-body-right .btn-group button {

@@ -1,4 +1,5 @@
 ﻿@import "global-style";
+@import "mixin";
 
 .navbar{
     position: fixed;
@@ -96,12 +97,22 @@
 
     .divAnnounceContent{
         .setupArea{
+            position: relative;
             display: flex;
             .SetupTest{
                 width: 15%;
                 margin: 0 2.5px;
                 input{
                     width: 100%;
+                    &.input-box{
+                        cursor: pointer;
+                        &.hideIcon{
+                            background: none;
+                        }
+                    }
+                    .dropdown{
+                        display: inline-block;
+                    }
                 }
                 .setBtnArea{
                     display: flex;
@@ -146,6 +157,9 @@
                     text-align: center;
                     color: #344059;
                     background: #D0EAEC;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000;
                     th{
                         min-width: 40px;
                         &.th_m{
@@ -182,13 +196,25 @@
             padding: 0 5px;
             margin: 5px 0;
         }
+        .announceSelect{
+            display: flex;
+            position: absolute;
+            bottom: 1em;
+            left: 1em;
+        }
     }
 }
 
 .modalBox{
-    //max-width: 800px;
+    font-family: Noto Sans TC;
     .modal-dialog{
         max-width: 800px;
+        .mheader{
+            .modal-title{
+                color: #344059;
+                @include noto-sans-tc-16-bold;
+            }
+        }
         .mbody{
             display: flex;
             padding: 0.5rem 1rem;
@@ -196,6 +222,10 @@
                 margin: 0 5px;
                 .form-group{
                     margin-bottom: 0.5em;
+                    label{
+                        color:#344059;
+                        @include noto-sans-tc-14-medium;
+                    }
                 }
                 .btn-group{
                     button{

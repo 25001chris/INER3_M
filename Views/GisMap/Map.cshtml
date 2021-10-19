@@ -320,8 +320,9 @@
             $("#BtnPipeDistMeasure").hide();
             $("#BtnGroundHoleTool").hide();
             $("#BtnSectionalViewTool").hide();
+
+            RenderBsDatepicker();
             //可進行拓樸處理的設備類別於一開始圖台開啟就載進來放著，免得每次開啟窗格就要再讀一次，
-			
             $.post("../GisMap/GetEquipmentClassByTopology", null, function (res) {
                 if (res.ProcessFlag) {
                     ToolWindowBarControl.TopologyEquipmentClasses = JSON.parse(res.ProcessMessage);
@@ -1642,7 +1643,7 @@
             `<tr>
                 <th>
                     <span class="tableNum">編號</span>
-                    <input type="checkbox" name='all' value='all' class="closed"/>
+                    <input type="checkbox" name='all' value='all' class="closed" onchange="onchangeFun(this)"/>
                 </th>
                 <th class="th_m">通報人員</th>
                 <th class="th_m">來源</th>
@@ -1667,7 +1668,7 @@
                 `<tr>
                     <td>
                         <span class="tableNum">${index}</span>
-                        <input type="checkbox" name=${index} value=${index} class="closed"/>
+                        <input type="checkbox" name=${index} value=${index} class="closed" onchange="onchangeFun(this)"/>
                     </td>
                     <td>${item.name}</td>
                     <td>${item.source}</td>
@@ -1702,6 +1703,7 @@
             $("#announceBtn").find(".blankBtn").addClass("closed");
             $("#announceTable").find(":checkbox").removeClass("closed");
             $("#announceTable").find("span").addClass("closed");
+            $("#announceSelect").removeClass("closed");
             switch (e) {
                 case 'position':
                     $("#sendPosition").removeClass("closed");
@@ -1762,6 +1764,28 @@
                 $(".divAnnounceBox").removeClass("toggleUp");
             }
         }
+
+        function onchangeFun(t){
+            let CheckVal = $(t).val();
+            let isCheckLength = $("#announceTable tbody").find('input[type="checkbox"]').filter(':checked').length;
+            let allLength = $("#announceTable tbody").find('input[type="checkbox"]').length
+            if(CheckVal === "all"){
+                if(isCheckLength === allLength){
+                    $("#announceTable").find('input[type="checkbox"]').prop("checked",false);
+                    $("#announceSelect").find("h5").text(0);
+                }else{
+                    $("#announceTable").find('input[type="checkbox"]').prop("checked",true);
+                    $("#announceSelect").find("h5").text($("#announceTable").find('input[type="checkbox"]').length);
+                }
+            }else{
+                $("#announceSelect").find("h5").text(isCheckLength);
+                if(isCheckLength < allLength){
+                    $("#announceTable thead").find('input[type="checkbox"]').prop("checked",false);
+                }
+            }
+
+        }
+            
 		
 		/*
         function SameResult(re1, re2) {
@@ -1981,14 +2005,11 @@
                     </select>
                 </div>
                 <div class="SetupTest newCol">
-                    @*<input id="StartTime" type="date" class="form-control" placeholder="起始時間" />*@
-                    <input id="startdate" class="input-box datepicker" placeholder="起始時間" data-toggle="datetimepicker" data-target="#startdate" />
+                    <input id="startdate" type="text" class="input-box datepicker" placeholder="起始時間" data-toggle="datetimepicker" data-target="#startdate"/>
                 </div>
                 <div class="SetupTest newCol">
-                    @*<input id="EndTime" type="date" class="form-control" placeholder="結束時間" />*@
-                    <input id="enddate" class="input-box datepicker" placeholder="結束時間" data-toggle="datetimepicker" data-target="#enddate" />
+                    <input id="enddate" type="text" class="input-box datepicker"  placeholder="結束時間" data-toggle="datetimepicker" data-target="#enddate"/>
                 </div>
-
                 <div class="SetupTest newCol">
                     <div class="setBtnArea">
                         <div class="setBtnBox">
@@ -2007,6 +2028,7 @@
                 </table>
             </div>
             <div id="announceBtn" class="announceBtn"></div>
+            <div id="announceSelect" class="closed announceSelect">已選取<h5>0</h5>筆</div>
         </div>
     </div>
 	<div id="divMapBaseEventOperation">
@@ -2095,7 +2117,7 @@
                 <div class="modal-body-left w-50">
                     <div class="form-group">
                         <label for="announceNum">通報編號</label>
-                        <input type="password" class="form-control" id="announceNum" placeholder="10">
+                        <input type="text" class="form-control" id="announceNum" placeholder="10">
                     </div>
                     <div class="form-group">
                         <label for="announceTime">通報時間</label>
