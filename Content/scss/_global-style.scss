@@ -313,6 +313,10 @@
             color: $color-white !important;
         }
     }
+    &.alertBtn{
+        background-color: #EFCC68 !important;
+        color: #344059 !important;
+    }
     &.isdisable{
         background-color: $color-text-major !important;
         color: white !important;

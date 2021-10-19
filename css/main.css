@@ -352,6 +352,11 @@
   color: white !important;
 }
 
+.button.alertBtn {
+  background-color: #EFCC68 !important;
+  color: #344059 !important;
+}
+
 .button.isdisable {
   background-color: #484848 !important;
   color: white !important;
@@ -489,8 +494,8 @@
 
 .divAnnounceBox {
   position: absolute;
-  top: 98px;
-  right: 1px;
+  top: calc( 98px + 0.5em);
+  right: 0.5em;
   width: 720px;
   height: 550px;
   background-color: #fff;
@@ -544,7 +549,7 @@
 }
 
 .divAnnounceBox .divAnnounceContent .setupArea .SetupTest {
-  width: 15%;
+  width: 16%;
   margin: 0 2.5px;
 }
 
@@ -625,7 +630,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable table thead th {
@@ -679,8 +684,12 @@
   font-family: Noto Sans TC;
 }
 
-.modalBox .modal-dialog {
-  max-width: 800px;
+.modalBox .modal-dialog.oneColumn {
+  max-width: 320px;
+}
+
+.modalBox .modal-dialog.twoColumn {
+  max-width: 640px;
 }
 
 .modalBox .modal-dialog .mheader .modal-title {
@@ -692,21 +701,18 @@
 }
 
 .modalBox .modal-dialog .mbody {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding: 0.5rem 1rem;
 }
 
-.modalBox .modal-dialog .mbody .modal-body-left, .modalBox .modal-dialog .mbody .modal-body-right {
+.modalBox .modal-dialog .mbody .modal-body-content {
   margin: 0 5px;
 }
 
-.modalBox .modal-dialog .mbody .modal-body-left .form-group, .modalBox .modal-dialog .mbody .modal-body-right .form-group {
+.modalBox .modal-dialog .mbody .modal-body-content .form-group {
   margin-bottom: 0.5em;
 }
 
-.modalBox .modal-dialog .mbody .modal-body-left .form-group label, .modalBox .modal-dialog .mbody .modal-body-right .form-group label {
+.modalBox .modal-dialog .mbody .modal-body-content .form-group label {
   color: #344059;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 14px;
@@ -714,11 +720,11 @@
   line-height: normal;
 }
 
-.modalBox .modal-dialog .mbody .modal-body-left .btn-group button, .modalBox .modal-dialog .mbody .modal-body-right .btn-group button {
+.modalBox .modal-dialog .mbody .modal-body-content .btn-group button {
   margin-top: 0;
 }
 
-.modalBox .modal-dialog .mbody .modal-body-left .btn-group button:first-child, .modalBox .modal-dialog .mbody .modal-body-right .btn-group button:first-child {
+.modalBox .modal-dialog .mbody .modal-body-content .btn-group button:first-child {
   background: #BCE3FF !important;
   border: 1px solid #4C7DA2 !important;
   -webkit-box-sizing: border-box !important;
@@ -727,11 +733,17 @@
   color: #4C7DA2 !important;
 }
 
-.modalBox .modal-dialog .mbody .modal-body-left .btn-group button:last-child, .modalBox .modal-dialog .mbody .modal-body-right .btn-group button:last-child {
+.modalBox .modal-dialog .mbody .modal-body-content .btn-group button:last-child {
   background: #B6CCDC !important;
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
   border-radius: 0px 5px 5px 0px !important;
   color: white !important;
+}
+
+.modalBox .modal-dialog .mfooter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */

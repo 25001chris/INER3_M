@@ -55,8 +55,8 @@
 
 .divAnnounceBox{
     position: absolute;
-    top: 98px;
-    right:1px;
+    top: calc( 98px + 0.5em );
+    right: 0.5em;
     width: 720px;
     height: 550px;
     background-color: #fff;
@@ -100,7 +100,7 @@
             position: relative;
             display: flex;
             .SetupTest{
-                width: 15%;
+                width: 16%;
                 margin: 0 2.5px;
                 input{
                     width: 100%;
@@ -159,7 +159,7 @@
                     background: #D0EAEC;
                     position: sticky;
                     top: 0;
-                    z-index: 1000;
+                    z-index: 100;
                     th{
                         min-width: 40px;
                         &.th_m{
@@ -208,7 +208,12 @@
 .modalBox{
     font-family: Noto Sans TC;
     .modal-dialog{
-        max-width: 800px;
+        &.oneColumn{
+            max-width: 320px;
+        }
+        &.twoColumn{
+            max-width: 640px;
+        }
         .mheader{
             .modal-title{
                 color: #344059;
@@ -216,9 +221,8 @@
             }
         }
         .mbody{
-            display: flex;
             padding: 0.5rem 1rem;
-            .modal-body-left,.modal-body-right{
+            .modal-body-content{
                 margin: 0 5px;
                 .form-group{
                     margin-bottom: 0.5em;
@@ -246,6 +250,9 @@
                     }
                 }
             }
+        }
+        .mfooter{
+            justify-content: center;
         }
     }
 }

@@ -351,6 +351,11 @@
   color: white !important;
 }
 
+.button.alertBtn {
+  background-color: #EFCC68 !important;
+  color: #344059 !important;
+}
+
 .button.isdisable {
   background-color: #484848 !important;
   color: white !important;
