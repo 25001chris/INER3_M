@@ -340,6 +340,11 @@
     text-align: center;
     width: 60px;
     padding: 2px 6px;
+    &.success{
+        color: #1DB65A;
+        background: #E2FAE4;
+        border: 1px solid #92E0B1;
+    }
     &.pending{
         color: #DEA74F;
         background: #FFF5E0;
@@ -349,6 +354,21 @@
         color: #36979D;
         background: #D6FCFA;
         border: 1px solid #36979D;
+    }
+    &.error{
+        color: #DC6969;
+        background: #FCE8E8;
+        border: 1px solid #FFABAB;
+    }
+    &.finish{
+        color: #666666;
+        background: #EEEEEE;
+        border: 1px solid #666666;
+    }
+    &.cancel{
+        color: #4C7DA2;
+        background: #DAE9EF;
+        border: 1px solid #4C7DA2;
     }
 }
 

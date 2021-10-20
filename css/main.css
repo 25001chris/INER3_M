@@ -389,6 +389,12 @@
   padding: 2px 6px;
 }
 
+.tag.success {
+  color: #1DB65A;
+  background: #E2FAE4;
+  border: 1px solid #92E0B1;
+}
+
 .tag.pending {
   color: #DEA74F;
   background: #FFF5E0;
@@ -399,6 +405,24 @@
   color: #36979D;
   background: #D6FCFA;
   border: 1px solid #36979D;
+}
+
+.tag.error {
+  color: #DC6969;
+  background: #FCE8E8;
+  border: 1px solid #FFABAB;
+}
+
+.tag.finish {
+  color: #666666;
+  background: #EEEEEE;
+  border: 1px solid #666666;
+}
+
+.tag.cancel {
+  color: #4C7DA2;
+  background: #DAE9EF;
+  border: 1px solid #4C7DA2;
 }
 
 .swal2-confirm {
@@ -503,11 +527,11 @@
 }
 
 .divAnnounceBox.toggleUp {
-  height: 340px;
+  height: 280px;
 }
 
 .divAnnounceBox.toggleUp .divAnnounceContent .announceTable {
-  height: 180px;
+  height: 120px;
 }
 
 .divAnnounceBox .divAnnounceTitle {
@@ -535,10 +559,15 @@
 
 .divAnnounceBox .divAnnounceTitle .arrowDown {
   right: 3rem;
+  cursor: pointer;
 }
 
 .divAnnounceBox .divSwitchTab .switch-tab-title {
   width: 33%;
+}
+
+.divAnnounceBox .divAnnounceContent {
+  padding: 0 0.5em;
 }
 
 .divAnnounceBox .divAnnounceContent .setupArea {
@@ -563,6 +592,10 @@
 
 .divAnnounceBox .divAnnounceContent .setupArea .SetupTest input.input-box.hideIcon {
   background: none;
+}
+
+.divAnnounceBox .divAnnounceContent .setupArea .SetupTest input.input-box.datepicker {
+  padding: 0 0.25em;
 }
 
 .divAnnounceBox .divAnnounceContent .setupArea .SetupTest input .dropdown {
@@ -590,7 +623,7 @@
 
 .divAnnounceBox .divAnnounceContent .setupArea .form-control {
   font-size: 14px;
-  padding: 0.5em;
+  padding: 0.5em 0.25em;
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable {
@@ -634,7 +667,8 @@
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable table thead th {
-  min-width: 40px;
+  min-width: 36px;
+  position: relative;
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable table thead th.th_m {
@@ -646,11 +680,36 @@
   max-width: 120px;
 }
 
+.divAnnounceBox .divAnnounceContent .announceTable table thead th input[type=checkbox] {
+  display: none;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table thead th input[type=checkbox]:checked + label {
+  background-image: url("./../images/ICON/select.svg");
+  background-position: center;
+  border: none;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table thead th label {
+  position: absolute;
+  top: 0.25em;
+  left: 0.5em;
+  border: 2px solid #829196;
+  border-radius: 2px;
+  width: 14px;
+  height: 14px;
+}
+
 .divAnnounceBox .divAnnounceContent .announceTable table tbody td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 120px;
+  position: relative;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable table tbody td .icon {
@@ -664,6 +723,26 @@
   word-break: break-word;
   word-wrap: break-word;
   white-space: initial;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table tbody td input[type=checkbox] {
+  display: none;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table tbody td input[type=checkbox]:checked + label {
+  background-image: url("./../images/ICON/select.svg");
+  background-position: center;
+  border: none;
+}
+
+.divAnnounceBox .divAnnounceContent .announceTable table tbody td label {
+  position: absolute;
+  top: 0.75em;
+  left: 0.5em;
+  border: 2px solid #829196;
+  border-radius: 2px;
+  width: 14px;
+  height: 14px;
 }
 
 .divAnnounceBox .divAnnounceContent .announceBtn {
@@ -691,6 +770,10 @@
 
 .modalBox .modal-dialog.twoColumn {
   max-width: 640px;
+}
+
+.modalBox .modal-dialog .mheader {
+  border-bottom: 0px;
 }
 
 .modalBox .modal-dialog .mheader .modal-title {
@@ -723,18 +806,8 @@
 
 .modalBox .modal-dialog .mbody .modal-body-content .btn-group button {
   margin-top: 0;
-}
-
-.modalBox .modal-dialog .mbody .modal-body-content .btn-group button:first-child {
-  background: #BCE3FF !important;
-  border: 1px solid #4C7DA2 !important;
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
-  border-radius: 5px 0px 0px 5px !important;
-  color: #4C7DA2 !important;
-}
-
-.modalBox .modal-dialog .mbody .modal-body-content .btn-group button:last-child {
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background: #B6CCDC !important;
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
@@ -742,9 +815,26 @@
   color: white !important;
 }
 
+.modalBox .modal-dialog .mbody .modal-body-content .btn-group button.active {
+  background: #BCE3FF !important;
+  border: 1px solid #4C7DA2 !important;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  color: #4C7DA2 !important;
+}
+
+.modalBox .modal-dialog .mbody .modal-body-content .btn-group button:first-child {
+  border-radius: 5px 0px 0px 5px !important;
+}
+
+.modalBox .modal-dialog .mbody .modal-body-content .btn-group button:last-child {
+  border-radius: 0px 5px 5px 0px !important;
+}
+
 .modalBox .modal-dialog .mfooter {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-top: 0px;
 }
 /*# sourceMappingURL=main.css.map */

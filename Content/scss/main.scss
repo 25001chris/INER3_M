@@ -62,10 +62,10 @@
     background-color: #fff;
     z-index: 1000;
     &.toggleUp{
-        height: 340px;
+        height: 280px;
         .divAnnounceContent{
             .announceTable{
-                height: 180px;
+                height: 120px;
             }
         }
     }
@@ -87,6 +87,7 @@
         }
         .arrowDown{
             right: 3rem;
+            cursor: pointer;
         }
     }
     .divSwitchTab{
@@ -96,6 +97,7 @@
     }
 
     .divAnnounceContent{
+        padding: 0 0.5em;
         .setupArea{
             position: relative;
             display: flex;
@@ -108,6 +110,9 @@
                         cursor: pointer;
                         &.hideIcon{
                             background: none;
+                        }
+                        &.datepicker{
+                            padding: 0 0.25em;
                         }
                     }
                     .dropdown{
@@ -129,7 +134,7 @@
             }
             .form-control{
                 font-size: 14px;
-                padding: 0.5em;
+                padding: 0.5em 0.25em;
             }
         }
         .announceTable{
@@ -161,13 +166,31 @@
                     top: 0;
                     z-index: 100;
                     th{
-                        min-width: 40px;
+                        min-width: 36px;
+                        position: relative;
                         &.th_m{
                             min-width: 60px;
                         }
                         &.th_l{
                             min-width: 100px;
                             max-width: 120px;
+                        }
+                        input[type=checkbox]{
+                            display: none;
+                            &:checked+label{
+                                background-image: url("./../images/ICON/select.svg");
+                                background-position: center;
+                                border: none;
+                            }
+                        }
+                        label{
+                            position: absolute;
+                            top: 0.25em;
+                            left: 0.5em;
+                            border: 2px solid #829196;
+                            border-radius: 2px;
+                            width: 14px;
+                            height: 14px;
                         }
                     }
                 }
@@ -177,6 +200,8 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         max-width: 120px;
+                        position: relative;
+                        @include noto-sans-tc-14-medium;
                         .icon{
                             padding: 10px;
                             cursor: pointer;
@@ -187,6 +212,23 @@
                             word-break: break-word;
                             word-wrap: break-word;
                             white-space: initial;
+                        }
+                        input[type=checkbox]{
+                            display: none;
+                            &:checked+label{
+                                background-image: url("./../images/ICON/select.svg");
+                                background-position: center;
+                                border: none;
+                            }
+                        }
+                        label{
+                            position: absolute;
+                            top: 0.75em;
+                            left: 0.5em;
+                            border: 2px solid #829196;
+                            border-radius: 2px;
+                            width: 14px;
+                            height: 14px;
                         }
                     }
                 }
@@ -216,6 +258,7 @@
             max-width: 640px;
         }
         .mheader{
+            border-bottom: 0px;
             .modal-title{
                 color: #344059;
                 @include noto-sans-tc-16-bold;
@@ -235,18 +278,22 @@
                 .btn-group{
                     button{
                         margin-top: 0;
-                        &:first-child{
+                        box-shadow: none;
+                        background: #B6CCDC !important;
+                        box-sizing: border-box !important;
+                        border-radius: 0px 5px 5px 0px !important;
+                        color: white !important;
+                        &.active{
                             background: #BCE3FF !important;
                             border: 1px solid #4C7DA2 !important;
                             box-sizing: border-box !important;
-                            border-radius: 5px 0px 0px 5px !important;
                             color: #4C7DA2 !important;
                         }
+                        &:first-child{
+                            border-radius: 5px 0px 0px 5px !important;
+                        }
                         &:last-child{
-                            background: #B6CCDC !important;
-                            box-sizing: border-box !important;
                             border-radius: 0px 5px 5px 0px !important;
-                            color: white !important;
                         }
                     }
                 }
@@ -254,6 +301,7 @@
         }
         .mfooter{
             justify-content: center;
+            border-top: 0px;
         }
     }
 }

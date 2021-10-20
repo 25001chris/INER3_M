@@ -749,6 +749,27 @@ footer {
     }
 }
 
+.listCheck{
+    display:none;
+    input[type=checkbox]{
+        display: none;
+        &:checked+label{
+            background-image: url("./../images/ICON/select.svg");
+            background-position: center;
+            border: none;
+        }
+    }
+    label{
+        position: absolute;
+        top: 0.75em;
+        left: 0.5em;
+        border: 2px solid #829196;
+        border-radius: 2px;
+        width: 14px;
+        height: 14px;
+    }
+}
+
 $top : calc( 50vh - 125px );
 
 .swal-wide{

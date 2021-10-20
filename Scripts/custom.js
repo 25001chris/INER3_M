@@ -381,3 +381,40 @@ function SwitchMobileSystemMenu() {
         $("a.MobileSystemMenu").find("img").prop("src", "images/Mobile/SystemMenu.svg");
     }
 }
+
+// 標籤工具
+function TagTool(tagObj){
+    const type = tagObj.type;
+    const text = tagObj.text;
+    let html = document.createElement("span");
+    $(html).addClass("tag");
+    $(html).addClass(type);
+    html.innerHTML = text;
+    return html;
+}
+function tagStyle(tagText){
+    let result = ""
+    switch (tagText) {
+        case '已發布':
+            result = 'success'
+            break;
+        case '待審核':
+            result = 'pending'
+            break;
+        case '審核中':
+            result = 'active'
+            break;
+        case '通報失敗':
+            result = 'error'
+            break;
+        case '已結案':
+            result = 'finish'
+            break;
+        case '已解除':
+            result = 'cancel'
+            break;
+        default:
+            break;
+    }
+    return result;
+}

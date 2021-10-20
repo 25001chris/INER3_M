@@ -34,9 +34,6 @@
     .feederActive{
         background-color: #FFF4E8 !important
     }
-    .listCheck{
-        display:none;
-    }
 </style>
 <div class="">
     <div class="mt30 mb5 pageTitle">
@@ -104,7 +101,9 @@
     var tStartT;
     var tEndT;
     var tUserAuth = "";
-    var test = false;
+    var isChecked = false;
+    var checkedList = [];
+    var listData;
     $(function () {
         mutation.setUserName(stateData, {item: 'userName',value: "@tUserName"});
         select(0);
@@ -149,7 +148,6 @@
                 getSearchData();
             }
         });
-
         $("#scenario").on("change",function(){
             let data = $(this).val();
             const $yorz = $("#action2");
@@ -281,6 +279,7 @@
         // })
         getAnnounce().done(function (res) {
             var data = res.data.reverse();
+            listData = data;
             var tPage = $("#page_select").val();
             var tStartNo = (tPage - 1) * 10;
             var tEndNo = (tStartNo + 10) > data.length ? data.length : (tStartNo + 10);
@@ -333,25 +332,7 @@
                     tr_title.appendChild(td_title);
                 }
             }
-            var newCheckBox = document.createElement("input");
-            var th_check = document.createElement('th');
-            newCheckBox.type = 'checkbox';
-            newCheckBox.name = 'all';
-            newCheckBox.value = 'all';
-            th_check.appendChild(newCheckBox);
-            $(th_check).addClass('listCheck');
-            if(test){
-                $(th_check).addClass('active');
-            }else{
-                $(th_check).removeClass('active');
-            }
-            $(th_check).css({
-                position: 'absolute',
-                width: '20px',
-                left: 0 + "px",
-                minHeight: "41.33px",
-            });
-            tr_title.prepend(th_check);
+            tr_title.prepend(createInputCheckBox('all'));
             //append table head
             root_body.appendChild(tr_title);
 
@@ -373,6 +354,9 @@
                         });
                         th_detail.innerHTML = data[i][tDataField[k]];
                         tr.appendChild(th_detail);
+                        if(k === 0){
+                            tr.appendChild(createInputCheckBox(data[i]["ID"]));
+                        }
                         if (isNewData) {
                             $(th_detail).addClass("feederActive")
                         }
@@ -403,13 +387,12 @@
                     }
                     else {
                         var td_detail = document.createElement('td');
-                        //console.log(tDataField[k])
                         if (tDataField[k] == "PROCESS") {
                             //var $span = document.createElement("span");
                             //$($span).addClass("primary");
                             //$span.innerHTML = data[i][tDataField[k]];
                             let tagType = tagStyle(data[i][tDataField[k]]);
-                            let result = Tag({type:tagType,text:data[i][tDataField[k]]});
+                            let result = TagTool({type:tagType,text:data[i][tDataField[k]]});
                             td_detail.appendChild(result);
                         }else{
                             td_detail.innerHTML = data[i][tDataField[k]];
@@ -421,26 +404,18 @@
                         }
                         tr.appendChild(td_detail);
                     }
-                    var newCheckBox1 = document.createElement("input");
-                    var td_check = document.createElement('td');
-                    newCheckBox1.type = 'checkbox';
-                    newCheckBox1.name = 'num' + k;
-                    newCheckBox1.value = 'num' + k;
-                    console.log(test)
-                    td_check.appendChild(newCheckBox1);
-                    $(td_check).addClass('listCheck');
-                    if(test){
-                        $(td_check).addClass('active');
-                    }else{
-                        $(td_check).removeClass('active');
-                    }
-                    $(td_check).css({
-                        position: 'absolute',
-                        width: '20px',
-                        left: 0 + "px",
-                        minHeight: "41.33px"
-                    });
-                    tr.prepend(td_check);
+                    // var newCheckBox1 = document.createElement("input");
+                    // var td_check = document.createElement('td');
+                    // var newLabel = document.createElement('label');
+                    // newCheckBox1.type = 'checkbox';
+                    // newCheckBox1.name = 'num' + k;
+                    // newCheckBox1.id = 'num' + k;
+                    // newCheckBox1.value = 'num' + k;
+                    // $(newLabel).attr("for",'num' + k);
+                    // td_check.appendChild(newCheckBox1);
+                    // td_check.appendChild(newLabel);
+                    // $(td_check).addClass('listCheck');
+                    // tr.prepend(createInputCheckBox(k));
                 }
                 root_body.appendChild(tr);
                 root.appendChild(root_body);
@@ -457,29 +432,61 @@
             console.log(err)
         })
     }
-
-    function Tag(tagObj){
-        const type = tagObj.type;
-        const text = tagObj.text;
-        let html = document.createElement("span");
-        $(html).addClass("tag");
-        $(html).addClass(type);
-        html.innerHTML = text;
-        return html;
-    }
-    function tagStyle(tagText){
-        let result = ""
-        switch (tagText) {
-            case '待審核':
-                result = 'pending'
-                break;
-            case '審核中':
-                result = 'active'
-                break;
-            default:
-                break;
+    function createInputCheckBox(i){
+        let newCheckBox = document.createElement("input");
+        let th_check = document.createElement('th');
+        let newLabel = document.createElement('label');
+        const checkData = i === 'all' ? 'all':'num' + i;
+        newCheckBox.type = 'checkbox';
+        newCheckBox.name = checkData;
+        newCheckBox.id = checkData;
+        newCheckBox.value = checkData;
+        newCheckBox.setAttribute("onclick", "setCheckedList(this)");
+        if(checkedList.indexOf(checkData)!==-1 || checkedList.length === listData.length){
+            $(newCheckBox).prop("checked",true)
         }
-        return result;
+        $(newLabel).attr("for",checkData);
+        th_check.appendChild(newCheckBox);
+        th_check.appendChild(newLabel);
+        $(th_check).addClass('listCheck');
+        if(isChecked){
+            $(th_check).addClass('active');
+        }else{
+            $(th_check).removeClass('active');
+        }
+        $(th_check).css({
+            position: 'absolute',
+            width: '20px',
+            left: 0 + "px",
+            minHeight: "41.33px"
+        });
+        return th_check;
+    }
+
+    function setCheckedList(self){
+        const $self = $(self);
+        const _val = $self.val()
+        const _isChecked = $self.prop("checked")
+        if(_val==="all"){
+            checkedList = [];
+            if(_isChecked){
+                listData.forEach(function(item){
+                    checkedList.push("num"+item.ID);
+                    $(".listCheck").find("input:checkbox").prop("checked",true);
+                })
+            }else{
+                $(".listCheck").find("input:checkbox").prop("checked",false);
+            }
+        }else{
+            if(_isChecked){
+                checkedList.push(_val)
+            }else{
+                let delObj = checkedList.indexOf(_val)
+                checkedList.splice(delObj, 1);
+                $(".listCheck").find("#all").prop("checked",false);
+            }
+        }
+        console.log(checkedList)
     }
 
     function getHistoryData(pEname, pStartTime, pEndTime) {
@@ -555,13 +562,13 @@
         $(t).addClass("closed");
         $(t).siblings().removeClass("closed");
         $(".listCheck").addClass("active");
-        test = true;
+        isChecked = true;
     }
     function confirmPosition(t){
         $(t).addClass("closed");
         $(t).siblings().removeClass("closed");
         $(".listCheck").removeClass("active");
-        test = false;
+        isChecked = false;
     }
 </script>
 }
