@@ -655,6 +655,7 @@
 
 .divAnnounceBox .divAnnounceContent .announceTable table tbody td .icon {
   padding: 10px;
+  cursor: pointer;
 }
 
 .divAnnounceBox .divAnnounceContent .announceTable table tbody td.time {

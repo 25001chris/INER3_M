@@ -1681,7 +1681,7 @@
                     <td><i class="icon position" data-toggle="modal" data-target="#editAnnounceOutModal"></i></td>
                     ${ i === 0 ? `<td><i class="icon stop"></i></td>` : '' }
                     ${ i === 0 ? `<td><i class="icon edit1" data-toggle="modal" data-target="#exampleModal"></td>` : '' }
-                    ${ i === 0 ? `<td><i class="icon cloud"></td>` : '' }
+                    ${ i === 0 ? `<td><i class="icon cloud" onclick="sendAnnounce()"></td>` : '' }
                     ${ i === 1 ? `<td><i class="icon finish"></td>` : '' }
                 </tr>`;
             })
@@ -1787,7 +1787,6 @@
                 }
             }
         }
-
         function isDateSelect(t){
             if($(t).val() !== ""){
                 $(".datepicker").addClass("hideIcon");
@@ -1795,8 +1794,32 @@
                 $(".datepicker").removeClass("hideIcon");
             };
         }
-            
-		
+        function sendAnnounce(){
+            // $.notify({
+            //     title: "<img src='../images/Notification/AL3.png'/>外部程式故障通報<br />"
+            //     , message: "現場人員於<a href='https://www.w3school.com.cn/jquery/attributes_hasclass.asp'>K1324HB51</a>進行故障通報，線路變壓器故障。"
+            // });
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn button mainBtn',
+                    cancelButton: 'btn button cancelBtn'
+                },
+                buttonsStyling: false
+            })
+            swalWithBootstrapButtons.fire({
+                title: '確認發布?',
+                text: '發布後，通報事項將無法再編輯修改',
+                padding: '3em 0',
+                showCancelButton: true,
+                confirmButtonText: '確認',
+                cancelButtonText:'取消',
+                reverseButtons: true
+            }).then(function (r) {
+                if (r.isConfirmed) {
+                    Swal.fire({title: '已發布',padding: '3em 0'})
+                }
+            })
+        }
 		/*
         function SameResult(re1, re2) {
             for (var i in re1.values) {
@@ -1853,9 +1876,6 @@
                 }
             }, 100);
         }
-
-       
-
         function CheckEstResult() {
             var url = window.getServicePath() + "/FeederAnalysis/GetEstimationResult"; //Soon 1100725
             var xmlHttp = new XMLHttpRequest();
