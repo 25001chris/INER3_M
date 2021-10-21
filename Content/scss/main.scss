@@ -58,7 +58,7 @@
     top: calc( 98px + 0.5em );
     right: 0.5em;
     width: 720px;
-    height: 550px;
+    height: 480px;
     background-color: #fff;
     z-index: 1000;
     user-select: none;
@@ -143,7 +143,7 @@
         }
         .announceTable{
             margin-top: 5px;
-            height: 390px;
+            height: 320px;
             overflow: auto;
             &::-webkit-scrollbar{
                 width: 8px;
