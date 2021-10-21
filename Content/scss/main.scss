@@ -61,6 +61,10 @@
     height: 550px;
     background-color: #fff;
     z-index: 1000;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     &.toggleUp{
         height: 280px;
         .divAnnounceContent{

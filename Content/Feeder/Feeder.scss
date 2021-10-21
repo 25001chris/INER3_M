@@ -503,6 +503,10 @@ footer {
             tr{
                 td,th{
                     max-width:fit-content !important;
+                    background-color: #f4f7f9;
+                }
+                .listCheck{
+                    min-width: 30px;
                 }
             }
         }

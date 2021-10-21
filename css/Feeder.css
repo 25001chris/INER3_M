@@ -998,6 +998,11 @@ footer {
   max-width: -webkit-fit-content !important;
   max-width: -moz-fit-content !important;
   max-width: fit-content !important;
+  background-color: #f4f7f9;
+}
+
+#tabletest.announceList tbody tr .listCheck, #table_Alert.announceList tbody tr .listCheck {
+  min-width: 30px;
 }
 
 #table_Aset tr {

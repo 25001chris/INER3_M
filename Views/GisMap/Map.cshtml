@@ -1725,7 +1725,7 @@
             }
         }
         //設定、佇列切換
-        function select1(i) {
+        function selectAnnounceItem(i) {
             var divSwitchTab = $(".divSwitchTab");
             var tLabelWidth = divSwitchTab.find(".switch-tab-title").eq(0).width();
             var tBarWidth = divSwitchTab.find(".switch-tab-title").eq(i).width();
@@ -1757,7 +1757,7 @@
             openAnnounceBoxStatus = !openAnnounceBoxStatus;
             if(openAnnounceBoxStatus){
                 $(".divAnnounceBox").removeClass("closed");
-                select1(0);
+                selectAnnounceItem(0);
             }else{
                 $(".divAnnounceBox").addClass("closed");
             }
@@ -2006,9 +2006,9 @@
         </div>
         <div class="divAnnounceContent">
             <div class="divSwitchTab switch-tab mb5">
-                <div class="switch-tab-title" onclick="select1(0);">通報接獲清單</div>
-                <div class="switch-tab-title" onclick="select1(1);">通報發布清單</div>
-                <div class="switch-tab-title" onclick="select1(2);">通報結案清單</div>
+                <div class="switch-tab-title" onclick="selectAnnounceItem(0);">通報接獲清單</div>
+                <div class="switch-tab-title" onclick="selectAnnounceItem(1);">通報發布清單</div>
+                <div class="switch-tab-title" onclick="selectAnnounceItem(2);">通報結案清單</div>
                 <div class="scroll-bar"></div>
             </div>
             <div class="setupArea">
